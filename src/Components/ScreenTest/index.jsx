@@ -1,5 +1,5 @@
-import { Screen1 } from "../HpScreen1"
 
-export const ScreenTest = () =>{
-    return <Screen1/>
-}
+export const ScreenTest = () => {
+  return <h1>Olá mundo.</h1>;
+};
+
