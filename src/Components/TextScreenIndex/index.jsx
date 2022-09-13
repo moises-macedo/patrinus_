@@ -1,6 +1,6 @@
 import { Div } from "./styled"
 
-export const TitleScreenIndex = ({text}) =>{
+export const TextScreenIndex = ({text}) =>{
     return(
         <Div>
             <h2>{text}</h2>
