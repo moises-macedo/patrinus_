@@ -1,3 +1,3 @@
-export const ScreenTest = () =>{
-    return <h1>Olá mundo.</h1>
-}
+export const ScreenTest = () => {
+  return <h1>Olá mundo.</h1>;
+};
