@@ -1,10 +1,25 @@
 import styled, { keyframes } from "styled-components";
+import { motion } from "framer-motion";
 
-export const Container = styled.div`
+export const Colors = keyframes`
+    0% {
+        background-position: 0% 50%;
+      }
+      50% {
+        background-position: 100% 50%;
+      }
+  
+      100% {
+        background-position: 0% 50%;
+      }
+  `;
+
+export const Container = styled(motion.div)`
   width: 100%;
   height: 100vh;
   display: flex;
   justify-content: space-between;
+  
 `;
 
 export const ContentText = styled.div`
@@ -36,9 +51,10 @@ export const ContentText = styled.div`
 
 export const ContentLogin = styled.div`
   z-index: 5;
+  border-radius: 8px;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: space-between;
   padding: 10px;
   background-color: #ffff;
   width: 100%;
@@ -89,6 +105,7 @@ export const Loginbase = styled.div`
 `;
 
 export const Blur = styled.div`
+  z-index: 4;
   backdrop-filter: blur(3px);
   -webkit-backdrop-filter: blur(3px);
   background: rgba(0, 0, 0, 0.2);
@@ -99,17 +116,4 @@ export const Blur = styled.div`
   @media (max-width: 460px) {
     display: none;
   }
-`;
-
-export const Colors = keyframes`
-  0% {
-      background-position: 0% 50%;
-    }
-    50% {
-      background-position: 100% 50%;
-    }
-
-    100% {
-      background-position: 0% 50%;
-    }
 `;
