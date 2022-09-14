@@ -6,7 +6,7 @@ export const Input = ( {label} ) => {
         <Container>
       <label>{label}</label>
       <InputContainer >       
-        <input   />
+        <input/>
       </InputContainer>      
     </Container>
     )

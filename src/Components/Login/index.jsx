@@ -1,8 +1,8 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
-import { apiPatrinus } from "../../services/api";
-import { Button } from "../Button";
-import Input from "../Input";
+import { apiPatrinus } from "../../Services/api";
+// import { Button } from "../Button";
+import {Input} from "../Input";
 import { TextScreenIndex } from "../TextScreenIndex";
 import { TitleScreenIndex } from "../TitleScreenIndex";
 
@@ -12,7 +12,7 @@ import * as yup from "yup";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { useForm } from "react-hook-form";
 
-import { Container, ContentText, Loginbase, ContentLogin } from "./styled";
+import { Container, ContentText, Loginbase, ContentLogin, Blur} from "./styled";
 
 
 
@@ -36,10 +36,9 @@ export const Login = ({
   });
 
   const closeModalEvent = (e) => {
-    // console.log(e.currentTarget.id);
-    // if (e.target.id === id) {
-    //   setOpenLogin(false);
-    // }
+    if (e.target.id === id) {
+      setOpenLogin(false);
+    }
   };
 
   const navigate = useNavigate();
@@ -59,7 +58,8 @@ export const Login = ({
   };
 
   return (
-    <Container id={id} onClick={closeModalEvent}>
+    <Container  onClick={closeModalEvent}>
+      <Blur id={id}></Blur>
       <Loginbase>
         <ContentLogin>
           <ContentText>
@@ -82,9 +82,9 @@ export const Login = ({
               label="Senha"
               type="password"
             />
-            <Button color="login" type="submit">
+            <button color="login" type="submit">
               Entrar
-            </Button>
+            </button>
           </form>
           <p>Esqueci a senha</p>
         </ContentLogin>
