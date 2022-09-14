@@ -1,5 +1,5 @@
+import { ModalCreateUser } from "../ModalCreateUser/index";
 
 export const ScreenTest = () => {
-  return <h1>Olá mundo.</h1>;
+  return <ModalCreateUser />;
 };
-
