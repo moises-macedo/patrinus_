@@ -1,6 +1,7 @@
+import { DashStudent } from "../../pages/DashStudent";
 import { TextScreenIndex } from "../TextScreenIndex";
 
 export const ScreenTest = () => {
-  return <TextScreenIndex text={"Bem Vindo a Patrinus"}/>
+  return <DashStudent />
 };
 
