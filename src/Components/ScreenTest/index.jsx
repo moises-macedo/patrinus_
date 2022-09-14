@@ -1,6 +1,7 @@
-import { TextScreenIndex } from "../TextScreenIndex";
+import { CardDev } from "../CardDev";
 
 export const ScreenTest = () => {
-  return <TextScreenIndex text={"Bem Vindo a Patrinus"}/>
+  return <CardDev />
 };
+
 
