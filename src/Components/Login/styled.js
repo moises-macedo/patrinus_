@@ -19,7 +19,6 @@ export const Container = styled(motion.div)`
   height: 100vh;
   display: flex;
   justify-content: space-between;
-  
 `;
 
 export const ContentText = styled.div`
@@ -81,6 +80,8 @@ export const ContentLogin = styled.div`
     font-weight: bold;
     font-size: 1.2rem;
     color: #4a6cbb;
+    position: relative;
+    bottom: 5%;
   }
 `;
 
@@ -109,7 +110,7 @@ export const Blur = styled.div`
   backdrop-filter: blur(3px);
   -webkit-backdrop-filter: blur(3px);
   background: rgba(0, 0, 0, 0.2);
-  flex: 2;
+  flex: 3;
   width: 100%;
   height: 100%;
 

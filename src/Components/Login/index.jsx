@@ -1,7 +1,7 @@
-import React from "react";
+import React, { useRef, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { apiPatrinus } from "../../Services/api";
-// import { Button } from "../Button";
+import { Button } from "../Button";
 import { Input } from "../Input";
 import { TextScreenIndex } from "../TextScreenIndex";
 import { TitleScreenIndex } from "../TitleScreenIndex";
@@ -18,8 +18,12 @@ import {
   ContentLogin,
   Blur,
 } from "./styled";
+import { toast } from "react-toastify";
+import { ReCaptchaComponent } from "./recaptcha";
 
 export const Login = ({ id = "loginModal", setOpenLogin, openLogin }) => {
+  const [valid, setValid] = useState(false);
+
   const formSchema = yup.object().shape({
     email: yup.string().required("Campo obrigatório!").email("Email inválido"),
     password: yup.string().required("Campo obrigatório!"),
@@ -43,15 +47,20 @@ export const Login = ({ id = "loginModal", setOpenLogin, openLogin }) => {
   const navigate = useNavigate();
 
   const onSubmitFunction = (data) => {
-    apiPatrinus
-      .post("/login", data)
-      .then((response) => {
-        console.log("foi");
-        localStorage.setItem("@Patrinus:token", response.data.accessToken);
-      })
-      .catch((err) => {
-        alert("não foi");
-      });
+    if (data && valid === true) {
+      apiPatrinus
+        .post("/login", data)
+        .then((response) => {
+          localStorage.setItem("@Patrinus:token", response.data.accessToken);
+          toast.success("Login com sucessos!!");
+          reset();
+        })
+        .catch((_) => {
+          toast.error("Email ou Senha inválidos!!");
+        });
+    }else{
+      toast.error("Humano ou robo?")
+    }
   };
 
   return (
@@ -71,22 +80,21 @@ export const Login = ({ id = "loginModal", setOpenLogin, openLogin }) => {
           </ContentText>
           <form onSubmit={handleSubmit(onSubmitFunction)}>
             <Input
-              register={register}
-              nome={"email"}
+              register={register("email")}
               errors={errors.email}
               label="Email"
               type="text"
             />
             <Input
-              register={register}
-              nome={"password"}
+              register={register("password")}
               errors={errors.password}
               label="Senha"
               type="password"
             />
-            <button color="login" type="submit">
+            <ReCaptchaComponent setValid={setValid} />
+            <Button theme="secundary" type="submit">
               Entrar
-            </button>
+            </Button>
           </form>
           <p>Esqueci a senha</p>
         </ContentLogin>
