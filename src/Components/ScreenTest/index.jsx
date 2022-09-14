@@ -1,6 +1,6 @@
-import { TextScreenIndex } from "../TextScreenIndex";
+import { PartnerSchools } from "../PartnerSchools";
 
 export const ScreenTest = () => {
-  return <TextScreenIndex text={"Bem Vindo a Patrinus"}/>
+  return <PartnerSchools/>
 };
 
