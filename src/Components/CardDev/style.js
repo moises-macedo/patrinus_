@@ -1,15 +1,15 @@
 import styled from "styled-components";
 
 export const Container = styled.section`
-width: 100%;
-min-height: 180px;
-background: var(--dark-1);
-display: flex;
-flex-direction: row;
-flex-wrap: wrap;
-align-items: center;
-justify-content: space-around;
-position: relative;
+  width: 100%;
+  min-height: 180px;
+  background: var(--dark-1);
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-around;
+  position: relative;
 `
 export const Card = styled.div`
 
@@ -55,12 +55,12 @@ export const Border = styled.div`
   transition: border 1s;
   position: absolute;
   backdrop-filter: blur(2px);
--webkit-backdrop-filter: blur(2px);
-z-index: 2;
+  -webkit-backdrop-filter: blur(2px);
+  z-index: 2;
 
   &:hover{
     backdrop-filter:none;
--webkit-backdrop-filter: none;
+    -webkit-backdrop-filter: none;  
     border: 1px solid white
   }
 `
