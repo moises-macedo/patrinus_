@@ -56,6 +56,7 @@ export const Border = styled.div`
   position: absolute;
   backdrop-filter: blur(2px);
 -webkit-backdrop-filter: blur(2px);
+z-index: 2;
 
   &:hover{
     backdrop-filter:none;
