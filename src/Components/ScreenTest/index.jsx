@@ -1,6 +1,7 @@
-import { PartnerSchools } from "../PartnerSchools";
+import { CardDev } from "../CardDev";
 
 export const ScreenTest = () => {
-  return <PartnerSchools/>
+  return <CardDev />
 };
+
 
