@@ -72,7 +72,7 @@ export const Container = styled.div`
             letter-spacing: 0em;
             text-align: center;
             color: #434343;
-            margin-top: 2em;
+            margin-top: 10px;
         }
         span{     
             
