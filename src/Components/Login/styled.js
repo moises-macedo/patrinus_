@@ -1,81 +1,98 @@
-import styled from "styled-components";
+import styled, { keyframes } from "styled-components";
+import { motion } from "framer-motion";
 
-export const Container = styled.div`
+export const Colors = keyframes`
+    0% {
+        background-position: 0% 50%;
+      }
+      50% {
+        background-position: 100% 50%;
+      }
+  
+      100% {
+        background-position: 0% 50%;
+      }
+  `;
+
+export const Container = styled(motion.div)`
+  width: 100%;
+  height: 100vh;
   display: flex;
-  justify-content: flex-end;
-  flex: 2;
-  backdrop-filter: blur(3px);
-  -webkit-backdrop-filter: blur(3px);
-  background: rgba(0, 0, 0, 0.2);
-  height: 100%;
-
-  @media (max-width: 900px) {
-    height: 100vh;
-  }
+  justify-content: space-between;
 `;
 
 export const ContentText = styled.div`
-  margin-top: 30px;
+  width: 100%;
 
   h3 {
-    margin-bottom: 30px;
+    margin: 40px 0;
   }
 
   h2 {
-    margin: 70px 0;
+    margin-bottom: 50px;
   }
 
-  @media (max-width: 900px) {
-    margin-top: 20px;
+  svg {
+    margin-bottom: 10px;
+    font-size: 1.4rem;
+    color: var(--dark-2);
+    display: block;
+    position: relative;
+    top: 20px;
+    left: 90%;
+    transform: translate(-50%, -50%);
 
-    h3 {
-      margin-bottom: 30px;
-    }
-
-    h2 {
-      margin: 60px 0;
+    @media (min-width: 460px) {
+      display: none;
     }
   }
 `;
 
 export const ContentLogin = styled.div`
-  background-color: #fff;
-  border: 1px solid #000;
-  height: 100%;
+  z-index: 5;
   border-radius: 8px;
-  padding: 20px;
   display: flex;
-  width: 100%;
-  justify-content: flex-start;
   flex-direction: column;
-  align-items: center;
+  justify-content: space-between;
+  padding: 10px;
+  background-color: #ffff;
+  width: 100%;
+  height: 100%;
+  @media (max-width: 460px) {
+    max-width: 500px;
+  }
 
-  svg {
-    @media (max-width: 530px) {
-      display: block;
-      text-align: right;
-      position: absolute;
-      top: 40px;
-      right: 50px;
-      font-size: 1.5rem;
-      color: var(--dark-2);
-    }
-    display: none;
+  form {
+    width: 100%;
+  }
+
+  div + div {
+    margin: 20px 0;
+  }
+
+  button {
+    width: 100%;
+    margin-top: 30px;
   }
 
   p {
-    width: 100%;
-    text-align: left;
-    margin-left: 15px;
-    font-size: 1.3rem;
+    margin-top: 30px;
+    font-weight: bold;
+    font-size: 1.2rem;
     color: #4a6cbb;
+    position: relative;
+    bottom: 5%;
   }
 `;
 
 export const Loginbase = styled.div`
+  padding: 20px;
+  flex: 1;
   width: 100%;
-  max-width: 500px;
   height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
   background: linear-gradient(
     45deg,
     var(--primary-1),
@@ -86,48 +103,18 @@ export const Loginbase = styled.div`
   );
   background-size: 300% 300%;
   animation: colors 15s ease infinite;
-  flex: 1;
-  padding: 20px;
-  form {
-    width: 100%;
-    margin-top: 30px;
+`;
 
-    button,
-    input {
-      width: 100%;
-    }
+export const Blur = styled.div`
+  z-index: 4;
+  backdrop-filter: blur(3px);
+  -webkit-backdrop-filter: blur(3px);
+  background: rgba(0, 0, 0, 0.2);
+  flex: 3;
+  width: 100%;
+  height: 100%;
 
-    button {
-      margin: 50px 0;
-      font-size: 1.6rem;
-
-      @media (max-width: 900px) {
-        margin: 30px 0;
-      }
-    }
-
-    div {
-      width: 100%;
-    }
-
-    div + div {
-      margin-top: 40px;
-      @media (max-width: 900px) {
-        margin-top: 10px;
-      }
-    }
-  }
-
-  @keyframes colors {
-    0% {
-      background-position: 0% 50%;
-    }
-    50% {
-      background-position: 100% 50%;
-    }
-
-    100% {
-      background-position: 0% 50%;
-    }
+  @media (max-width: 460px) {
+    display: none;
   }
 `;
