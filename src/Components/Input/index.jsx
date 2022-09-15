@@ -1,7 +1,6 @@
 import React from "react";
 import { Container, InputContainer } from "./style";
 
-
 export const Input = ({ label, register,placeholder, errors, ...rest }) => {
   
   return (
@@ -12,7 +11,6 @@ export const Input = ({ label, register,placeholder, errors, ...rest }) => {
       <InputContainer>
         <input {...register} {...rest} placeholder={placeholder}  />
       </InputContainer>
-
     </Container>
   );
 };
