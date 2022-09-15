@@ -9,7 +9,9 @@ justify-content: center;
 height: 100vh;
 width: 100%;
 /* background: rgba(0,0,0,0.4); */
-background-image: url("https://cptstatic.s3.amazonaws.com/imagens/enviadas/materias/materia1631/rosas-flores-maior-popularidade-comercializacao-cpt.jpg");
+background-image: url("https://iloveflores.com/wp-content/uploads/2015/10/flores-lindas.jpg");
+background-repeat: no-repeat;
+background-size: cover;
 @keyframes colors{
 
 0% {
@@ -39,8 +41,18 @@ background-image: url("https://cptstatic.s3.amazonaws.com/imagens/enviadas/mater
      transform: scale(1) rotateY(360deg);
     }
 }
+.input{
+    color:#636e72;
+    border-bottom: 2px solid #636e72;
+    cursor: not-allowed;
 
-
+    &::placeholder{
+        color:#636e72;
+    }
+    label{
+        color:#636e72;
+    }
+}
 `
 
 export const Section = styled.section`
@@ -89,6 +101,7 @@ input{
     width:310px;
     border-bottom: 2px solid var(--dark-1);
  }
+ 
 }
 button{
     padding: 15px 25px;

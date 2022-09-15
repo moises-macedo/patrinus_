@@ -27,7 +27,7 @@ export const CardDev = () => {
         },
         {
             image: Eduardo,
-            name: "Gabriel R."
+            name: "Eduardo R."
         }
     ]
 
