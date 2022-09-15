@@ -1,13 +1,15 @@
 import React from "react";
 import { Container, InputContainer } from "./style";
 
-export const Input = ({ label, register, type }) => {
-  // const register = useForm();
+export const Input = ({ label, register,placeholder, errors, ...rest }) => {
+  
   return (
-    <Container>
-      <label>{label}</label>
+    <Container errors={errors}>
+      <label errors={errors}>
+        {label} <span>{errors !== undefined ? errors.message : null}</span>
+      </label>
       <InputContainer>
-        <input {...register} type={type} />
+        <input {...register} {...rest} placeholder={placeholder}  />
       </InputContainer>
     </Container>
   );
