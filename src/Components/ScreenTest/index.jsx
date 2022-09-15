@@ -1,7 +1,7 @@
-import { DashStudent } from "../../pages/DashStudent";
-import { TextScreenIndex } from "../TextScreenIndex";
+import { Footer } from "../Footer";
 
 export const ScreenTest = () => {
-  return <DashStudent />
+  return <Footer/>
 };
+
 
