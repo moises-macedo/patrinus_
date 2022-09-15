@@ -1,9 +1,10 @@
-import { ModalRegisterSchool } from "../ModalRegisterSchool";
-
+import { ModalCreateUser } from "../ModalCreateUser/index";
 export const ScreenTest = () => {
+
   return (
     <>
       <ModalRegisterSchool />
     </>
   );
+
 };

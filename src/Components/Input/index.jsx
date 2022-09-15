@@ -12,7 +12,6 @@ export const Input = ({disabled, label, register,placeholder, errors, ...rest })
       <InputContainer>
         <input {...register} {...rest} placeholder={placeholder} disabled={disabled} />
       </InputContainer>
-
     </Container>
   );
 };
