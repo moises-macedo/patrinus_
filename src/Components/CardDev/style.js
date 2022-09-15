@@ -1,20 +1,20 @@
 import styled from "styled-components";
 
 export const Container = styled.section`
-width: 100%;
-min-height: 250px;
-background: var(--dark-1);
-display: flex;
-flex-direction: row;
-flex-wrap: wrap;
-align-items: center;
-justify-content: space-around;
-position: relative;
+  width: 100%;
+  min-height: 180px;
+  background: var(--dark-1);
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-around;
+  position: relative;
 `
 export const Card = styled.div`
 
-height: 179px;
-  width: 180px;
+height: 150px;
+  width: 150px;
   background: grey;
   border-radius: 10px;
   transition: ease-in-out background 0.8s;
@@ -27,11 +27,7 @@ height: 179px;
   position: relative;
   background: ${props => `url(${props.backgroud})`};
   background-size: 200px;
-
-  &:nth-child(odd){
-margin-bottom: 30px;
-  }
- 
+  margin: 10px;
 
   &:hover{
     background: ${props => ` linear-gradient( rgba(0,0,0,0.20),rgba(0,0,0,0.80) 100%),url('${props.backgroud}')`} ;
@@ -52,14 +48,19 @@ margin-bottom: 30px;
 `
 
 export const Border = styled.div`
-  height: 169px;
-  width: 170px;
+  height: 145px;
+  width: 145px;
   background: transparent;
   border-radius: 10px;
   transition: border 1s;
   position: absolute;
+  backdrop-filter: blur(2px);
+  -webkit-backdrop-filter: blur(2px);
+  z-index: 2;
 
   &:hover{
+    backdrop-filter:none;
+    -webkit-backdrop-filter: none;  
     border: 1px solid white
   }
 `

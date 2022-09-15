@@ -38,6 +38,21 @@ export const Content = styled.div`
 
     }
 
+    @media (min-width: 769px){
+        display: flex;
+        flex-direction: row;
+        width: 100%;
+        
+        margin-top: 5em;
+       
+
+        img{
+            width: 30%;
+            justify-content: space-between;
+            margin: 5em;
+        }
+    }
+
 
 
 

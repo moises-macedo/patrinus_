@@ -4,18 +4,18 @@ import Julio from "../../Assets/Img/julio.jpeg";
 import Gabriel from "../../Assets/Img/gabriel.jpeg";
 import Eduardo from "../../Assets/Img/eduardo.jpeg"
 import { Border, Card, Container } from "./style"
-import { useState } from "react";
+
 
 export const CardDev = () => {
-    
+
     const arr = [
-        {
-            image: Moises,
-            name: "Moisés A."
-        },
         {
             image: Douglas,
             name: "Douglas B."
+        },
+        {
+            image: Moises,
+            name: "Moisés A."
         },
         {
             image: Julio,
@@ -31,19 +31,21 @@ export const CardDev = () => {
         }
     ]
 
-    
+
 
     return (
+
         <Container>
             {arr.map((el, index) => {
-                const {image,name} =el
+                const { image, name } = el
                 return (
                     <Card key={index} backgroud={image}>
                         <Border></Border>
                         <h2>{name}</h2>
                     </Card>
                 )
-            })}            
+            })}
         </Container>
+
     )
 }
