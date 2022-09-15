@@ -1,7 +1,7 @@
-import { Footer } from "../Footer";
+import { ModalRegisterSchool } from "../ModalRegisterSchool";
 
 export const ScreenTest = () => {
-  return <Footer/>
+  return <ModalRegisterSchool />
 };
 
 

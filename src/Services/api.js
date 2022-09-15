@@ -5,5 +5,5 @@ export const apiPatrinus = axios.create({
 });
 
 export const apiReceita = axios.create({
-    baseURL: 'https://www.receitaws.com.br/v1/cnpj'
+    baseURL: 'https://www.receitaws.com.br/v1/cnpj/'
 })
