@@ -1,7 +1,5 @@
-import { Footer } from "../Footer";
+import { ModalEditProfile } from "../ModalEditProfile/index";
 
 export const ScreenTest = () => {
-  return <Footer/>
+  return <ModalEditProfile />;
 };
-
-
