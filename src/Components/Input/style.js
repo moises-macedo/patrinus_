@@ -41,6 +41,11 @@ export const InputContainer = styled.div`
   input {
     font-size: 1.125em;
     border: none;
+
+    background: transparent;
     width: 100%;
+    &::placeholder{
+      background: transparent;
+    }
   }
 `;

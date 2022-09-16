@@ -1,5 +1,7 @@
-import { Footer } from "../Footer";
+import { CardDev } from "../CardDev";
 
 export const ScreenTest = () => {
-  return <Footer />;
+
+  return <CardDev/>;
+
 };
