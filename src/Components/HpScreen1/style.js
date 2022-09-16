@@ -6,7 +6,7 @@ export const Background = styled.div`
 
         
         p{
-            font-family: 'Barlow';
+            font-family: var(--font-barlow);
             font-size: 1em;
             font-weight: 700;        
             letter-spacing: 0em;
