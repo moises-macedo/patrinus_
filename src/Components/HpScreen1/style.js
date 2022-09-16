@@ -1,8 +1,68 @@
 import styled from "styled-components";
 
+export const Background = styled.div`
+
+    div{
+        p{
+            font-family: 'Barlow';
+            font-size: 1em;
+            font-weight: 700;        
+            letter-spacing: 0em;
+            text-align: center;
+        }
+
+        .pSup{
+            margin-top: 10px;
+        }
+
+        hr{
+            width: 95%;            
+            margin-top: 10px; 
+            margin-left: 10px;                   
+            border: 1px solid #FCB1A7;
+
+        }
+    }
+
+
+    @media (min-width: 769px){
+
+        div{
+            p{                      
+                font-size: 1.5em;           
+            }
+    
+            .pSup{
+                margin-top: -137px; 
+            }
+
+            hr{
+            width: 95%;             
+            margin-top: 30px; 
+            margin-left: 25px;                   
+            border: 1px solid #FCB1A7;
+
+        }
+        }
+
+
+        
+
+
+    }
+
+    @media (min-width: 1439px){
+
+
+    }
+
+`;
+
 export const Container = styled.div`
     height: 100vh;
-
+    background-color: #83ad93;
+    
+/* 
     div{
         
         p{
@@ -11,15 +71,17 @@ export const Container = styled.div`
             font-size: 1.5em; 
             margin-top: 2%;
         }
-    }
+    } */
 
     @media (min-width: 769px){
-        
-        div{
-            
-        }
-        
+        clip-path: polygon(0 0, 100% 0, 100% 62%, 0 88%);
+        background-color: #83ad93;
     }
+
+    /* @media (min-width: 1439px){
+        clip-path: polygon(0 0, 100% 0, 100% 62%, 0 88%);
+        background-color: #83ad93;
+    } */
 
 
 `;
@@ -28,6 +90,7 @@ export const Content = styled.div`
     display: flex;
     align-items: center;
     flex-direction: column;
+    background-color: #83ad93;
 
     header{
         width: 95%;
@@ -38,7 +101,7 @@ export const Content = styled.div`
 
         .button_register, .button_signIn{
             width: 100%;
-            margin-top: 5px;               
+            margin-top: 20px;               
             border-radius: 30px;
             background: linear-gradient(180deg, #FFFFFF 0%, #FFFFFF 22.74%, #FFEEE6 100%);
             box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
@@ -46,7 +109,8 @@ export const Content = styled.div`
             font-family: Barlow;
             font-size: 1.87em;
             font-weight: 600;                
-            letter-spacing: 0em;        
+            letter-spacing: 0em;  
+            padding: 4px ;
         }
     }
 
@@ -55,6 +119,7 @@ export const Content = styled.div`
         width: 95%;
         justify-content: center;
         flex-direction: column-reverse;
+        background-color: #83ad93;
         
         aside{
             margin-top: 27px;
@@ -74,7 +139,7 @@ export const Content = styled.div`
             p{
                 width: 95%;
                 text-align: center;
-                margin-top: 2%;
+                margin-top: 7%;
                 font-family: Barlow;
                 font-weight: 700;
                 font-size: 2em;  
@@ -98,27 +163,23 @@ export const Content = styled.div`
                 color: #FFFFFF;
                 font-size: 1.87em;
                 font-weight: 600; 
-                margin-top: 8%;
+                margin-top: 11%;
                 margin-bottom: 8%;
-                padding: 2px;
+                padding: 4px;
             }
 
         }
     }
 
-    
-
     @media (min-width: 769px){
-        clip-path: polygon(0 0, 100% 0, 100% 62%, 0 88%);
-        background-color: #83ad93;
-
+        
         header{
             display: flex;
             flex-direction: row;
             justify-content: space-between;
 
             .button_register{                
-                width: 12.5em;
+                width: 30%;
                 padding: 0.625em;
                 margin-left: 1em;
                 margin-top: 1.12em;
@@ -133,7 +194,7 @@ export const Content = styled.div`
             }
 
             .button_signIn{               
-                width: 12.5em;
+                width: 30%;
                 padding: 0.625em;
                 margin-right: 1em;
                 margin-top: 34px;
@@ -157,9 +218,60 @@ export const Content = styled.div`
             article{
                 p{
                     margin-left: 1em;
-                    margin-top: 1.75em;
+                    margin-top: 1.5em;
                     font-family: Barlow;
-                    font-size: 2.18em;
+                    font-size: 1.5em;
+                    font-weight: 700;
+                    letter-spacing: 0em;
+                    text-align: left;               
+                    width: 19em;
+                }
+    
+                hr{
+                    height: 0px;
+                    width: 28em;
+                    margin-left: 1em;
+                    margin-top: 3em;                    
+                    border: 1px solid #FFFFFF;
+                }
+
+                .button_be_a_partner{                
+                    width:11.62em;                
+                    margin-left: 0.68em;
+                    margin-top: 2em;
+                    /* margin-bottom: 41%; */
+                    border-radius: 40px;
+                    padding: 13px;
+                    background: #595959;
+                    font-family: Barlow;
+                    font-size: 2.25em;
+                    font-weight: 600; 
+                    color: #FFFFFF;
+                    letter-spacing: 0em;
+                }
+            }
+
+            aside{
+                img{
+                    margin-bottom: auto;  
+                    width: 86%;
+                }
+            }
+        }
+    }
+
+    @media (min-width: 1439px){
+        main{  
+            display: grid;
+            grid-template-columns: 1fr 1fr; 
+            
+
+            article{
+                p{
+                    margin-left: 1em;
+                    margin-top: 1em;
+                    font-family: Barlow;
+                    font-size: 2.5em;
                     font-weight: 700;
                     letter-spacing: 0em;
                     text-align: left;               
@@ -170,16 +282,17 @@ export const Content = styled.div`
                     height: 0px;
                     width: 39.56em;
                     margin-left: 1em;
-                    margin-top: 3em;                    
+                    margin-top: 1em;                    
                     border: 1px solid #FFFFFF;
                 }
 
                 .button_be_a_partner{                
-                    width:16.62em;                
+                    width:11.62em;                
                     margin-left: 0.68em;
-                    margin-top: 2em;
-                    margin-bottom: 5.5em;
+                    margin-top: 1em;
+                    margin-bottom: 41%;
                     border-radius: 40px;
+                    padding: 13px;
                     background: #595959;
                     font-family: Barlow;
                     font-size: 2.25em;
@@ -188,16 +301,13 @@ export const Content = styled.div`
                     letter-spacing: 0em;
                 }
             }
-        
 
-            img{
-                              
-                width: 46em;
-                height: 33em;
+            aside{
+                img{
+                    margin-bottom: auto;                            
+                    width: 35em;                    
+                }
             }
-
-            
         }
     }
-
 `;

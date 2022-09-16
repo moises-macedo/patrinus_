@@ -1,16 +1,7 @@
-import { AboutMe } from "../AboutMe";
-import { Footer } from "../Footer";
-import { InformationUser } from "../InformationUser";
-import { StudentInformation } from "../StudentInformation";
+import { ModalEditProfile } from "../ModalEditProfile/index";
 
 export const ScreenTest = () => {
-  return (
-  <>
-  <Footer/>
-  <StudentInformation />
-  </>
-    
-  )
+  return <ModalEditProfile />;
+  );
+
 };
-
-

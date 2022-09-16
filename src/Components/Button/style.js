@@ -28,4 +28,5 @@ export const ButtonStyled = styled.button`
   background-color: ${(props) => theme[props.theme].background};
   color: ${(props) => theme[props.theme].color};
   text-transform: uppercase ;
+  cursor: pointer;
 `
