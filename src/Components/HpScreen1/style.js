@@ -3,6 +3,8 @@ import styled from "styled-components";
 export const Background = styled.div`
 
     div{
+
+        
         p{
             font-family: 'Barlow';
             font-size: 1em;
@@ -12,12 +14,12 @@ export const Background = styled.div`
         }
 
         .pSup{
-            margin-top: 10px;
+            margin-top: 90px;
         }
 
         hr{
             width: 95%;            
-            margin-top: 10px; 
+            margin-top: 30px; 
             margin-left: 10px;                   
             border: 1px solid #FCB1A7;
 

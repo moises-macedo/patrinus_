@@ -24,13 +24,14 @@ export const Content = styled.div`
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    width: 95%;
+    height: 70vh;
+    margin-top: 40px;
+   
     
 
     img{
-        width: 60%;
+        width: 40%;
         margin-top: 10%;
-        margin-bottom: 1em;
         box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
         -webkit-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
         -moz-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
