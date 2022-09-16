@@ -8,8 +8,13 @@ align-items: center;
 justify-content: center;
 height: 100vh;
 width: 100%;
-/* background: rgba(0,0,0,0.4); */
-background-image: url("https://cptstatic.s3.amazonaws.com/imagens/enviadas/materias/materia1631/rosas-flores-maior-popularidade-comercializacao-cpt.jpg");
+background: rgba(0,0,0,0.4);
+z-index: 10;
+position: absolute;
+top: 0;
+left: 0;
+overflow-y: none;
+
 @keyframes colors{
 
 0% {
@@ -39,8 +44,18 @@ background-image: url("https://cptstatic.s3.amazonaws.com/imagens/enviadas/mater
      transform: scale(1) rotateY(360deg);
     }
 }
+.input{
+    color: var(--dar-1);
+    border-bottom: 2px solid #636e72;
+    cursor: not-allowed;
 
-
+    &::placeholder{
+        color:#636e72;
+    }
+    label{
+        color:#636e72;
+    }
+}
 `
 
 export const Section = styled.section`
@@ -56,8 +71,13 @@ border-radius: 15px;
 box-shadow: 10px 10px 21px 0px rgba(0, 0, 0, 0.75);
 -webkit-box-shadow: 10px 10px 21px 0px rgba(0, 0, 0, 0.75);
 -moz-box-shadow: 10px 10px 21px 0px rgba(0, 0, 0, 0.75);
-backdrop-filter: blur(10px);
--webkit-backdrop-filter: blur(10px);
+backdrop-filter: blur(5px);
+-webkit-backdrop-filter: blur(5px);
+background: rgba(0, 0, 0, 0.3);
+
+backdrop-filter: blur(15px);
+-webkit-backdrop-filter: blur(15px);
+border: 1px solid rgba(0, 0, 0, 0.3);
 
 `
 
@@ -89,6 +109,7 @@ input{
     width:310px;
     border-bottom: 2px solid var(--dark-1);
  }
+ 
 }
 button{
     padding: 15px 25px;
@@ -107,7 +128,8 @@ button{
     transition: all 250ms;
     overflow: hidden;
     width: 100%;
-    margin-bottom:10px;
+    
+    margin-top: 10px;
 
     &::before {
         content: "";
