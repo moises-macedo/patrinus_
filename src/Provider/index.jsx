@@ -1,8 +1,8 @@
 import AuthProvider from "./Auth";
 import UsersProvider from "./User";
-import ModalProvider from "./ModalStates";
+import { ModalProvider } from "./ModalStates";
 
-export const Provider = ({ children }) => {
+export const Providers = ({ children }) => {
   return (
     <UsersProvider>
       <AuthProvider>

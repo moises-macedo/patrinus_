@@ -1,6 +1,5 @@
-import { ModalRegisterSchool } from "../ModalRegisterSchool";
+import { ModalEditProfile } from "../ModalEditProfile/index";
 
 export const ScreenTest = () => {
-  return <ModalRegisterSchool />
-
+  return <ModalEditProfile />;
 };
