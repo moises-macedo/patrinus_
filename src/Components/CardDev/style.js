@@ -32,8 +32,8 @@ export const Aside = styled.aside`
   }
 `;
 export const Card = styled.div`
-  height: 150px;
-  width: 150px;
+  height: 155px;
+  width: 155px;
   background: grey;
   flex: none;
 
@@ -86,19 +86,19 @@ export const Card = styled.div`
 `;
 
 export const Border = styled.div`
-  height: 145px;
-  width: 145px;
+  height: 170px;
+  width: 170px;
   background: transparent;
-  border-radius: 10px;
-  transition: border 1s;
+  border-radius: 10px;  
   position: absolute;
   backdrop-filter: blur(2px);
   -webkit-backdrop-filter: blur(2px);
-  z-index: 2;
+  z-index:2;
+  border: 10px solid red;
 
   &:hover {
     backdrop-filter: none;
     -webkit-backdrop-filter: none;
-    border: 1px solid white;
+       
   }
 `;
