@@ -2,6 +2,7 @@ import * as yup from "yup";
 import { apiPatrinus } from "../../Services/api";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { Input } from "../Input/index";
+
 import {
   Container,
   Content,
@@ -9,6 +10,7 @@ import {
   ButtonExit,
   PageContainer,
 } from "./styled.js";
+
 import { FiXCircle } from "react-icons/fi";
 import { useForm } from "react-hook-form";
 import { useState } from "react";
