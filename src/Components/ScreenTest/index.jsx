@@ -1,7 +1,6 @@
-import { ModalEditProfile } from "../ModalEditProfile/index";
+import { CardDev } from "../CardDev";
 
 export const ScreenTest = () => {
-  return <ModalEditProfile />;
-  );
+  return <CardDev/>;
 
 };
