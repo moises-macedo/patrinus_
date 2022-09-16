@@ -1,5 +1,4 @@
 import styled from "styled-components";
-import backgroundImage from "../../Assets/Img/backgroundImage.jpg";
 import graduacao from "../../Assets/Img/graduacao.jpg"
 
 export const Container = styled.div`
@@ -50,36 +49,7 @@ export const Container = styled.div`
         }
 
     }
-
-    article{
-
-        width: 95%;
-
-        hr{
-                height: 0px;
-                width: 95%;
-                margin-left: 10px;
-                margin-top: 10px;                    
-                border: 1px solid #595959;
-        }
-
-
-        p, span{
-            font-family: 'Barlow';
-            font-size: 1em;
-            font-weight: 500;
-            
-            letter-spacing: 0em;
-            text-align: center;
-            color: #434343;
-            margin-top: 10px;
-        }
-        span{     
-            
-            color: var(--primary-1);
-        }
-        
-    }
+    
 
     @media (min-width: 769px){
         height: 100%;
@@ -115,32 +85,7 @@ export const Container = styled.div`
         }
 
 
-        article{
-            display: flex;
-            justify-content: center;
-            align-items: center;
-
-
-            hr{
-                display: none;
-            }
-
-            p, span{
-                font-family: 'Barlow';
-                font-size: 2.8em;
-                font-weight: 500;
-                line-height: 54px;
-                letter-spacing: 0em;
-                text-align: left;
-                color: #434343;
-                margin-top: 1.3em;
-            }
-
-            span{   
-                font-size: 1.4em;
-                color: var(--primary-1);
-            }
-        }
+        
         
     }
 
@@ -217,15 +162,15 @@ export const Content = styled.div`
             .box1, .box2, .box3{            
                 height: 30em;
                 width: 30em;
-                margin-top: 6.625em;
-                margin: 4.5em;
+                margin-top: 1.625em;
+                margin: 1.5em;
                 display: flex;
                 flex-direction: column;
                 align-items: center;
 
                 .tittle{
                     font-family: 'Barlow';
-                    font-size: 50px;
+                    font-size: 30px;
                     font-weight: 700;
                     line-height: 60px;
                     letter-spacing: 0em;
@@ -236,7 +181,7 @@ export const Content = styled.div`
                     /* height: 6.75em;
                     width: 436px; */
                     font-family: 'Barlow';
-                    font-size: 2.8em;
+                    font-size: 20px;
                     font-weight: 500;                
                     letter-spacing: 0em;
                     text-align: center;
@@ -254,5 +199,54 @@ export const Content = styled.div`
 
 
     
+
+`;
+
+export const ContainerText = styled.div`
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    hr{        
+        width: 95%;
+        margin-left: 5px;
+        margin-top: 10px;                    
+        border: 1px solid #595959;
+    }
+
+    p, span{
+        font-family: 'Barlow';
+        font-size: 1.5em;
+        font-weight: 500;
+        /* line-height: 54px; */
+        letter-spacing: 0em;
+        text-align: center;
+        color: #434343;
+        margin-top: 1.3em;
+        margin-bottom: 1.3em;             
+    }
+
+    span{   
+        font-size: 1.4em;
+        color: var(--primary-1);
+    }
+
+    @media (min-width: 769px){
+
+        p, span{            
+            font-size: 2.8em;                     
+        }
+
+        span{   
+            font-size: 1.4em;
+            color: var(--primary-1);
+        }
+    }
+
+    hr{        
+        display: none;
+    }
+
+
 
 `;

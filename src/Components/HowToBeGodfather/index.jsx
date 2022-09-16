@@ -1,10 +1,11 @@
-import { Container, Content } from "./style";
+import { Container, Content, ContainerText } from "./style";
 import Pass1 from "../../Assets/Img/Pass1.png";
 import Pass2 from "../../Assets/Img/Pass2.png";
 import Pass3 from "../../Assets/Img/Pass3.png";
 
 export const HowToBeGodfather = () =>{
 return (
+    <>
     <Container> 
 
         <div className="tittleH2">
@@ -12,7 +13,6 @@ return (
         </div>
             
             <Content>
-            
 
             <section>
                 <div className="box1">                    
@@ -61,14 +61,16 @@ return (
                 </div> 
             </section>
 
-            </Content>
+            </Content>  
 
-            <article>
-                <hr />
-                <p>Seja uma <span>escola</span> parceira e ajude melhor a educação. </p>
-            </article>
+             <ContainerText>
+            <hr />
+            <p>Seja uma <span>escola</span> parceira e ajude melhor a educação. </p>
+        </ContainerText>        
 
         </Container>
+       
+        </>
 )
 
 }
