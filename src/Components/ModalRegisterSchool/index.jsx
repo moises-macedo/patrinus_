@@ -8,8 +8,9 @@ import { useForm } from "react-hook-form";
 import { Button } from "../Button";
 import { BiUser, BiMailSend, BiPencil } from "react-icons/bi";
 import { MdCorporateFare, MdSettingsCell, MdInfo } from "react-icons/md";
+import { toast } from "react-toastify";
 
-export const ModalRegisterSchool = () => {
+export const ModalRegisterSchool = ({onClick, setOnclick,id="modal"}) => {
   const [cnpj, setCnpj] = useState();
   const [corporateName, setCorporateName] = useState();
 
@@ -41,7 +42,14 @@ export const ModalRegisterSchool = () => {
     resolver: yupResolver(formSchema),
   });
 
-  const onSubmit = (data) => {};
+  const onSubmit = (data) => {
+    const user = {...data, corporateName}
+
+    if(user){
+      toast.success("Enviado com sucesso")
+      reset()
+    }
+  };
 
   const loadCorporateName = () => {
     if (cnpj !== undefined) {
@@ -53,12 +61,18 @@ export const ModalRegisterSchool = () => {
     }
   };
 
+  const handleClick = (e) =>{
+    if(e.target.id === id){
+      setOnclick(!onClick)
+    }
+  }
+
   useEffect(() => {
     loadCorporateName();
-  }, []);
+  }, [cnpj]);
 
   return (
-    <Aside>
+    <Aside id={id} onClick={handleClick}>
       <Section>
         <Title>
           <h2>Seja escola parceira</h2>
@@ -67,49 +81,46 @@ export const ModalRegisterSchool = () => {
 
         <Form onSubmit={handleSubmit(onSubmit)}>
           <Input
-            value={cnpj}
-            name={"cnpj"}
-            o
+            onChange={(e) => setCnpj(e.target.value)}
             label={<MdInfo />}
             placeholder={"Informe o CNPJ"}
-            register={register}
+            errors={errors.cnpj}
+            register={register("cnpj")}
           />
           <Input
-            name={"corporateName"}
+            defaultValue={corporateName}
             label={<MdCorporateFare />}
             placeholder={"Será carregado automaticamente"}
             disabled={true}
-            register={register}
+            register={register("corporateName")}
             className={"input"}
-            value={corporateName}
           />
           <Input
-            name={"name"}
             label={<BiUser />}
             placeholder={"Informe nome do responsável"}
-            register={register}
+            register={register("name")}
+            errors={errors.name}
           />
           <Input
-            name={"email"}
             label={<BiMailSend />}
             placeholder={"Informe e-mail "}
-            register={register}
+            register={register("email")}
+            errors={errors.email}
           />
           <Input
-            name={"telephone"}
             label={<MdSettingsCell />}
-            placeholder={"Informe telefone"}
-            register={register}
+            placeholder={"Informe telefone"}            
+            register={register("telephone")}
+            errors={errors.telephone}
           />
           <Input
-            name={"observation"}
             label={<BiPencil />}
-            placeholder={"Observação"}
-            register={register}
+            placeholder={"Observação"}            
+            register={register("observation")}
           />
           <InputCheckBox>
             <input type={"checkbox"} />
-            <p>Eu concordo com os Termos de Usuário</p>
+            <p>Eu confirmo que a empresa e o responsável acima autorizou o contato</p>
           </InputCheckBox>
           <Button theme={"secundary"}>
             <p>Enviar</p>
