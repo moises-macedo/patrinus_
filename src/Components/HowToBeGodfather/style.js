@@ -55,7 +55,7 @@ export const Container = styled.div`
         height: 100%;
         width: 100%;
 
-        background: linear-gradient( rgba(0,0,0,0.50),rgba(0,0,0,0.80) 100%), url(${graduacao}) no-repeat;
+        background: url(${graduacao}) no-repeat;
         background-size: 100%;
         backdrop-filter: blur(5px);
         -webkit-backdrop-filter: blur(5px);
@@ -65,6 +65,7 @@ export const Container = styled.div`
         .tittleH2{
             background: none;
             margin-bottom: 10px;
+            background: linear-gradient( rgba(0,0,0,0.50),rgba(0,0,0,0.80) 100%);
 
             h2{
                 background: none;
@@ -83,16 +84,7 @@ export const Container = styled.div`
                 
             }
         }
-
-
-        
-        
     }
-
-        
-
-    
-
 `;
 
 export const Content = styled.div`
@@ -187,19 +179,9 @@ export const Content = styled.div`
                     text-align: center;
                     color: var(--light-1);
                 }
-                
             }
         }
-
-
-
     }
-
-    
-
-
-    
-
 `;
 
 export const ContainerText = styled.div`
