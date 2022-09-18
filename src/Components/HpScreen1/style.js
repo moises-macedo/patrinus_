@@ -29,13 +29,15 @@ export const Background = styled.div`
       }
 
       .pSup {
-        margin-top: -137px;
+        margin-top: -5px;
+        
       }
 
       hr {
         width: 95%;
         margin-top: 30px;
         margin-left: 25px;
+        margin-bottom: 30px;
         border: 1px solid #fcb1a7;
       }
     }
@@ -62,8 +64,8 @@ export const Content = styled.div`
     width: 95%;
     display: flex;
     flex-direction: column;
-    align-items: center;
-    justify-content: center;
+    align-items: flex-start;
+    justify-content: flex-start;
 
     .button_register,
     .button_signIn {
@@ -83,6 +85,31 @@ export const Content = styled.div`
       font-weight: 600;
       letter-spacing: 0em;
       padding: 4px;
+      cursor: pointer;
+    }
+    .button_register{
+      width: 100%;
+      max-width: 200px;
+    }
+    .button_signIn{
+      display: none;
+    }
+    .button__signIn-mobile{
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      margin-top: 20px;
+      button{
+        background: none;
+        font-size: 18px;
+        text-decoration: underline;
+        cursor: pointer;
+
+        &:hover{
+          color: var(--light-2);
+        }
+      }
     }
   }
 
@@ -92,7 +119,7 @@ export const Content = styled.div`
     justify-content: center;
     flex-direction: column-reverse;
     background-color: #83ad93;
-    margin-top: 50px;
+    margin-top: 20px;
 
     aside {
       margin-top: 27px;
@@ -102,7 +129,7 @@ export const Content = styled.div`
 
       img {
         width: 100%;
-        max-width: 600px;
+        max-width: 300px;
       }
     }
 
@@ -126,16 +153,14 @@ export const Content = styled.div`
       }
 
       .button_be_a_partner {
-        width: 100%;
-        max-width: 300px;
+        width: 95%;
         border-radius: 40px;
         background: #595959;
-        font-family: Barlow;
-        font-weight: 500;
         color: #ffffff;
         font-size: 1.5em;
-        font-weight: 600;
+        margin-top: 15px;
         padding: 4px;
+        cursor: pointer;
       }
     }
   }
@@ -162,12 +187,10 @@ export const Content = styled.div`
         padding: 0.625em;
         margin-right: 1em;
         margin-top: 34px;
-        box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-        border: none;
-        font-family: Barlow;
-        font-size: 1.87em;
-        font-weight: 600;
-        letter-spacing: 0em;
+        display: block;
+      }
+      .button__signIn-mobile{
+        display: none;
       }
     }
 
@@ -203,7 +226,7 @@ export const Content = styled.div`
         img {
           margin-bottom: auto;
           width: 100%;
-          max-width: 300px;
+          max-width: 600px;
         }
       }
     }

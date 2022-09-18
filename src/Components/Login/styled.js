@@ -19,11 +19,14 @@ export const Container = styled(motion.div)`
   height: 100vh;
   display: flex;
   justify-content: space-between;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.5);
 `;
 
 export const ContentText = styled.div`
-  width: 100%;
-
+  width: 100%; 
   h3 {
     margin: 40px 0;
   }

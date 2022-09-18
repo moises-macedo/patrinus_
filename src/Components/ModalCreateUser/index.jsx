@@ -13,10 +13,13 @@ import {
 
 import { FiXCircle } from "react-icons/fi";
 import { useForm } from "react-hook-form";
-import { useState } from "react";
+import { useContext } from "react";
+import { ModalContext } from "../../Provider/ModalStates";
+import { TitleScreenIndex } from "../TitleScreenIndex";
+import { TextScreenIndex } from "../TextScreenIndex";
 
 export const ModalCreateUser = () => {
-  const [isModalVisible, setIsModalVisible] = useState(true);
+  const { setModalRegisterUser, modalRegisterUser } = useContext(ModalContext);
 
   const signUpSchema = yup.object().shape({
     name: yup.string().required("Campo Obrigatório"),
@@ -48,21 +51,23 @@ export const ModalCreateUser = () => {
 
   const handleOutsideClick = (e) => {
     if (e.target.id === "OutsideModal") {
-      setIsModalVisible(false);
+      setModalRegisterUser(!modalRegisterUser);
     }
   };
 
   return (
     <>
-      {isModalVisible ? (
+      {modalRegisterUser ? (
         <PageContainer id="OutsideModal" onClick={handleOutsideClick}>
           <Container>
             <Content>
               <ButtonExit>
-                <FiXCircle onClick={() => setIsModalVisible(false)} />
+                <FiXCircle
+                  onClick={() => setModalRegisterUser(!modalRegisterUser)}
+                />
               </ButtonExit>
-              <h3>Bem vindo a Patrinus</h3>
-              <h2>Cadastre-se</h2>
+              <TextScreenIndex text={"Bem vindo a Patrinus"}/>
+              <TitleScreenIndex text={"Cadastre-se"} />
               <form onSubmit={handleSubmit(handleSignup)}>
                 <Input label="Nome" register={register("name")} />
                 <Input label="Email" register={register("email")} />
@@ -74,7 +79,7 @@ export const ModalCreateUser = () => {
                 <Input label="Confirme sua senha" type="password" />
 
                 <InputBox>
-                  <label>Você é...</label>
+                  <label>Eu sou...</label>
                   <select {...register("type")}>
                     <option>aluno</option>
                     <option>padrinho</option>
