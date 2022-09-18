@@ -20,9 +20,12 @@ import {
 } from "./styled";
 import { toast } from "react-toastify";
 import { ReCaptchaComponent } from "./recaptcha";
+import { useContext } from "react";
+import { ModalContext } from "../../Provider/ModalStates";
 
-export const Login = ({ id = "loginModal", setOpenLogin, openLogin }) => {
+export const Login = ({ id = "loginModal"}) => {
   const [valid, setValid] = useState(false);
+  const { modalSignUp,setModalSignUp} = useContext(ModalContext);
 
   const formSchema = yup.object().shape({
     email: yup.string().required("Campo obrigatório!").email("Email inválido"),
@@ -40,7 +43,7 @@ export const Login = ({ id = "loginModal", setOpenLogin, openLogin }) => {
 
   const closeModalEvent = (e) => {
     if (e.target.id === id) {
-      setOpenLogin(false);
+      setModalSignUp(!modalSignUp)
     }
   };
 
@@ -58,47 +61,51 @@ export const Login = ({ id = "loginModal", setOpenLogin, openLogin }) => {
         .catch((_) => {
           toast.error("Email ou Senha inválidos!!");
         });
-    }else{
-      toast.error("Humano ou robo?")
+    } else {
+      toast.error("Humano ou robo?");
     }
   };
 
   return (
-    <Container
-      onClick={closeModalEvent}
-      initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
-      exit={{ opacity: 0, transition: { duration: 0.2 } }}
-    >
-      <Blur id={id}></Blur>
-      <Loginbase>
-        <ContentLogin>
-          <ContentText>
-            <FiXCircle onClick={() => setOpenLogin(false)} />
-            <TextScreenIndex text="Bem Vindo a Patrinus" />
-            <TitleScreenIndex text="Login" />
-          </ContentText>
-          <form onSubmit={handleSubmit(onSubmitFunction)}>
-            <Input
-              register={register("email")}
-              errors={errors.email}
-              label="Email"
-              type="text"
-            />
-            <Input
-              register={register("password")}
-              errors={errors.password}
-              label="Senha"
-              type="password"
-            />
-            <ReCaptchaComponent setValid={setValid} />
-            <Button theme="secundary" type="submit">
-              Entrar
-            </Button>
-          </form>
-          <p>Esqueci a senha</p>
-        </ContentLogin>
-      </Loginbase>
-    </Container>
+    <>
+      {modalSignUp ? (
+        <Container
+          onClick={closeModalEvent}
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          exit={{ opacity: 0, transition: { duration: 0.2 } }}
+        >
+          <Blur id={id}></Blur>
+          <Loginbase>
+            <ContentLogin>
+              <ContentText>
+                <FiXCircle onClick={() => setModalSignUp(!modalSignUp)} />
+                <TextScreenIndex text="Bem Vindo a Patrinus" />
+                <TitleScreenIndex text="Login" />
+              </ContentText>
+              <form onSubmit={handleSubmit(onSubmitFunction)}>
+                <Input
+                  register={register("email")}
+                  errors={errors.email}
+                  label="Email"
+                  type="text"
+                />
+                <Input
+                  register={register("password")}
+                  errors={errors.password}
+                  label="Senha"
+                  type="password"
+                />
+                <ReCaptchaComponent setValid={setValid} />
+                <Button theme="secundary" type="submit">
+                  Entrar
+                </Button>
+              </form>
+              <p>Esqueci a senha</p>
+            </ContentLogin>
+          </Loginbase>
+        </Container>
+      ) : null}
+    </>
   );
 };
