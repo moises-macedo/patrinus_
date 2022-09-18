@@ -15,6 +15,10 @@ export const Colors = keyframes`
   `;
 
 export const Container = styled(motion.div)`
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 10;
   width: 100%;
   height: 100vh;
   display: flex;
@@ -76,7 +80,7 @@ export const ContentLogin = styled.div`
   }
 
   p {
-    margin-top: 30px;
+    margin-top: 45px;
     font-weight: bold;
     font-size: 1.2rem;
     color: #4a6cbb;
