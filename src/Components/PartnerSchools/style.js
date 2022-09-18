@@ -8,7 +8,7 @@ export const Container = styled.div`
   align-items: center;
 
   h3 {
-    margin-top: 0.5em;
+    margin-top: 1.3em;
     font-family: "Barlow";
     font-size: 3em;
     font-weight: 700;

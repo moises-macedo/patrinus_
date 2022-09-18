@@ -2,7 +2,7 @@ import { Container, Content } from "./style";
 import kenzie from "../../Assets/Img/kenzie.jpg";
 import estacio from "../../Assets/Img/estacio.jpg";
 
-export const PartnerSchools = () => {
+export const PartnerSchools = ({img,nome}) => {
     return(
         <Container>
 
