@@ -1,7 +1,5 @@
-import { CardDev } from "../CardDev";
+import { CardGodFather } from "../CardGodFather";
 
 export const ScreenTest = () => {
-
-  return <CardDev/>;
-
+  return <CardGodFather />;
 };
