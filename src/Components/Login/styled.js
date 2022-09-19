@@ -100,7 +100,7 @@ export const Loginbase = styled.div`
   padding: 20px;
   flex: 1;
   width: 100%;
-  min-width: 400px;
+  min-width: 320px;
   height: 100%;
   display: flex;
   justify-content: center;
