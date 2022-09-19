@@ -1,17 +1,21 @@
 import styled from "styled-components";
+import { motion } from "framer-motion";
 
 
-export const Aside = styled.aside`
+export const Aside = styled(motion.aside)`
 font-family: var(--font-barlow);
 display: flex;
 align-items: center;
 justify-content: center;
 height: 100vh;
 width: 100%;
-/* background: rgba(0,0,0,0.4); */
-background-image: url("https://iloveflores.com/wp-content/uploads/2015/10/flores-lindas.jpg");
-background-repeat: no-repeat;
-background-size: cover;
+background: rgba(0,0,0,0.4);
+z-index: 10;
+position: absolute;
+top: 0;
+left: 0;
+overflow-y: none;
+
 @keyframes colors{
 
 0% {
@@ -42,7 +46,7 @@ background-size: cover;
     }
 }
 .input{
-    color:#636e72;
+    color: var(--dar-1);
     border-bottom: 2px solid #636e72;
     cursor: not-allowed;
 
@@ -68,8 +72,13 @@ border-radius: 15px;
 box-shadow: 10px 10px 21px 0px rgba(0, 0, 0, 0.75);
 -webkit-box-shadow: 10px 10px 21px 0px rgba(0, 0, 0, 0.75);
 -moz-box-shadow: 10px 10px 21px 0px rgba(0, 0, 0, 0.75);
-backdrop-filter: blur(10px);
--webkit-backdrop-filter: blur(10px);
+backdrop-filter: blur(5px);
+-webkit-backdrop-filter: blur(5px);
+background: rgba(0, 0, 0, 0.3);
+
+backdrop-filter: blur(15px);
+-webkit-backdrop-filter: blur(15px);
+border: 1px solid rgba(0, 0, 0, 0.3);
 
 `
 
@@ -120,7 +129,8 @@ button{
     transition: all 250ms;
     overflow: hidden;
     width: 100%;
-    margin-bottom:10px;
+    
+    margin-top: 10px;
 
     &::before {
         content: "";

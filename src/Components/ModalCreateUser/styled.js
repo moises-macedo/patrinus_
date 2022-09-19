@@ -9,12 +9,13 @@ export const PageContainer = styled.div`
   left: 0;
   backdrop-filter: blur(3px);
   -webkit-backdrop-filter: blur(3px);
-  background: rgba(0, 0, 0, 0.2);
+  background: rgba(0, 0, 0, 0.5);
 `;
 
 export const Container = styled.div`
   height: 100vh;
-  width: 50%;
+  width: 100%;
+  max-width: 600px;
   background: linear-gradient(192.59deg, #84b094 0.58%, #fedacc 100%);
   display: flex;
   justify-content: center;
@@ -26,7 +27,7 @@ export const Container = styled.div`
 
 export const Content = styled.div`
   height: 97vh;
-  width: 97%;
+  width: 90%;
   border-radius: 15px;
   border: 2px var(--dark-1) solid;
   background-color: var(--light-1);

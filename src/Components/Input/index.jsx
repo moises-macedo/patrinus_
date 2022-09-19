@@ -1,9 +1,8 @@
 import React from "react";
 import { Container, InputContainer } from "./style";
 
-
 export const Input = ({disabled, label, register,placeholder, errors, ...rest }) => {
-  
+
   return (
     <Container errors={errors}>
       <label errors={errors}>
@@ -11,6 +10,7 @@ export const Input = ({disabled, label, register,placeholder, errors, ...rest })
       </label>
       <InputContainer>
         <input {...register} {...rest} placeholder={placeholder} disabled={disabled} />
+
       </InputContainer>
     </Container>
   );

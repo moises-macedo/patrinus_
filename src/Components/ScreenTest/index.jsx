@@ -1,10 +1,5 @@
-import { ModalCreateUser } from "../ModalCreateUser/index";
+import { CardGodFather } from "../CardGodFather";
+
 export const ScreenTest = () => {
-
-  return (
-    <>
-      <ModalRegisterSchool />
-    </>
-  );
-
+  return <CardGodFather />;
 };
