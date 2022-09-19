@@ -30,7 +30,7 @@ export const Container = styled(motion.div)`
 `;
 
 export const ContentText = styled.div`
-  width: 100%; 
+  width: 100%;
   h3 {
     margin: 40px 0;
   }
@@ -49,7 +49,7 @@ export const ContentText = styled.div`
     left: 90%;
     transform: translate(-50%, -50%);
 
-    @media (min-width: 460px) {
+    @media (min-width: 900px) {
       display: none;
     }
   }
@@ -65,7 +65,7 @@ export const ContentLogin = styled.div`
   background-color: #ffff;
   width: 100%;
   height: 100%;
-  @media (max-width: 460px) {
+  @media (max-width: 900px) {
     max-width: 500px;
   }
 
@@ -75,6 +75,10 @@ export const ContentLogin = styled.div`
 
   div + div {
     margin: 20px 0;
+  }
+
+  label{
+    font-size: 1.4rem;
   }
 
   button {
@@ -96,6 +100,7 @@ export const Loginbase = styled.div`
   padding: 20px;
   flex: 1;
   width: 100%;
+  min-width: 400px;
   height: 100%;
   display: flex;
   justify-content: center;
@@ -110,6 +115,7 @@ export const Loginbase = styled.div`
   );
   background-size: 300% 300%;
   animation: colors 15s ease infinite;
+
 `;
 
 export const Blur = styled.div`
@@ -121,7 +127,7 @@ export const Blur = styled.div`
   width: 100%;
   height: 100%;
 
-  @media (max-width: 460px) {
+  @media (max-width: 470px) {
     display: none;
   }
 `;
