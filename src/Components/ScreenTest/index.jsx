@@ -1,8 +1,8 @@
 import { CardDev } from "../CardDev";
-import { ComponentPartnerSchools } from "../ComponentPartnerSchools";
+import { DashboardStudentGodparents } from "../DashboardStudentGodparents";
 
 export const ScreenTest = () => {
 
-  return <ComponentPartnerSchools/>;
+  return <DashboardStudentGodparents/>;
 
 };

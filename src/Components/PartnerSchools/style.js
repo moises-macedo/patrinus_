@@ -8,7 +8,7 @@ export const Container = styled.div`
   align-items: center;
 
   h3 {
-    margin-top: 1.3em;
+    margin-top: 0.5em;
     font-family: "Barlow";
     font-size: 3em;
     font-weight: 700;
@@ -29,7 +29,7 @@ export const Content = styled.div`
 
   img {
     width: 40%;
-
+    border: 1px solid #fff;
     margin-top: 10%;
     box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.75);
     -webkit-box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.75);
