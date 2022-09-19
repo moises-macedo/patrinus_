@@ -26,13 +26,14 @@ export const Container = styled.div`
     color: ${(props) =>
       props.errors === undefined ? css`rgba(0, 0, 0, 0.56)` : css`red`};
 
-      span{
-        font-size: 1.1rem;
-      }
+    span {
+      font-size: 1.1rem;
+    }
   }
 `;
 export const InputContainer = styled.div`
   border-bottom: 2px solid rgba(0, 0, 0, 0.76);
+  display: flex;
   textarea:focus,
   input:focus,
   select:focus {
@@ -44,8 +45,12 @@ export const InputContainer = styled.div`
 
     background: transparent;
     width: 100%;
-    &::placeholder{
+    &::placeholder {
       background: transparent;
     }
+  }
+  svg {
+    font-size: 30px;
+    cursor: pointer;
   }
 `;

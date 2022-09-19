@@ -3,7 +3,9 @@ import { Container, InputContainer } from "./style";
 
 export const Input = ({
   disabled,
+  Icon,
   label,
+  click,
   register,
   placeholder,
   errors,
@@ -21,6 +23,7 @@ export const Input = ({
           placeholder={placeholder}
           disabled={disabled}
         />
+        {Icon ? <Icon onClick={click} /> : null}
       </InputContainer>
     </Container>
   );
