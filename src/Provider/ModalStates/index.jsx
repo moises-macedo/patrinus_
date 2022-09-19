@@ -3,7 +3,7 @@ import { createContext, useEffect, useState } from "react";
 export const ModalContext = createContext();
 
 export const ModalProvider = ({ children }) => {
-  const [modalSignUp, setModalSignUp] = useState(true);
+  const [modalSignUp, setModalSignUp] = useState(false);
   const [modalRegisterUser, setModalRegisterUser] =useState(false)
   const [modalEditProfile, setModalEditProfile] = useState(false);
   const [modalPartnerSchools, setModalPartnerSchools] = useState(false);
@@ -15,7 +15,6 @@ export const ModalProvider = ({ children }) => {
     document.querySelector("body").style.overflow = "hidden";    
   }
 
-  console.log(modalSignUp)
 
   return (
     <ModalContext.Provider

@@ -9,8 +9,9 @@ import { useContext } from "react";
 import { ModalContext } from "../../Provider/ModalStates";
 import { ModalCreateUser } from "../../Components/ModalCreateUser";
 import { Login } from "../../Components/Login";
+import { Navigate } from "react-router-dom";
 
-export const Home = () => {
+export const Home = ({ authenticated }) => {
   const { modalPartnerSchools, setModalPartnerSchools } =
     useContext(ModalContext);
 
@@ -21,6 +22,11 @@ export const Home = () => {
     });
     setModalPartnerSchools(!modalPartnerSchools);
   };
+
+
+  if (authenticated ) {
+    return <Navigate to={"/dashboard"} />;
+  }
   return (
     <>
       <Screen1 />

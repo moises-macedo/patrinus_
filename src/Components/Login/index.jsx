@@ -22,10 +22,12 @@ import { toast } from "react-toastify";
 import { ReCaptchaComponent } from "./recaptcha";
 import { useContext } from "react";
 import { ModalContext } from "../../Provider/ModalStates";
+import { UsersContext } from "../../Provider/User";
 
 export const Login = ({ id = "loginModal"}) => {
   const [valid, setValid] = useState(false);
   const { modalSignUp,setModalSignUp} = useContext(ModalContext);
+  const {setToken,setUser,setAuthenticated} = useContext(UsersContext)
 
   const formSchema = yup.object().shape({
     email: yup.string().required("Campo obrigatório!").email("Email inválido"),
@@ -54,12 +56,17 @@ export const Login = ({ id = "loginModal"}) => {
       apiPatrinus
         .post("/login", data)
         .then((response) => {
-          localStorage.setItem("@Patrinus:token", response.data.accessToken);
-          toast.success("Login com sucessos!!");
+          localStorage.setItem("@Patrinus:token", response.data.accessToken
+          );          
+          setToken(response.data.accessToken)          
+          setUser(response.data.user)
+          setAuthenticated(true)
           reset();
+          navigate("/dashboard")
         })
         .catch((_) => {
           toast.error("Email ou Senha inválidos!!");
+          
         });
     } else {
       toast.error("Humano ou robo?");
