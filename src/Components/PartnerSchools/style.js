@@ -29,7 +29,7 @@ export const Content = styled.div`
 
   img {
     width: 40%;
-
+    border: 1px solid #fff;
     margin-top: 10%;
     box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.75);
     -webkit-box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.75);
