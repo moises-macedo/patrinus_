@@ -5,7 +5,7 @@ export const ModalContext = createContext();
 export const ModalProvider = ({ children }) => {
   const [modalSignUp, setModalSignUp] = useState(false);
   const [modalRegisterUser, setModalRegisterUser] = useState(false);
-  const [modalEditProfile, setModalEditProfile] = useState(true);
+  const [modalEditProfile, setModalEditProfile] = useState(false);
   const [modalPartnerSchools, setModalPartnerSchools] = useState(false);
 
   if (!modalPartnerSchools || !modalRegisterUser || !modalSignUp) {
