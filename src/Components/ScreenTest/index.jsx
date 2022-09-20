@@ -1,5 +1,5 @@
-import { SchollMenu } from "../MenuSchool/index";
+import { DashboardProfileGodfather } from "../../Pages/DashboardProfileGodfather/index";
 
 export const ScreenTest = () => {
-  return <SchollMenu />;
+  return <DashboardProfileGodfather />;
 };
