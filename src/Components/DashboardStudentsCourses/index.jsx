@@ -1,13 +1,13 @@
 import {Container, Content, HeaderContent} from "./styled";
 
 import {BackGroundDashboard} from "../Background"
-import {Menus} from "../Menus"
+import {MenuGodson} from "../MenuGodson"
 import { InputSearch } from "../InputSearch";
 
 export const DashboardStudentsCourses = () => {
     return(
         <Container>
-            <Menus/>
+            <MenuGodson/>
             <BackGroundDashboard/>
             <Content>
                 <HeaderContent>
