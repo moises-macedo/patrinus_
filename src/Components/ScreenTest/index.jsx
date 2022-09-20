@@ -1,7 +1,7 @@
 
-import { DashboardGodfatherTopCourses } from "../../Pages/DashboardGodfatherTopCourses/index";
+import { DashboardProfileGodfather } from "../../Pages/DashboardProfileGodfather/index";
 
 export const ScreenTest = () => {
-  return <DashboardGodfatherTopCourses />;
+  return <DashboardProfileGodfather />;
 
 };
