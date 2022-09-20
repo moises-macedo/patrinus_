@@ -48,9 +48,10 @@ export const ModalCreateUser = () => {
     resolver: yupResolver(signUpSchema),
   });
 
-  const handleSignup = (data) => {
+  const handleSignup = ({ name, email, password, type }) => {
+    const user = { name, email, password, type };
     apiPatrinus
-      .post("users/register", data)
+      .post("users/register", user)
       .then((_) => {
         toast.success("Cadastro Efetuado!!");
         setModalRegisterUser(!modalRegisterUser);
