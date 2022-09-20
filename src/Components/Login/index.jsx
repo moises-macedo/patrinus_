@@ -6,7 +6,7 @@ import { Input } from "../Input";
 import { TextScreenIndex } from "../TextScreenIndex";
 import { TitleScreenIndex } from "../TitleScreenIndex";
 
-import { FiXCircle, FiUnlock, FiLock } from "react-icons/fi";
+import { FiXCircle, FiEyeOff, FiEye } from "react-icons/fi";
 
 import * as yup from "yup";
 import { yupResolver } from "@hookform/resolvers/yup";
@@ -25,6 +25,7 @@ import { ModalContext } from "../../Provider/ModalStates";
 import { UsersContext } from "../../Provider/User";
 
 export const Login = ({ id = "loginModal" }) => {
+  const [showPassword, setShowPassword] = useState(false);
   const [valid, setValid] = useState(false);
   const { modalSignUp, setModalSignUp } = useContext(ModalContext);
   const { setToken, setUser, setAuthenticated } = useContext(UsersContext);
@@ -99,7 +100,9 @@ export const Login = ({ id = "loginModal" }) => {
                   register={register("password")}
                   errors={errors.password}
                   label="Senha"
-                  type="password"
+                  type={showPassword ? "text" : "password"}
+                  Icon={showPassword ? FiEye : FiEyeOff}
+                  click={() => setShowPassword(!showPassword)}
                 />
                 <ReCaptchaComponent setValid={setValid} />
                 <Button theme="secundary" type="submit">
