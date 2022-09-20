@@ -15,6 +15,10 @@ export const Colors = keyframes`
   `;
 
 export const Container = styled(motion.div)`
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 10;
   width: 100%;
   height: 100vh;
   display: flex;
@@ -26,7 +30,7 @@ export const Container = styled(motion.div)`
 `;
 
 export const ContentText = styled.div`
-  width: 100%; 
+  width: 100%;
   h3 {
     margin: 40px 0;
   }
@@ -45,7 +49,7 @@ export const ContentText = styled.div`
     left: 90%;
     transform: translate(-50%, -50%);
 
-    @media (min-width: 460px) {
+    @media (min-width: 900px) {
       display: none;
     }
   }
@@ -61,7 +65,7 @@ export const ContentLogin = styled.div`
   background-color: #ffff;
   width: 100%;
   height: 100%;
-  @media (max-width: 460px) {
+  @media (max-width: 900px) {
     max-width: 500px;
   }
 
@@ -73,13 +77,17 @@ export const ContentLogin = styled.div`
     margin: 20px 0;
   }
 
+  label{
+    font-size: 1.4rem;
+  }
+
   button {
     width: 100%;
     margin-top: 30px;
   }
 
   p {
-    margin-top: 30px;
+    margin-top: 45px;
     font-weight: bold;
     font-size: 1.2rem;
     color: #4a6cbb;
@@ -92,6 +100,7 @@ export const Loginbase = styled.div`
   padding: 20px;
   flex: 1;
   width: 100%;
+  min-width: 320px;
   height: 100%;
   display: flex;
   justify-content: center;
@@ -106,6 +115,7 @@ export const Loginbase = styled.div`
   );
   background-size: 300% 300%;
   animation: colors 15s ease infinite;
+
 `;
 
 export const Blur = styled.div`
@@ -117,7 +127,7 @@ export const Blur = styled.div`
   width: 100%;
   height: 100%;
 
-  @media (max-width: 460px) {
+  @media (max-width: 470px) {
     display: none;
   }
 `;

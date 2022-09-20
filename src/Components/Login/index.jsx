@@ -6,7 +6,7 @@ import { Input } from "../Input";
 import { TextScreenIndex } from "../TextScreenIndex";
 import { TitleScreenIndex } from "../TitleScreenIndex";
 
-import { FiXCircle } from "react-icons/fi";
+import { FiXCircle, FiEyeOff, FiEye } from "react-icons/fi";
 
 import * as yup from "yup";
 import { yupResolver } from "@hookform/resolvers/yup";
@@ -24,10 +24,11 @@ import { useContext } from "react";
 import { ModalContext } from "../../Provider/ModalStates";
 import { UsersContext } from "../../Provider/User";
 
-export const Login = ({ id = "loginModal"}) => {
+export const Login = ({ id = "loginModal" }) => {
+  const [showPassword, setShowPassword] = useState(false);
   const [valid, setValid] = useState(false);
-  const { modalSignUp,setModalSignUp} = useContext(ModalContext);
-  const {setToken,setUser,setAuthenticated} = useContext(UsersContext)
+  const { modalSignUp, setModalSignUp } = useContext(ModalContext);
+  const { setToken, setUser, setAuthenticated } = useContext(UsersContext);
 
   const formSchema = yup.object().shape({
     email: yup.string().required("Campo obrigatório!").email("Email inválido"),
@@ -45,7 +46,7 @@ export const Login = ({ id = "loginModal"}) => {
 
   const closeModalEvent = (e) => {
     if (e.target.id === id) {
-      setModalSignUp(!modalSignUp)
+      setModalSignUp(!modalSignUp);
     }
   };
 
@@ -56,17 +57,15 @@ export const Login = ({ id = "loginModal"}) => {
       apiPatrinus
         .post("/login", data)
         .then((response) => {
-          localStorage.setItem("@Patrinus:token", response.data.accessToken
-          );          
-          setToken(response.data.accessToken)          
-          setUser(response.data.user)
-          setAuthenticated(true)
+          localStorage.setItem("@Patrinus:token", response.data.accessToken);
+          setToken(response.data.accessToken);
+          setUser(response.data.user);
+          setAuthenticated(true);
           reset();
-          navigate("/dashboard")
+          navigate("/dashboard");
         })
         .catch((_) => {
           toast.error("Email ou Senha inválidos!!");
-          
         });
     } else {
       toast.error("Humano ou robo?");
@@ -101,7 +100,9 @@ export const Login = ({ id = "loginModal"}) => {
                   register={register("password")}
                   errors={errors.password}
                   label="Senha"
-                  type="password"
+                  type={showPassword ? "text" : "password"}
+                  Icon={showPassword ? FiEye : FiEyeOff}
+                  click={() => setShowPassword(!showPassword)}
                 />
                 <ReCaptchaComponent setValid={setValid} />
                 <Button theme="secundary" type="submit">
