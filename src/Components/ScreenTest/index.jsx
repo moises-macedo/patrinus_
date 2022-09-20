@@ -1,5 +1,6 @@
 import { CardGodFather } from "../CardGodFather";
+import { ModalEditProfile } from "../ModalEditProfile";
 
 export const ScreenTest = () => {
-  return <CardGodFather />;
+  return <ModalEditProfile />;
 };
