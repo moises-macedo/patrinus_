@@ -1,9 +1,7 @@
 
-import { CardDev } from "../CardDev";
-import { DashboardStudentGodparents } from "../DashboardStudentGodparents";
+import { SchollMenu } from "../MenuSchool/index";
 
 export const ScreenTest = () => {
-
-  return <DashboardStudentGodparents/>;
+  return <SchollMenu />;
 
 };
