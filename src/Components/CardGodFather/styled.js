@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 
 export const Container = styled.div`
   height: 310px;
@@ -18,7 +18,7 @@ export const Container = styled.div`
 export const Border = styled.div`
   height: 90%;
   width: 90%;
-  border: 3px solid var(--secondary-1);
+  ${((props) => props.theme === true ? css`border: 3px solid var(--secondary-1)` : css`border: 3px solid #83AF93`)} ;
   position: absolute;
   z-index: 10;
 `;
