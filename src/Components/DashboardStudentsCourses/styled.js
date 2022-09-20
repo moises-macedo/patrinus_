@@ -22,4 +22,11 @@ export const HeaderContent = styled.div`
   display: flex;
   justify-content: space-between;
   padding: 0 40px;
+
+  @media (max-width: 720px){
+    h2{
+      margin-bottom: 25px;
+    }
+    flex-direction: column;
+  }
 `;

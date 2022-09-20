@@ -28,7 +28,7 @@ const MoveRightToLeft = keyframes`
 `;
 
 export const InputOpenSearch = styled.div`
-  width: 440px;
+  max-width: 440px;
   height: 30px;
   display: flex;
   justify-content: space-between;
