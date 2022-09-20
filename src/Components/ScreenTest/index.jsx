@@ -1,4 +1,4 @@
-import { DashboardSchoolCourses } from "../../Pages/DashboardSchoolCourses";
+import { DashboardSchoolCourses } from "../../Pages/DashboardSchoolCourses/index";
 
 export const ScreenTest = () => {
   return <DashboardSchoolCourses />;
