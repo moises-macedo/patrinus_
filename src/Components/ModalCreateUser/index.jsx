@@ -107,6 +107,7 @@ export const ModalCreateUser = () => {
                 <Input
                   label="Confirme sua senha"
                   type={showConfirmPassword ? "text" : "password"}
+                  register={register("passwordConfirm")}
                   errors={errors.passwordConfirm}
                   Icon={showConfirmPassword ? FiEye : FiEyeOff}
                   click={() => setConfirmShowPassword(!showConfirmPassword)}
