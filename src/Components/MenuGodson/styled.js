@@ -92,18 +92,6 @@ export const MenuGodSon = styled.div`
   }
 `;
 
-export const MenuGodfather = styled(MenuGodSon)`
-  background: linear-gradient(
-    174.14deg,
-    var(--secondary-1) 4.65%,
-    rgba(131, 175, 147, 0) 157.91%
-  );
-`;
-
-export const MenuSchool = styled(MenuGodSon)`
-  background: var(--light-1);
-`;
-
 export const UnderlineSelect = styled.div`
   height: 2px;
   width: 190px;

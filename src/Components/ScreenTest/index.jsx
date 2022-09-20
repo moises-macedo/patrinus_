@@ -1,6 +1,5 @@
-import { CardGodFather } from "../CardGodFather";
-import { ModalEditProfile } from "../ModalEditProfile";
+import { SchollMenu } from "../MenuSchool/index";
 
 export const ScreenTest = () => {
-  return <ModalEditProfile />;
+  return <SchollMenu />;
 };
