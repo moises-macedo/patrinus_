@@ -28,12 +28,12 @@ export const ModalCreateUser = () => {
     email: yup.string().email("Email inválido").required("Campo Obrigatório"),
     password: yup
       .string()
-      .min(8, "Minimo de 8 Digitos")
-      .required("")
-      .matches("^(?=.[A-Z])", "Necessária 1 letra maiúscula.")
-      .matches("^(?=.[a-z])", "Necessária 1 letra minúscula.")
-      .matches("^(?=.[0-9])", "Necessária ter 1 numero")
-      .matches("^(?=.[!#@$%&])", "Necessária 1 caractere especial"),
+      .required("É necessário uma senha")
+      .matches(
+        "^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$ %^&*-]).{8,}$",
+        "Verifique sua senha!"
+      )
+      .min(8, "Minimo de 8 Digitos"),
     passwordConfirm: yup
       .string()
       .oneOf([yup.ref("password")], "Senha diferentes"),
@@ -48,9 +48,10 @@ export const ModalCreateUser = () => {
     resolver: yupResolver(signUpSchema),
   });
 
-  const handleSignup = (data) => {
+  const handleSignup = ({ name, email, password, type }) => {
+    const user = { name, email, password, type };
     apiPatrinus
-      .post("users/register", data)
+      .post("users/register", user)
       .then((_) => {
         toast.success("Cadastro Efetuado!!");
         setModalRegisterUser(!modalRegisterUser);
@@ -107,6 +108,7 @@ export const ModalCreateUser = () => {
                 <Input
                   label="Confirme sua senha"
                   type={showConfirmPassword ? "text" : "password"}
+                  register={register("passwordConfirm")}
                   errors={errors.passwordConfirm}
                   Icon={showConfirmPassword ? FiEye : FiEyeOff}
                   click={() => setConfirmShowPassword(!showConfirmPassword)}
@@ -119,8 +121,7 @@ export const ModalCreateUser = () => {
                     <option>padrinho</option>
                   </select>
                 </InputBox>
-
-                <button type="submit">Cadastre-Se</button>
+                <button type="submit">Cadastre-se</button>
               </form>
             </Content>
           </Container>

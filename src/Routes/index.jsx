@@ -2,6 +2,7 @@ import { useContext } from "react";
 import { Route, Routes as RoutePages } from "react-router-dom";
 import { ScreenTest } from "../Components/ScreenTest";
 import { Dashboard } from "../Pages/Dashboard";
+import { DashboardProfileGodfather } from "../Pages/DashboardProfileGodfather";
 import { Home } from "../Pages/Home";
 import { UsersContext } from "../Provider/User";
 
@@ -15,6 +16,7 @@ export const Routes = () => {
         path="/dashboard"
         element={<Dashboard authenticated={authenticated} />}
       />
+      <Route path="/profileGodfather" element={<DashboardProfileGodfather />} />
     </RoutePages>
   );
 };
