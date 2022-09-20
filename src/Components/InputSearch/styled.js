@@ -23,12 +23,13 @@ const MoveRightToLeft = keyframes`
         opacity: 1;
     }to{
         width: inherit;
-        opacity: 0;
+        opacity: 1;
     }
 `;
 
 export const InputOpenSearch = styled.div`
   width: 440px;
+  height: 30px;
   display: flex;
   justify-content: space-between;
   align-items: center;
