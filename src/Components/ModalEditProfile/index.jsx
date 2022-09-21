@@ -12,37 +12,48 @@ import { ModalContext } from "../../Provider/ModalStates/index";
 import { useContext } from "react";
 import { FiXCircle } from "react-icons/fi";
 import { apiPatrinus } from "../../Services/api";
+import { useState } from "react";
+import { toast } from "react-toastify";
+import { UsersContext } from "../../Provider/User";
 
 export const ModalEditProfile = () => {
   const { modalEditProfile, setModalEditProfile } = useContext(ModalContext);
+  const { user } = useContext(UsersContext);
+  const [handleIsChecked, setHandleIsChecked] = useState(false);
 
   const handleCloseModalEditProfile = (e) => {
     if (e.target.id === "OutsideModalEditProfile") {
       setModalEditProfile(false);
     }
   };
-
+  console.log(user);
   const schemaProfileEdit = yup.object().shape({
-    name: yup.string(),
     address: yup.string(),
     age: yup.number(),
     cpf: yup.number(),
   });
 
-  const {
-    register,
-    handleSubmit,
-    formState: { errors },
-  } = useForm({
+  const { register, handleSubmit } = useForm({
     resolver: yupResolver(schemaProfileEdit),
   });
 
-  // const onSubmit = (data) => {
-  //   apiPatrinus
-  //     .patch(`/user/${}`)
-  //     .then((_) => console.log("ok"))
-  //     .catch((err) => console.log(err));
-  // };
+  const onSubmit = (data) => {
+    if (!handleIsChecked) {
+      toast.error("Você precisar aceitar os termos!!", {
+        toastId: "toastError",
+      });
+      return null;
+    }
+    apiPatrinus
+      .patch(`/users/${user.id}`, data)
+      .then((_) => {
+        toast.success("Informações alteradas com sucesso!", {
+          toastId: "toastSuccess",
+        });
+        setModalEditProfile(false);
+      })
+      .catch((err) => console.log(err));
+  };
 
   return (
     <>
@@ -56,17 +67,22 @@ export const ModalEditProfile = () => {
               <FiXCircle onClick={() => setModalEditProfile(false)} />
             </ButtonExit>
             <h2>Editar Perfil</h2>
-            <form>
-              <Input label="Nome" register={register("name")} />
+            <form onSubmit={handleSubmit(onSubmit)}>
+              <Input label="Nome" disabled={true} placeholder={user.name} />
               <Input label="Endereço" register={register("address")} />
-              <Input label="Idade" register={register("age")} />
-              <Input label="CPF" register={register("cpf")} />
+              <Input label="Idade" register={register("age")} type="number" />
+              <Input label="CPF" register={register("cpf")} type="number" />
               <CheckboxContainer>
                 <label>Eu confirmo que as informações são verdadeiras</label>
-                <input type="checkbox" />
+                <input
+                  type="checkbox"
+                  onChange={() => setHandleIsChecked(true)}
+                />
               </CheckboxContainer>
               <div>
-                <button id="cancel">Cancelar</button>
+                <button id="cancel" onClick={() => setModalEditProfile(false)}>
+                  Cancelar
+                </button>
                 <button id="save" type="submit">
                   Salvar
                 </button>
