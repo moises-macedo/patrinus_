@@ -4,17 +4,16 @@ export const ModalContext = createContext();
 
 export const ModalProvider = ({ children }) => {
   const [modalSignUp, setModalSignUp] = useState(false);
-  const [modalRegisterUser, setModalRegisterUser] =useState(false)
+  const [modalRegisterUser, setModalRegisterUser] = useState(false);
   const [modalEditProfile, setModalEditProfile] = useState(false);
   const [modalPartnerSchools, setModalPartnerSchools] = useState(false);
 
-  if (!modalPartnerSchools || !modalRegisterUser || !modalSignUp ) {
+  if (!modalPartnerSchools || !modalRegisterUser || !modalSignUp) {
     document.querySelector("body").style.overflow = "auto";
-  } 
-  if(modalPartnerSchools || modalRegisterUser || modalSignUp){
-    document.querySelector("body").style.overflow = "hidden";    
   }
-
+  if (modalPartnerSchools || modalRegisterUser || modalSignUp) {
+    document.querySelector("body").style.overflow = "hidden";
+  }
 
   return (
     <ModalContext.Provider
@@ -26,7 +25,7 @@ export const ModalProvider = ({ children }) => {
         modalPartnerSchools,
         setModalPartnerSchools,
         modalRegisterUser,
-        setModalRegisterUser
+        setModalRegisterUser,
       }}
     >
       {children}
