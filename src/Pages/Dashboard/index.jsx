@@ -5,7 +5,6 @@ export const Dashboard = ({ authenticated }) => {
   if (!authenticated) {
     return <Navigate to={"/"} />;
   }
-
   return <div>
     <StudentInformation />
   </div>;
