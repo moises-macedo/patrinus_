@@ -1,9 +1,9 @@
 import { CardDev } from "../CardDev";
-import { DashboardSponsored } from "../DashboardSponsored";
+import { ModalAddCourse } from "../ModalAddCourse";
+
 
 export const ScreenTest = () => {
-
-  return <DashboardSponsored/>;
+  return <ModalAddCourse/>;
 
 };
  

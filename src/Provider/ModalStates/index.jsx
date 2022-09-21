@@ -7,11 +7,12 @@ export const ModalProvider = ({ children }) => {
   const [modalRegisterUser, setModalRegisterUser] = useState(false);
   const [modalEditProfile, setModalEditProfile] = useState(false);
   const [modalPartnerSchools, setModalPartnerSchools] = useState(false);
+  const [modalAddCourse, setModalAddCourse] = useState(false);
 
-  if (!modalPartnerSchools || !modalRegisterUser || !modalSignUp) {
+  if (!modalPartnerSchools || !modalRegisterUser || !modalSignUp || !modalAddCourse) {
     document.querySelector("body").style.overflow = "auto";
   }
-  if (modalPartnerSchools || modalRegisterUser || modalSignUp) {
+  if (modalPartnerSchools || modalRegisterUser || modalSignUp || modalAddCourse) {
     document.querySelector("body").style.overflow = "hidden";
   }
 
@@ -26,6 +27,8 @@ export const ModalProvider = ({ children }) => {
         setModalPartnerSchools,
         modalRegisterUser,
         setModalRegisterUser,
+        modalAddCourse,
+        setModalAddCourse
       }}
     >
       {children}
