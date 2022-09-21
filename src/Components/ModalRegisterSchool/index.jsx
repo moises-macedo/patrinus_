@@ -9,10 +9,15 @@ import { Button } from "../Button";
 import { BiUser, BiMailSend, BiPencil } from "react-icons/bi";
 import { MdCorporateFare, MdSettingsCell, MdInfo } from "react-icons/md";
 import { toast } from "react-toastify";
+import { ModalContext } from "../../Provider/ModalStates";
+import { useContext } from "react";
 
-export const ModalRegisterSchool = ({onClick, setOnclick,id="modal"}) => {
+export const ModalRegisterSchool = ({ id = "modal" }) => {
   const [cnpj, setCnpj] = useState();
   const [corporateName, setCorporateName] = useState();
+
+  const { modalPartnerSchools, setModalPartnerSchools } =
+    useContext(ModalContext);
 
   const formSchema = yup.object().shape({
     cnpj: yup.string().required("CNPJ obrigatório!").lowercase(),
@@ -43,11 +48,11 @@ export const ModalRegisterSchool = ({onClick, setOnclick,id="modal"}) => {
   });
 
   const onSubmit = (data) => {
-    const user = {...data, corporateName}
+    const user = { ...data, corporateName };
 
-    if(user){
-      toast.success("Enviado com sucesso")
-      reset()
+    if (user) {
+      toast.success("Enviado com sucesso");
+      reset();
     }
   };
 
@@ -61,72 +66,85 @@ export const ModalRegisterSchool = ({onClick, setOnclick,id="modal"}) => {
     }
   };
 
-  const handleClick = (e) =>{
-    if(e.target.id === id){
-      setOnclick(!onClick)
+  const handleClick = (e) => {
+    if (e.target.id === id) {
+      setModalPartnerSchools(!modalPartnerSchools);
     }
-  }
+  };
 
   useEffect(() => {
     loadCorporateName();
   }, [cnpj]);
 
   return (
-    <Aside id={id} onClick={handleClick}>
-      <Section>
-        <Title>
-          <h2>Seja escola parceira</h2>
-          <div></div>
-        </Title>
+    <>
+      {modalPartnerSchools ? (
+        <Aside
+          id={id}
+          onClick={handleClick}
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          exit={{ opacity: 0, transition: { duration: 0.1 } }}
+        >
+          <Section>
+            <Title>
+              <h2>Seja escola parceira</h2>
+              <div></div>
+            </Title>
 
-        <Form onSubmit={handleSubmit(onSubmit)}>
-          <Input
-            onChange={(e) => setCnpj(e.target.value)}
-            label={<MdInfo />}
-            placeholder={"Informe o CNPJ"}
-            errors={errors.cnpj}
-            register={register("cnpj")}
-          />
-          <Input
-            defaultValue={corporateName}
-            label={<MdCorporateFare />}
-            placeholder={"Será carregado automaticamente"}
-            disabled={true}
-            register={register("corporateName")}
-            className={"input"}
-          />
-          <Input
-            label={<BiUser />}
-            placeholder={"Informe nome do responsável"}
-            register={register("name")}
-            errors={errors.name}
-          />
-          <Input
-            label={<BiMailSend />}
-            placeholder={"Informe e-mail "}
-            register={register("email")}
-            errors={errors.email}
-          />
-          <Input
-            label={<MdSettingsCell />}
-            placeholder={"Informe telefone"}            
-            register={register("telephone")}
-            errors={errors.telephone}
-          />
-          <Input
-            label={<BiPencil />}
-            placeholder={"Observação"}            
-            register={register("observation")}
-          />
-          <InputCheckBox>
-            <input type={"checkbox"} />
-            <p>Eu confirmo que a empresa e o responsável acima autorizou o contato</p>
-          </InputCheckBox>
-          <Button theme={"secundary"}>
-            <p>Enviar</p>
-          </Button>
-        </Form>
-      </Section>
-    </Aside>
+            <Form onSubmit={handleSubmit(onSubmit)}>
+              <Input
+                onChange={(e) => setCnpj(e.target.value)}
+                label={<MdInfo />}
+                placeholder={"Informe o CNPJ"}
+                errors={errors.cnpj}
+                register={register("cnpj")}
+              />
+              <Input
+                defaultValue={corporateName}
+                label={<MdCorporateFare />}
+                placeholder={"Será carregado automaticamente"}
+                disabled={true}
+                register={register("corporateName")}
+                className={"input"}
+              />
+              <Input
+                label={<BiUser />}
+                placeholder={"Informe nome do responsável"}
+                register={register("name")}
+                errors={errors.name}
+              />
+              <Input
+                label={<BiMailSend />}
+                placeholder={"Informe e-mail "}
+                register={register("email")}
+                errors={errors.email}
+              />
+              <Input
+                label={<MdSettingsCell />}
+                placeholder={"Informe telefone"}
+                register={register("telephone")}
+                errors={errors.telephone}
+              />
+              <Input
+                label={<BiPencil />}
+                placeholder={"Observação"}
+                register={register("observation")}
+              />
+              <InputCheckBox>
+                <input type={"checkbox"} />
+                <p>
+                  Eu confirmo que a empresa e o responsável acima autorizou o
+                  contato
+                </p>
+              </InputCheckBox>
+              <Button theme={"secundary"}>
+                <p>Enviar</p>
+              </Button>
+            </Form>
+          </Section>
+        </Aside>
+      ) : null}
+    </>
   );
 };

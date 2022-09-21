@@ -2,7 +2,7 @@ import * as yup from "yup";
 import { apiPatrinus } from "../../Services/api";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { Input } from "../Input/index";
-
+import { toast } from "react-toastify";
 import {
   Container,
   Content,
@@ -10,22 +10,30 @@ import {
   ButtonExit,
   PageContainer,
 } from "./styled.js";
-
-import { FiXCircle } from "react-icons/fi";
+import { FiXCircle, FiEyeOff, FiEye } from "react-icons/fi";
 import { useForm } from "react-hook-form";
+import { useContext } from "react";
+import { ModalContext } from "../../Provider/ModalStates";
+import { TitleScreenIndex } from "../TitleScreenIndex";
+import { TextScreenIndex } from "../TextScreenIndex";
 import { useState } from "react";
 
 export const ModalCreateUser = () => {
-  const [isModalVisible, setIsModalVisible] = useState(true);
+  const { setModalRegisterUser, modalRegisterUser } = useContext(ModalContext);
+  const [showPassword, setShowPassword] = useState(false);
+  const [showConfirmPassword, setConfirmShowPassword] = useState(false);
 
   const signUpSchema = yup.object().shape({
     name: yup.string().required("Campo Obrigatório"),
-    email: yup
+    email: yup.string().email("Email inválido").required("Campo Obrigatório"),
+    password: yup
       .string()
-      .min(8, "Minimo de 8 digitos")
-      .email("Email inválido")
-      .required("Campo Obrigatório"),
-    password: yup.string().required(""),
+      .required("É necessário uma senha")
+      .matches(
+        "^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$ %^&*-]).{8,}$",
+        "Verifique sua senha!"
+      )
+      .min(8, "Minimo de 8 Digitos"),
     passwordConfirm: yup
       .string()
       .oneOf([yup.ref("password")], "Senha diferentes"),
@@ -35,53 +43,85 @@ export const ModalCreateUser = () => {
     formState: { errors },
     register,
     handleSubmit,
+    reset,
   } = useForm({
     resolver: yupResolver(signUpSchema),
   });
 
-  const handleSignup = (data) => {
+  const handleSignup = ({ name, email, password, type }) => {
+    const user = { name, email, password, type };
     apiPatrinus
-      .post("users/register", data)
-      .then((_) => console.log("ok"))
-      .catch((err) => console.log(err));
+      .post("users/register", user)
+      .then((_) => {
+        toast.success("Cadastro Efetuado!!");
+        setModalRegisterUser(!modalRegisterUser);
+        reset({
+          name: "",
+          email: "",
+          password: "",
+          passwordConfirm: "",
+        });
+      })
+      .catch((_) => {
+        toast.error("Email ou senha inválidos!!");
+      });
   };
 
   const handleOutsideClick = (e) => {
     if (e.target.id === "OutsideModal") {
-      setIsModalVisible(false);
+      setModalRegisterUser(!modalRegisterUser);
     }
   };
 
   return (
     <>
-      {isModalVisible ? (
+      {modalRegisterUser ? (
         <PageContainer id="OutsideModal" onClick={handleOutsideClick}>
           <Container>
             <Content>
               <ButtonExit>
-                <FiXCircle onClick={() => setIsModalVisible(false)} />
+                <FiXCircle
+                  onClick={() => setModalRegisterUser(!modalRegisterUser)}
+                />
               </ButtonExit>
-              <h3>Bem vindo a Patrinus</h3>
-              <h2>Cadastre-se</h2>
+              <TextScreenIndex text={"Bem vindo a Patrinus"} />
+              <TitleScreenIndex text={"Cadastre-se"} />
               <form onSubmit={handleSubmit(handleSignup)}>
-                <Input label="Nome" register={register("name")} />
-                <Input label="Email" register={register("email")} />
+                <Input
+                  label="Nome"
+                  register={register("name")}
+                  errors={errors.name}
+                />
+                <Input
+                  label="Email"
+                  register={register("email")}
+                  errors={errors.email}
+                />
                 <Input
                   label="Senha"
-                  type="password"
+                  type={showPassword ? "text" : "password"}
                   register={register("password")}
+                  errors={errors.password}
+                  Icon={showPassword ? FiEye : FiEyeOff}
+                  click={() => setShowPassword(!showPassword)}
                 />
-                <Input label="Confirme sua senha" type="password" />
+                <Input
+                  label="Confirme sua senha"
+                  type={showConfirmPassword ? "text" : "password"}
+                  register={register("passwordConfirm")}
+                  errors={errors.passwordConfirm}
+                  Icon={showConfirmPassword ? FiEye : FiEyeOff}
+                  click={() => setConfirmShowPassword(!showConfirmPassword)}
+                />
 
                 <InputBox>
-                  <label>Você é...</label>
+                  <label>Eu sou...</label>
                   <select {...register("type")}>
                     <option>aluno</option>
                     <option>padrinho</option>
                   </select>
                 </InputBox>
-
-                <button type="submit">Cadastre-Se</button>
+                <button type="submit">Cadastre-se</button>
               </form>
             </Content>
           </Container>
