@@ -1,7 +1,9 @@
-
-import { DashboardProfileGodfather } from "../../Pages/DashboardProfileGodfather/index";
+import { CardDev } from "../CardDev";
+import { DashboardSponsored } from "../DashboardSponsored";
 
 export const ScreenTest = () => {
-  return <DashboardProfileGodfather />;
+
+  return <DashboardSponsored/>;
 
 };
+ 
