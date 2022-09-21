@@ -1,4 +1,5 @@
 import { Navigate } from "react-router-dom";
+import { StudentInformation } from "../../Components/StudentInformation";
 
 export const Dashboard = ({ authenticated }) => {
   if (!authenticated) {
@@ -6,6 +7,6 @@ export const Dashboard = ({ authenticated }) => {
   }
 
   return <div>
-    <p> Dashboard</p>
+    <StudentInformation />
   </div>;
 };
