@@ -3,9 +3,7 @@ import styled from "styled-components";
 export const StudentStyle = styled.div`
    display: flex;
    flex-direction: column;
-   justify-content: center;
-   align-items: center;
-  
+   
    font-size: 16.75px;
 
   
@@ -23,7 +21,20 @@ export const StudentStyle = styled.div`
         height: 65px;
         font-family: var(--font-inter);
         font-size: 18px;
+        margin-top: 28px;
     }
    }
 
+`;
+
+export const StudentStyleMain = styled.div`
+    display: flex;
+    justify-content: space-around;
+
+`;
+
+export const ProfileStyle = styled.div`
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
 `;

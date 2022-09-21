@@ -1,9 +1,7 @@
-import { CardDev } from "../CardDev";
-import { ModalAddCourse } from "../ModalAddCourse";
+import { CoursesAvailable } from "../CoursesAvailable";
 
 
 export const ScreenTest = () => {
-  return <ModalAddCourse/>;
-
+  return <CoursesAvailable />;
 };
  
