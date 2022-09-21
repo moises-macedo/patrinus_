@@ -1,8 +1,7 @@
 
-import { DashboardSchoolCourses } from "../../Pages/DashboardSchoolCourses/index";
+import { CoursesAvailable } from "../CoursesAvailable";
 
 export const ScreenTest = () => {
-  return <DashboardSchoolCourses />;
-
+  return <CoursesAvailable />;
 };
  
