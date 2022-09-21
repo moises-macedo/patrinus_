@@ -1,9 +1,8 @@
-import { CardDev } from "../CardDev";
-import { DashboardSponsored } from "../DashboardSponsored";
+
+import { DashboardSchoolCourses } from "../../Pages/DashboardSchoolCourses/index";
 
 export const ScreenTest = () => {
-
-  return <DashboardSponsored/>;
+  return <DashboardSchoolCourses />;
 
 };
  
