@@ -21,7 +21,7 @@ export const Container = styled.div`
     justify-content: center;
     background: var(--dark-2);
 
-    h2 {
+    h2{
       font-family: "Barlow";
 
       min-height: 50px;
@@ -52,79 +52,17 @@ export const Container = styled.div`
         50% {
           background-position: 100% 50%;
         }
-
-<<<<<<< HEAD
-    }
-    
-
-    @media (min-width: 769px){
-        height: 100%;
-        width: 100%;
-
-        background: url(${graduacao}) no-repeat;
-        background-size: 100%;
-        backdrop-filter: blur(5px);
-        -webkit-backdrop-filter: blur(5px);
-    
-        background-position: center;
-
-        .tittleH2{
-            background: none;
-            margin-bottom: 10px;
-            background: linear-gradient( rgba(0,0,0,0.50),rgba(0,0,0,0.80) 100%);
-
-            h2{
-                background: none;
-                font-family: 'Barlow';
-                font-size: 3.12em;
-                font-weight: 700;
-                line-height: 60px;
-                letter-spacing: 0em;
-                text-align: left;
-                color: red;
-                margin-top: 0.3em;
-                background-clip: none;
-                -webkit-background-clip: none;
-                -moz-background-clip: none;
-                -webkit-text-fill-color:  var(--light-3);
-                
-            }
-        }
-    }
-=======
-        100% {
-          background-position: 0% 50%;
-        }
       }
-    }
-  }
+      
 
-  @media (min-width: 769px) {
-    height: 100%;
-    width: 100%;
-
-    .tittleH2 {
-      background: var(--dark-2);
-      margin-bottom: 10px;
-
-      h2 {
-        background: none;
-        font-family: "Barlow";
+      @media (min-width: 769px){
         font-size: 3.12em;
         font-weight: 700;
         line-height: 60px;
         letter-spacing: 0em;
-        text-align: left;
-        color: red;
-        margin-top: 0.3em;
-        background-clip: none;
-        -webkit-background-clip: none;
-        -moz-background-clip: none;
-        -webkit-text-fill-color: var(--light-3);
-      }
-    }
-  }
->>>>>>> developer
+      } 
+    }   
+  }    
 `;
 
 export const Content = styled.div`
@@ -215,7 +153,6 @@ export const Content = styled.div`
           justify-content: center;
           img {
             width: 100%;
-<<<<<<< HEAD
 
             .box1, .box2, .box3{            
                 height: 30em;
@@ -248,30 +185,6 @@ export const Content = styled.div`
             }
         }
     }
-=======
-            max-width: 250px;
-          }
-        }
-
-        .tittle {
-          font-size: 30px;
-          font-weight: 700;
-          line-height: 60px;
-          color: var(--secondary-1);
-        }
-
-        .description {
-
-          font-size: 20px;
-          font-weight: 500;
-          text-align: center;
-          color: var(--light-1);
-          word-wrap: break-word;
-        }
-      }
-    }
-  }
->>>>>>> developer
 `;
 
 export const ContainerText = styled.div`
