@@ -3,6 +3,7 @@ import { Route, Routes as RoutePages } from "react-router-dom";
 import { DashboardStudentsCourses } from "../Components/DashboardStudentsCourses";
 import { ScreenTest } from "../Components/ScreenTest";
 import { Dashboard } from "../Pages/Dashboard";
+import { DashboardPartnerSchools } from "../Pages/DashboardPartnerSchools";
 import { DashboardProfileGodfather } from "../Pages/DashboardProfileGodfather";
 import { DashboardProfileGodson } from "../Pages/DashboardProfileGodson";
 import { DashboardStudentGodparents } from "../Components/DashboardStudentGodparents";
@@ -27,12 +28,14 @@ export const Routes = () => {
         element={<DashboardProfileGodson />}
       />
       <Route path="/profileGodfather" element={<DashboardProfileGodfather />} />
+
       <Route path="/DashboardStudentsCourses" element={<DashboardStudentsCourses />} />
       <Route path="/DashboardStudentGodparents" element={<DashboardStudentGodparents />} />
       <Route path="/DashboardStudentGodparents" element={<DashboardStudentGodparents />} />
       <Route path="/FavoriteCourses" element={<FavoriteCourses />} />
       <Route path="/DashboardSponsored" element={<DashboardSponsored />} />
       <Route path="/ComponentPartnerSchools" element={<ComponentPartnerSchools />} />
+
     </RoutePages>
   );
 };

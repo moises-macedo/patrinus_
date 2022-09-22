@@ -10,11 +10,13 @@ import { ModalContext } from "../../Provider/ModalStates";
 import { ModalCreateUser } from "../../Components/ModalCreateUser";
 import { Login } from "../../Components/Login";
 import { Navigate } from "react-router-dom";
-import { DashboardSchool } from "../DashboardSchool";
+
 
 export const Home = ({ authenticated }) => {
   const { modalPartnerSchools, setModalPartnerSchools } =
     useContext(ModalContext);
+
+    // apagar
 
   const handleClick = () => {
     window.scrollTo({
@@ -30,7 +32,21 @@ export const Home = ({ authenticated }) => {
   }
   return (
     <>
-    <DashboardSchool />
+    <Screen1 />
+      <PartnerSchools />
+      <HowToBeGodfather />
+      <Container>
+        <p>
+          Seja uma <button onClick={handleClick}>#escola</button> parceira e
+          ajude melhorar a educação.
+        </p>
+      </Container>
+      <CardDev />
+      <Footer />
+      {/* Modais */}
+      <ModalRegisterSchool />
+      <ModalCreateUser />
+      <Login />
     </>
   );
 };
