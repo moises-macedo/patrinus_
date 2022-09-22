@@ -14,27 +14,31 @@ import { DashboardSponsored } from "../Components/DashboardSponsored";
 import { ComponentPartnerSchools } from "../Components/ComponentPartnerSchools";
 
 export const Routes = () => {
-  const { authenticated } = useContext(UsersContext);
+  const { authenticated,user } = useContext(UsersContext);
+
   return (
     <RoutePages>
       <Route exact path="/" element={<Home authenticated={authenticated} />} />
+
       <Route path="/test" element={<ScreenTest />} />
-      <Route
+
+      {/* <Route
         path="/dashboard"
         element={<Dashboard authenticated={authenticated} />}
-      />
+      /> */}
+
       <Route
         path="/dashboardgodsonprofile"
         element={<DashboardProfileGodson />}
       />
-      <Route path="/profileGodfather" element={<DashboardProfileGodfather />} />
+      <Route path="/profilegodfather" element={<DashboardProfileGodfather />} />
 
-      <Route path="/DashboardStudentsCourses" element={<DashboardStudentsCourses />} />
-      <Route path="/DashboardStudentGodparents" element={<DashboardStudentGodparents />} />
-      <Route path="/DashboardStudentGodparents" element={<DashboardStudentGodparents />} />
-      <Route path="/FavoriteCourses" element={<FavoriteCourses />} />
-      <Route path="/DashboardSponsored" element={<DashboardSponsored />} />
-      <Route path="/ComponentPartnerSchools" element={<ComponentPartnerSchools />} />
+      <Route path="/dashboardstudentscourses" element={<DashboardStudentsCourses />} />
+      <Route path="/dashboardstudentgodparents" element={<DashboardStudentGodparents />} />
+      <Route path="/dashboardstudentgodparents" element={<DashboardStudentGodparents />} />
+      <Route path="/favoritecourses" element={<FavoriteCourses />} />
+      <Route path="/dashboardsponsored" element={<DashboardSponsored />} />
+      <Route path="/componentpartnerschools" element={<ComponentPartnerSchools />} />
 
     </RoutePages>
   );
