@@ -1,4 +1,4 @@
-import { availableItems } from "./item";
+import { availableItems } from "../../Services/item";
 import { MdInfo } from "react-icons/md";
 import { useState } from "react";
 import {
