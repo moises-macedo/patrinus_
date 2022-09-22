@@ -1,11 +1,22 @@
 import React from 'react';
 
-import {Triangle} from "./styled"
+import {Area, Ul} from "./styled"
 
 export const BackGroundDashboard = ({theme = "student"}) => {
     return(
-        <Triangle theme={theme} >
-
-        </Triangle>
+        <Area>
+            <Ul>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+            </Ul>
+    </Area >
     )
 }
