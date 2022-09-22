@@ -1,11 +1,11 @@
 import {Container, Content} from "./styled"
-import {Menus} from "../Menus"
+import {MenuGodFather} from "../MenuGodFather"
 import {BackGroundDashboard} from "../Background"
 import { CardGodFather } from "../CardGodFather"
 export const DashboardStudentGodparents = ( ) =>{
     return(
         <Container>
-            <Menus/>
+            <MenuGodFather/>
             <BackGroundDashboard/>
             <Content>
             <h2>Padrinhos</h2>

@@ -1,14 +1,16 @@
-import {Container, Li} from ".styled";
+import {Container, Li} from "./styled";
 
 import {availableItems} from "./item"
 
 export const cpStudentsRegistered = () =>{
-
+console.log(availableItems,"aa")
     return(
         <Container>
             <ul>
 
-            {availableItems.length > 0 ? <Li></Li> : "Sem Alunos!"}
+            {availableItems.map((modalidade, curso) =>{
+                <Li><span>Fulano</span>{modalidade}<span>{curso}</span></Li>
+            })}
             </ul>
         </Container>
     )

@@ -1,4 +1,4 @@
-import { Menus } from "../Menus"
+import {  MenuGodson} from "../MenuGodson"
 import { BackGroundDashboard } from "../Background"
 import { PartnerSchools } from "../PartnerSchools"
 
@@ -7,7 +7,7 @@ import {Container, Content} from "./styled"
 export const ComponentPartnerSchools = () => {
     return (
         <Container>
-            <Menus/>
+            <MenuGodson/>
             <BackGroundDashboard/>
             <Content>
                 <PartnerSchools/>

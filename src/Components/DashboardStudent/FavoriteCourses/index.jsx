@@ -3,7 +3,7 @@ import { BackGroundDashboard } from '../../Background';
 
 import {CardFavoriteCourse} from "../../CardFavoriteCourse"
 
-import { Menus } from '../../Menus';
+import { MenuGodson } from '../../MenuGodson';
 
 import {Container, H2, ContentText, Content, Ul} from "./styled"
 
@@ -53,7 +53,7 @@ export const FavoriteCourses = () => {
 
     return (
         <Container>
-            <Menus></Menus>
+            <MenuGodson></MenuGodson>
             <Content>
             <ContentText>
             <H2>Seja Bem vindo Fulano</H2>
