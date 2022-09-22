@@ -1,9 +1,6 @@
-import { CoursesAvailable } from "../CoursesAvailable";
-import { ModalEditProfile } from "../ModalEditProfile";
-
+import { MenuMobile } from "../MenuMobile/Index";
 
 export const ScreenTest = () => {
-
-  return <DashboardStudentsCourses />;
+  return <MenuMobile />;
 
 };
