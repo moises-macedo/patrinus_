@@ -1,6 +1,9 @@
-import { DashboardPartnerSchools } from "../../Pages/DashboardPartnerSchools";
+
+import { Home } from "../../Pages/Home";
 import { MenuMobile } from "../MenuMobile/Index";
 
 export const ScreenTest = () => {
-  return <DashboardPartnerSchools />;
+  return <Home />;
+
+
 };

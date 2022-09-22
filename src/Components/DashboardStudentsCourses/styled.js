@@ -9,7 +9,7 @@ export const Content = styled.div`
   width: 100%;
   display: flex;
   flex-direction: column;
-  margin-top: 7%;
+  margin-top: 2%;
 
   h2 {
     font-size: 2.3rem;
@@ -32,9 +32,13 @@ export const HeaderContent = styled.div`
 `;
 
 export const ContentComponent = styled.div`
-  margin-top: 30px;
-  width: 70vw;
+  margin-top: 105px;
+  margin-left: 12px;
+  width: 76vw;
   padding: 0 20px;
   overflow-y: scroll;
-  height: 82vh;
+  height: 78vh;
+  ::-webkit-scrollbar{
+    overflow-y: hidden;
+  }
 `;
