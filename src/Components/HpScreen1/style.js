@@ -58,8 +58,8 @@ export const Content = styled.div`
   display: flex;
   align-items: center;
   flex-direction: column;
-  background-color: pink;
-  /* cor certa: #83ad93 */
+  background-color: #83ad93;
+
 
   header {
     margin-top: 10px;
