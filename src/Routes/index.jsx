@@ -2,6 +2,7 @@ import { useContext } from "react";
 import { Route, Routes as RoutePages } from "react-router-dom";
 import { ScreenTest } from "../Components/ScreenTest";
 import { Dashboard } from "../Pages/Dashboard";
+import { DashboardPartnerSchools } from "../Pages/DashboardPartnerSchools";
 import { DashboardProfileGodfather } from "../Pages/DashboardProfileGodfather";
 import { DashboardProfileGodson } from "../Pages/DashboardProfileGodson";
 import { Home } from "../Pages/Home";
@@ -22,6 +23,10 @@ export const Routes = () => {
         element={<DashboardProfileGodson />}
       />
       <Route path="/profileGodfather" element={<DashboardProfileGodfather />} />
+      <Route
+        path="/partnerschoolsGodson"
+        element={<DashboardPartnerSchools />}
+      />
     </RoutePages>
   );
 };
