@@ -1,6 +1,6 @@
-import { CoursesAvailable } from "../CoursesAvailable";
-import { DashboardStudentsCourses } from "../DashboardStudentsCourses";
+
+import { MenuMobile } from "../MenuMobile/Index";
 
 export const ScreenTest = () => {
-  return <CoursesAvailable />;
+  return <MenuMobile />;
 };
