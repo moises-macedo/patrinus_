@@ -37,7 +37,15 @@ export const Screen1 = () => {
       <Container>
         <Content>
           <header>
-            <p className="logo">Patrinus</p>
+            <div class="container_logo">
+              <div class="animated-border"></div>
+              <div class="corner">
+                <div class="content_logo">
+                  <h1 className="logo_tittle">Patrinus</h1>
+                </div>
+              </div>
+            </div>
+
             <div>
             <button className="button_register" onClick={handleClickRegisterUser}>Cadastrar</button>
             
