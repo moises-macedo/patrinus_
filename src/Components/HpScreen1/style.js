@@ -62,55 +62,104 @@ export const Content = styled.div`
 
   header {
     width: 95%;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    justify-content: flex-start;
+    display: flex;  
+    align-items: center;
+    justify-content: space-between ;
+    
 
-    .button_register,
-    .button_signIn {
-      width: 100%;
-      margin-top: 20px;
-      border-radius: 30px;
-      background: linear-gradient(
-        180deg,
-        #ffffff 0%,
-        #ffffff 22.74%,
-        #ffeee6 100%
-      );
-      box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-      border: none;
-      font-family: Barlow;
-      font-size: 1.87em;
-      font-weight: 600;
-      letter-spacing: 0em;
-      padding: 4px;
-      cursor: pointer;
-    }
-    .button_register{
-      width: 100%;
-      max-width: 200px;
-    }
-    .button_signIn{
-      display: none;
-    }
-    .button__signIn-mobile{
-      width: 100%;
-      display: flex;
-      align-items: center;
-      justify-content: flex-end;
-      margin-top: 20px;
-      button{
-        background: none;
-        font-size: 18px;
-        text-decoration: underline;
-        cursor: pointer;
+    .logo{
+      border-bottom: 2px solid;
+      font-family: var(--font-barlow);
+      margin-left: 5px;
+      font-size: 1.5em;
+      color: var(--light-2);
+      font-weight: 400;
+      animation: border 500ms infinite normal, typing 4s steps(50) 2s normal both;
+      white-space: nowrap; 
+      overflow: hidden;
+        
+      @keyframes typing {
+        from {
+          width: 0;
+        }
 
-        &:hover{
-          color: var(--light-2);
+        to {
+          width: 5em;
+        }
+      }  
+
+      @keyframes border {
+        from {
+          border-right-color: black;
+        }
+
+        to {
+          border-right-color: red;
         }
       }
     }
+
+  
+    
+
+    div{
+      display: flex;
+      flex-direction: column;
+      
+
+      .button_register{
+        width: 100%;
+        margin-top: 20px;
+        border-radius: 10px;
+
+        background: transparent;
+        padding-right: 8px ;
+        padding-left: 8px ;
+        padding-top: 4px ;
+        padding-bottom: 4px ;
+        
+        border: 1px solid var(--dark-1);
+
+
+        box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);        
+        font-family: Barlow;
+        font-size: 16px;
+        font-weight: 600;
+        letter-spacing: 0em;        
+        cursor: pointer;
+      }
+      .button_register{
+        width: 100%;
+        height: 43px;
+        max-width: 200px;
+
+        &:hover{
+            color: var(--light-2);
+            border:1px solid var(--light-2);
+          }
+      }
+     
+      .button__signIn-div{
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        margin-top: 9px;
+        button{
+          background: none;
+          font-size: 18px;
+          text-decoration: underline;
+          cursor: pointer;
+
+          &:hover{
+            color: var(--light-2);
+          }
+        }
+      }
+
+    }
+
+    
   }
 
   main {
@@ -170,28 +219,46 @@ export const Content = styled.div`
       display: flex;
       flex-direction: row;
       justify-content: space-between;
+      align-items: baseline;
 
-      .button_register {
+      .logo{
+        font-size: 2em;
+        font-weight: 600;
+      }
+
+      div{
+        display: flex;
+        align-items: baseline;        
+        flex-direction: row-reverse;
+
+        .button_register{
         width: 100%;
-        max-width: 250px;
-        padding: 0.625em;
-        margin-left: 1em;
-        margin-top: 1.12em;
-        border-radius: 0px;    
+        max-width: 200px;
+        border-radius: 10px;
+
+        background: transparent;
+        padding-right: 8px ;
+        padding-left: 8px ;
+        padding-top: 4px ;
+        padding-bottom: 4px ;
+        
+        border: 1px solid var(--dark-1);
+
+
+        box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);        
+        font-family: Barlow;
+        font-size: 16px;
+        font-weight: 600;
+        letter-spacing: 0em;        
+        cursor: pointer;
+      }     
+        
+        .button__signIn-div{
+        margin-right: 15px;
+        }
 
       }
 
-      .button_signIn {
-        width: 100%;
-        max-width: 250px;
-        padding: 0.625em;
-        margin-right: 1em;
-        margin-top: 34px;
-        display: block;
-      }
-      .button__signIn-mobile{
-        display: none;
-      }
     }
 
     main {

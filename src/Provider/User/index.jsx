@@ -10,6 +10,7 @@ const UsersProvider = ({ children }) => {
   );
   const [user, setUser] = useState([]);
   const [authenticated, setAuthenticated] = useState(false);
+  console.log(user)
   
   const get_User = () => {  
     

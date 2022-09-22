@@ -17,8 +17,7 @@ export const StudentInformation = () =>{
         <TitlePage>Perfil</TitlePage>
         <Grades />
         </ProfileStyle>
-        <StudentStyle>
-         
+        <StudentStyle>         
         <SponsoredBy />
         <InformationUser />
         <AboutMe />
