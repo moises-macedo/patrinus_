@@ -15,6 +15,8 @@ export const Home = ({ authenticated }) => {
   const { modalPartnerSchools, setModalPartnerSchools } =
     useContext(ModalContext);
 
+    // apagar
+
   const handleClick = () => {
     window.scrollTo({
       top: 0,
