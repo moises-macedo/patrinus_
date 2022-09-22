@@ -3,5 +3,7 @@ import { ModalEditProfile } from "../ModalEditProfile";
 
 
 export const ScreenTest = () => {
-  return <ModalEditProfile />;
+
+  return <DashboardStudentsCourses />;
+
 };
