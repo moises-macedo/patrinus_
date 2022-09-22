@@ -9,10 +9,20 @@ export const ModalProvider = ({ children }) => {
   const [modalPartnerSchools, setModalPartnerSchools] = useState(false);
   const [modalAddCourse, setModalAddCourse] = useState(false);
 
-  if (!modalPartnerSchools || !modalRegisterUser || !modalSignUp || !modalAddCourse) {
+  if (
+    !modalPartnerSchools ||
+    !modalRegisterUser ||
+    !modalSignUp ||
+    !modalAddCourse
+  ) {
     document.querySelector("body").style.overflow = "auto";
   }
-  if (modalPartnerSchools || modalRegisterUser || modalSignUp || modalAddCourse) {
+  if (
+    modalPartnerSchools ||
+    modalRegisterUser ||
+    modalSignUp ||
+    modalAddCourse
+  ) {
     document.querySelector("body").style.overflow = "hidden";
   }
 
@@ -28,7 +38,7 @@ export const ModalProvider = ({ children }) => {
         modalRegisterUser,
         setModalRegisterUser,
         modalAddCourse,
-        setModalAddCourse
+        setModalAddCourse,
       }}
     >
       {children}

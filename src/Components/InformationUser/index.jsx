@@ -1,9 +1,12 @@
-import { InformationUserStyle } from "./style"
+import { InformationUserStyle } from "./style";
+import { useContext } from "react";
+import { UsersContext } from "../../Provider/User/index";
 export const InformationUser = () => {
-    return(   
-        <InformationUserStyle>
-        <h4>Nome: Lorenzo</h4>
-        <h4>Email:lorenzo@gmail.com</h4>
-        </InformationUserStyle>
-    )
-}
+  const { user } = useContext(UsersContext);
+  return (
+    <InformationUserStyle>
+      <h4>Nome: {user.name}</h4>
+      <h4>Email:{user.email}</h4>
+    </InformationUserStyle>
+  );
+};
