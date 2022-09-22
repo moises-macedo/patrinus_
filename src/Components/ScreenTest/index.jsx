@@ -1,6 +1,9 @@
 import { CoursesAvailable } from "../CoursesAvailable";
-import { DashboardStudentsCourses } from "../DashboardStudentsCourses";
+import { ModalEditProfile } from "../ModalEditProfile";
+
 
 export const ScreenTest = () => {
+
   return <DashboardStudentsCourses />;
+
 };

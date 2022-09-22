@@ -4,15 +4,17 @@ export const ModalContainer = styled.div`
   height: 100vh;
   width: 100%;
   position: absolute;
-  background-color: #000000;
+  backdrop-filter: blur(3px);
+  -webkit-backdrop-filter: blur(3px);
+  background: rgba(0, 0, 0, 0.5);
   display: flex;
   align-items: center;
   justify-content: center;
 `;
 
 export const Content = styled.div`
-  height: 60%;
-  width: 40%;
+  height: 80%;
+  width: 60%;
   background-color: var(--primary-1);
   border-radius: 5px;
   display: flex;
@@ -22,7 +24,6 @@ export const Content = styled.div`
 
   @media (max-width: 700px) {
     width: 80%;
-    height: 70%;
   }
 
   h2 {
@@ -34,13 +35,13 @@ export const Content = styled.div`
 
   form {
     width: 100%;
-    height: 85%;
+    height: 90%;
     display: flex;
     align-items: center;
     justify-content: center;
     flex-direction: column;
     border-radius: 8px;
-    font-size: 0.7em;
+    font-size: 0.5em;
     color: var(--dark-1);
 
     input {
