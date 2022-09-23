@@ -84,16 +84,8 @@ export const ContentLogin = styled.div`
   button {
     width: 100%;
     margin-top: 30px;
-  }
-
-  p {
-    margin-top: 45px;
-    font-weight: bold;
-    font-size: 1.2rem;
-    color: #4a6cbb;
-    position: relative;
-    bottom: 5%;
-  }
+    margin-bottom: 169px;
+  }  
 `;
 
 export const Loginbase = styled.div`

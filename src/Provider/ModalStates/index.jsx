@@ -5,7 +5,7 @@ import { UsersContext } from "../User";
 export const ModalContext = createContext();
 
 export const ModalProvider = ({ children }) => {
-  const [modalSignUp, setModalSignUp] = useState(false);
+  const [modalSignUp, setModalSignUp] = useState(true);
   const [modalRegisterUser, setModalRegisterUser] = useState(false);
   const [modalEditProfile, setModalEditProfile] = useState(true);
   const [modalPartnerSchools, setModalPartnerSchools] = useState(false);
