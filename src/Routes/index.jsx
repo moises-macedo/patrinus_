@@ -35,7 +35,7 @@ export const Routes = () => {
 
       <Route path="/dashboardstudentscourses" element={<DashboardStudentsCourses />} />
       <Route path="/dashboardstudentgodparents" element={<DashboardStudentGodparents />} />
-      <Route path="/dashboardstudentgodparents" element={<DashboardStudentGodparents />} />
+      {/* <Route path="/dashboardstudentgodparents" element={<DashboardStudentGodparents />} /> */}
       <Route path="/favoritecourses" element={<FavoriteCourses />} />
       <Route path="/dashboardsponsored" element={<DashboardSponsored />} />
       <Route path="/componentpartnerschools" element={<ComponentPartnerSchools />} />

@@ -26,7 +26,7 @@ const theme = {
 export const Area = styled.div`
   background: var(--light-2);
   background: -webkit-linear-gradient(to left, #ffff, gray);
-  width: 77.6%;
+  width: 100%;
   height: 100vh;
   position: absolute;
   z-index: -8;

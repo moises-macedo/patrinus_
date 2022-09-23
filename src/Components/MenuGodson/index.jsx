@@ -1,11 +1,18 @@
 import { MenuGodSon } from "./styled";
+import { FaUserAlt } from 'react-icons/fa';
+import { useContext } from "react";
+import { UsersContext } from "../../Provider/User";
 
 export const MenuGodson = () => {
+
+  const {user} = useContext(UsersContext)
+
   return (
     <MenuGodSon>
-      <img src="" alt="Foto do usuário" />
+      <img src={<FaUserAlt/>} alt={user?.name} />
       <h2>nome do usuário</h2>
       <ul>
+        
         <nav>
           <button id="menuList">Perfil</button>
         </nav>
