@@ -9,8 +9,15 @@ h3{
 }
 textarea{
     border-radius: 10px;
+    width: 100%;
+    max-width: 300px;
+    height: 250px;
     background-color: var(--secondary-1);
     color: var(--dark-1);
+    resize:none;
+    padding-top: 10px;
+    padding-left: 10px;
+    font-weight: 700;
    }
 
 `

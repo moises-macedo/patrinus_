@@ -58,6 +58,7 @@ export const UlDescription = styled.ul`
   backdrop-filter: blur(5px);
   -webkit-backdrop-filter: blur(5px);
   border: 1px solid rgba(255, 255, 255);
+  cursor: pointer;
   li {
     min-height: 50px;
     font-family: var(--font-barlow);

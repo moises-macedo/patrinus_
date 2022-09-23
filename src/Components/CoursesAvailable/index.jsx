@@ -39,9 +39,10 @@ const CoursesDescription = ({ card, index, id = "modal" }) => {
     });
   };
   
+  console.log(myCourses)
   return (
     <>
-      <UlDescription key={index}>
+      <UlDescription key={index} onClick={() => setIsClosed(!isClosed)}>
         <li>{card.escola}</li>
         <li>{card.curso}</li>
         <li>
@@ -61,6 +62,7 @@ const CoursesDescription = ({ card, index, id = "modal" }) => {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           exit={{ opacity: 0, transition: { duration: 0.2 } }}
+          
         >
           <Aside>
             <Title>

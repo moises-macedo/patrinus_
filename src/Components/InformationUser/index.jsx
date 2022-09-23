@@ -6,8 +6,8 @@ export const InformationUser = () => {
   const { user } = useContext(UsersContext);
   return (
     <InformationUserStyle>
-      <h4>Nome: {user.name}</h4>
-      <h4>Email:{user.email}</h4>
+      <p>Nome:<span>{user.name}</span></p>
+      <p>Email:<span>{user.email}</span></p>
     </InformationUserStyle>
   );
 };

@@ -96,7 +96,7 @@ export const Content = styled.div`
 
     button {
       height: 10%;
-      width: 60%;
+      width: 100%;
       border-radius: 10px;
       border: none;
       background-color: var(--dark-2);
