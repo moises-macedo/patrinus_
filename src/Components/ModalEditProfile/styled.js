@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const ModalContainer = styled.div`
-  height: 100vh;
+  height: 110vh;
   width: 100%;
   position: absolute;
   background-color: #000000;
@@ -60,7 +60,6 @@ export const Content = styled.div`
         cursor: pointer;
         font-weight: bold;
         font-size: 25px;
-        margin-left: 20px;
         box-shadow: 5px 4px 4px rgba(0, 0, 0, 0.25);
       }
 
