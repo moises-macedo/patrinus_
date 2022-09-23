@@ -61,9 +61,11 @@ export const MenuGodSon = styled.div`
     border: none;
     color: var(--light-1);
     box-shadow: 10px 10px 4px rgba(0, 0, 0, 0.25);
+    filter: brightness(0.9);
   }
   #exit:hover {
     cursor: pointer;
+    filter: brightness(1);   
   }
 
   #menuList {

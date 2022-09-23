@@ -1,8 +1,12 @@
+import { useContext } from "react";
 import { BackGroundDashboard } from "../../Components/Background/index";
 import { MenuGodFather } from "../../Components/MenuGodFather";
+import { UsersContext } from "../../Provider/User";
 import { FullPage, AboutMe, Discipulus, Content } from "./styled";
 
 export const DashboardProfileGodfather = () => {
+
+  const {user} = useContext(UsersContext)
   return (
     <FullPage>
       <BackGroundDashboard theme="patrinus" />
@@ -22,7 +26,7 @@ export const DashboardProfileGodfather = () => {
             PageMaker including versions of Lorem Ipsum.
           </p>
           <h3>Email:</h3>
-          <p>fulano@mail.com</p>
+          <p>{user.email}</p>
         </AboutMe>
         <Discipulus>
           <h3>Alunos apoiados</h3>
