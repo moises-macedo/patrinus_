@@ -4,6 +4,17 @@ export const FullPage = styled.div`
   height: 100vh;
   width: 100%;
   display: flex;
+
+  .mobile1 {
+    @media (min-width: 700px) {
+      display: none;
+    }
+  }
+  .mobile {
+    @media (max-width: 700px) {
+      display: none;
+    }
+  }
 `;
 
 export const BackgroundSchool = styled.div`
