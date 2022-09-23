@@ -12,7 +12,9 @@ export const CourseComponent = () => {
           <p>nameCourse</p>
           <p>typeCourse</p>
           <p>instCourse</p>
-          <AiFillStar  onClick={favoriteCourse} color={isOn ? "yellow" : "black"} size={50}/>
+          <div>
+          <AiFillStar  onClick={favoriteCourse} color={isOn ? "yellow" : "black"} size={'80%'}/>
+          </div>
         </CourseStyle>
     )
 }
