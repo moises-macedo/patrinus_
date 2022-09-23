@@ -13,7 +13,7 @@ export const DashboardStudentsCourses = () => {
         <Content>
           <HeaderContent>
             <h2>Cursos</h2>
-            <InputSearch />
+            {/* <InputSearch /> */}
           </HeaderContent>
           <ContentComponent>
             <CoursesAvailable />
