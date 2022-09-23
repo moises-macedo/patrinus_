@@ -31,7 +31,7 @@ export const Home = ({ authenticated }) => {
     if (user.type === "aluno") {
       return <Navigate to={"/dashboardgodsonprofile"} />;
     } else if (user.type === "padrinho") {
-      return <Navigate to={"/profilegodfather"} />;
+      return <Navigate to={"/profile-godfather"} />;
     }
   }
   return (
