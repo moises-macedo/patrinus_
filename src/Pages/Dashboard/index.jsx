@@ -6,6 +6,7 @@ export const Dashboard = ({ authenticated }) => {
     return <Navigate to={"/"} />;
   }
   return <div>
-    <StudentInformation />
+  <>
+  </>
   </div>;
 };
