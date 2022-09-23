@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const ModalContainer = styled.div`
-  height: 100vh;
+  height: 110vh;
   width: 100%;
   position: absolute;
   backdrop-filter: blur(3px);
@@ -62,7 +62,9 @@ export const Content = styled.div`
         background-color: var(--danger);
         cursor: pointer;
         font-weight: bold;
-        font-size: 0.9rem;
+
+        font-size: 25px;
+
         box-shadow: 5px 4px 4px rgba(0, 0, 0, 0.25);
       }
 
