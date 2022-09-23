@@ -326,12 +326,17 @@ export const Content = styled.div`
       .button_be_a_partner {
         width: 95%;
         border-radius: 40px;
-        background: #595959;
+        background: #595959;      
         color: #ffffff;
         font-size: 1.5em;
         margin-top: 15px;
         padding: 4px;
         cursor: pointer;
+        filter: brightness(0.8);
+
+        &:hover{
+          filter: brightness(1);
+        }
       }
     }
   }

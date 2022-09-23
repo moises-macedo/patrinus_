@@ -9,7 +9,9 @@ export const DashboardGodfatherCard = () => {
       <MenuGodson />
       <Content>
         <h2>Padrinhos</h2>
-        <CardArea> </CardArea>
+        <CardArea> 
+          
+        </CardArea>
       </Content>
     </FullPage>
   );
