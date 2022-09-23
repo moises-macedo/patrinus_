@@ -4,15 +4,17 @@ export const ModalContainer = styled.div`
   height: 110vh;
   width: 100%;
   position: absolute;
-  background-color: #000000;
+  backdrop-filter: blur(3px);
+  -webkit-backdrop-filter: blur(3px);
+  background: rgba(0, 0, 0, 0.5);
   display: flex;
   align-items: center;
   justify-content: center;
 `;
 
 export const Content = styled.div`
-  height: 60%;
-  width: 40%;
+  height: 80%;
+  width: 60%;
   background-color: var(--primary-1);
   border-radius: 5px;
   display: flex;
@@ -22,7 +24,6 @@ export const Content = styled.div`
 
   @media (max-width: 700px) {
     width: 80%;
-    height: 70%;
   }
 
   h2 {
@@ -33,15 +34,14 @@ export const Content = styled.div`
   }
 
   form {
-    width: 80%;
-    height: 85%;
+    width: 100%;
+    height: 90%;
     display: flex;
     align-items: center;
     justify-content: center;
     flex-direction: column;
     border-radius: 8px;
-
-    font-size: 0.7em;
+    font-size: 0.5em;
     color: var(--dark-1);
 
     input {
@@ -52,25 +52,30 @@ export const Content = styled.div`
       display: flex;
       width: 100%;
       margin-top: 20px;
+      justify-content: space-evenly;
 
       button#cancel {
         height: 40px;
+        max-width: 190px;
         width: 190px;
+        min-width: 100px;
         background-color: var(--danger);
         cursor: pointer;
         font-weight: bold;
+
         font-size: 25px;
+
         box-shadow: 5px 4px 4px rgba(0, 0, 0, 0.25);
       }
 
       button#save {
         height: 40px;
+        max-width: 190px;
         width: 190px;
         cursor: pointer;
         background-color: var(--success);
         font-weight: bold;
-        font-size: 25px;
-        margin-left: 25px;
+        font-size: 0.9rem;
         box-shadow: 5px 4px 4px rgba(0, 0, 0, 0.25);
       }
     }
@@ -78,7 +83,6 @@ export const Content = styled.div`
 `;
 export const CheckboxContainer = styled.div`
   height: 30px;
-  width: 20px;
   display: flex;
   justify-content: space-between;
   align-items: center;

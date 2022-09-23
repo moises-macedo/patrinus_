@@ -7,7 +7,6 @@ export const Div = styled.div`
     font-family: var(--font-barlow);
     font-size: clamp(1.5em, 15vw, 4.5em);
     font-weight: 600;
-    letter-spacing: 0.08em;
     background: linear-gradient(
       45deg,
       var(--primary-1),

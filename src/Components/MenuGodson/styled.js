@@ -19,6 +19,7 @@ export const MenuGodSon = styled.div`
   h2 {
     color: var(--light-1);
     font-size: 25px;
+    text-transform: capitalize;
   }
 
   img {
@@ -61,9 +62,11 @@ export const MenuGodSon = styled.div`
     border: none;
     color: var(--light-1);
     box-shadow: 10px 10px 4px rgba(0, 0, 0, 0.25);
+    filter: brightness(0.9);
   }
   #exit:hover {
     cursor: pointer;
+    filter: brightness(1);   
   }
 
   #menuList {
@@ -90,18 +93,6 @@ export const MenuGodSon = styled.div`
       color: var(--dark-1);
     }
   }
-`;
-
-export const MenuGodfather = styled(MenuGodSon)`
-  background: linear-gradient(
-    174.14deg,
-    var(--secondary-1) 4.65%,
-    rgba(131, 175, 147, 0) 157.91%
-  );
-`;
-
-export const MenuSchool = styled(MenuGodSon)`
-  background: var(--light-1);
 `;
 
 export const UnderlineSelect = styled.div`

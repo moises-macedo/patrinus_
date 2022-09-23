@@ -4,11 +4,16 @@ export const Container = styled.footer`
 width: 100%;
 display: flex;
 align-items: center;
-flex-wrap: wrap;
 justify-content: space-between;
 background: var(--light-3);
 min-height: 50px;
 font-family: var(--font-barlow);
+
+@media (max-width: 780px)
+{
+    min-height: 150px;
+flex-direction: column;
+}
 `
 
 export const Section = styled.section`
@@ -50,6 +55,7 @@ max-width: 270px;
 display: flex;
 align-items: center;
 justify-content: center;
+min-height: 50px;
 h5{
     display: flex;
     align-items: center;
@@ -71,6 +77,10 @@ align-items: center;
 justify-content: space-evenly;
 width:100%;
 max-width: 270px;
+@media (max-width: 780px)
+{
+margin-bottom: 15px;
+}
 li{
     border: 1px solid var(--primary-1);
     width: 35px;

@@ -1,7 +1,8 @@
 import styled from "styled-components";
+import { motion } from "framer-motion";
 
 
-export const Aside = styled.aside`
+export const Aside = styled(motion.aside)`
 font-family: var(--font-barlow);
 display: flex;
 align-items: center;
@@ -130,6 +131,7 @@ button{
     width: 100%;
     
     margin-top: 10px;
+
 
     &::before {
         content: "";

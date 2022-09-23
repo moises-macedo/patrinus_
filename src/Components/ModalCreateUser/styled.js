@@ -1,4 +1,15 @@
-import styled from "styled-components";
+import styled, { keyframes } from "styled-components";
+export const Colors = keyframes`
+    0% {
+        background-position: 0% 50%;
+      }
+      50% {
+        background-position: 100% 50%;
+      }
+  
+      100% {
+        background-position: 0% 50%;
+      }`;
 
 export const PageContainer = styled.div`
   height: 100vh;
@@ -9,13 +20,23 @@ export const PageContainer = styled.div`
   left: 0;
   backdrop-filter: blur(3px);
   -webkit-backdrop-filter: blur(3px);
-  background: rgba(0, 0, 0, 0.2);
+  background: rgba(0, 0, 0, 0.5);
 `;
 
 export const Container = styled.div`
   height: 100vh;
-  width: 50%;
-  background: linear-gradient(192.59deg, #84b094 0.58%, #fedacc 100%);
+  width: 100%;
+  max-width: 600px;
+  background: linear-gradient(
+    45deg,
+    var(--primary-1),
+    var(--secondary-1),
+    var(--dark-2),
+    var(--primary-2),
+    var(--primary-1)
+  );
+  background-size: 300% 300%;
+  animation: colors 15s ease infinite;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -26,7 +47,7 @@ export const Container = styled.div`
 
 export const Content = styled.div`
   height: 97vh;
-  width: 97%;
+  width: 90%;
   border-radius: 15px;
   border: 2px var(--dark-1) solid;
   background-color: var(--light-1);
