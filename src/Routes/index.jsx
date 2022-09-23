@@ -11,6 +11,9 @@ import { UsersContext } from "../Provider/User";
 import { FavoriteCourses } from "../Components/DashboardStudent/FavoriteCourses";
 import { DashboardSponsored } from "../Components/DashboardSponsored";
 import { ComponentPartnerSchools } from "../Components/ComponentPartnerSchools";
+import { DashboardStudentsRegistered } from "../Components/DashboardStudentsRegistered";
+import { DashboardSchoolCourses } from "../Pages/DashboardSchoolCourses";
+import {SchoolProfile} from "../Components/DashboardSchoolProfile"
 
 export const Routes = () => {
   const { authenticated } = useContext(UsersContext);
@@ -33,6 +36,9 @@ export const Routes = () => {
       <Route path="/FavoriteCourses" element={<FavoriteCourses />} />
       <Route path="/DashboardSponsored" element={<DashboardSponsored />} />
       <Route path="/ComponentPartnerSchools" element={<ComponentPartnerSchools />} />
+      <Route path="/dashboardStudentsRegistered" element={<DashboardStudentsRegistered />} />
+      <Route path="/SchoolProfile" element={<SchoolProfile />} />
+      <Route path="/DashboardSchoolCourses" element={<DashboardSchoolCourses />} />
     </RoutePages>
   );
 };
