@@ -43,6 +43,7 @@ const UsersProvider = ({ children }) => {
         setUser,
         authenticated,
         setAuthenticated,
+        get_User,
       }}
     >
       {children}

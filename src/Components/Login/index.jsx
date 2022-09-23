@@ -114,7 +114,7 @@ export const Login = ({ id = "loginModal" }) => {
                   Entrar
                 </Button>
               </form>
-              <p>Esqueci a senha</p>
+              <p>&nbsp;</p>
             </ContentLogin>
           </Loginbase>
         </Container>

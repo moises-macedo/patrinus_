@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const ModalContainer = styled.div`
-  height: 110vh;
+  height: 100vh;
   width: 100%;
   position: absolute;
   backdrop-filter: blur(3px);

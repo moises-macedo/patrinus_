@@ -18,7 +18,7 @@ import { UsersContext } from "../../Provider/User";
 
 export const ModalEditProfile = () => {
   const { modalEditProfile, setModalEditProfile } = useContext(ModalContext);
-  const { user } = useContext(UsersContext);
+  const { user,get_User } = useContext(UsersContext);
   const [handleIsChecked, setHandleIsChecked] = useState(false);
 
   const handleCloseModalEditProfile = (e) => {
@@ -52,6 +52,7 @@ export const ModalEditProfile = () => {
           toastId: "toastSuccess",
         });
         setModalEditProfile(false);
+        get_User()
       })
       .catch((err) => console.log(err));
   };
