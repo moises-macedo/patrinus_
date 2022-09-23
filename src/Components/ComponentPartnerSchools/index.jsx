@@ -1,4 +1,3 @@
-
 import { BackGroundDashboard } from "../Background"
 import { PartnerSchools } from "../PartnerSchools"
 

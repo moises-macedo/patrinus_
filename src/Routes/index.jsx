@@ -11,6 +11,9 @@ import { UsersContext } from "../Provider/User";
 import { FavoriteCourses } from "../Components/DashboardStudent/FavoriteCourses";
 import { DashboardSponsored } from "../Components/DashboardSponsored";
 import { ComponentPartnerSchools } from "../Components/ComponentPartnerSchools";
+import { DashboardStudentsRegistered } from "../Components/DashboardStudentsRegistered";
+import { DashboardSchoolCourses } from "../Pages/DashboardSchoolCourses";
+import {SchoolProfile} from "../Components/DashboardSchoolProfile"
 
 export const Routes = () => {
   const { authenticated, user } = useContext(UsersContext);
@@ -30,23 +33,18 @@ export const Routes = () => {
         path="/dashboardgodsonprofile"
         element={<DashboardProfileGodson />}
       />
-      <Route path="/profilegodfather" element={<DashboardProfileGodfather />} />
 
-      <Route
-        path="/dashboardstudentscourses"
-        element={<DashboardStudentsCourses />}
-      />
-      <Route
-        path="/dashboardstudentgodparents"
-        element={<DashboardStudentGodparents />}
-      />
-      {/* <Route path="/dashboardstudentgodparents" element={<DashboardStudentGodparents />} /> */}
-      <Route path="/favoritecourses" element={<FavoriteCourses />} />
-      <Route path="/dashboardsponsored" element={<DashboardSponsored />} />
-      <Route
-        path="/componentpartnerschools"
-        element={<ComponentPartnerSchools />}
-      />
+      <Route path="/profileGodfather" element={<DashboardProfileGodfather />} />
+      <Route path="/DashboardStudentsCourses" element={<DashboardStudentsCourses />} />
+      <Route path="/DashboardStudentGodparents" element={<DashboardStudentGodparents />} />
+      <Route path="/DashboardStudentGodparents" element={<DashboardStudentGodparents />} />
+      <Route path="/FavoriteCourses" element={<FavoriteCourses />} />
+      <Route path="/DashboardSponsored" element={<DashboardSponsored />} />
+      <Route path="/ComponentPartnerSchools" element={<ComponentPartnerSchools />} />
+      <Route path="/dashboardStudentsRegistered" element={<DashboardStudentsRegistered />} />
+      <Route path="/SchoolProfile" element={<SchoolProfile />} />
+      <Route path="/DashboardSchoolCourses" element={<DashboardSchoolCourses />} />
+
     </RoutePages>
   );
 };

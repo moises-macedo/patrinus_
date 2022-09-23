@@ -1,3 +1,4 @@
+
 import { Container, Content } from "./styled";
 import { BackGroundDashboard } from "../Background";
 import { CardGodFather } from "../CardGodFather";
@@ -14,3 +15,4 @@ export const DashboardStudentGodparents = () => {
     </Container>
   );
 };
+

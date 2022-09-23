@@ -1,8 +1,9 @@
+import { useNavigate } from "react-router-dom";
 import { MenuSchool } from "./styled";
 import { UsersContext } from "../../Provider/User";
 import { useContext } from "react";
-import { useNavigate } from "react-router-dom";
 export const SchollMenu = () => {
+
   const { setAuthenticated, authenticated } = useContext(UsersContext);
   const navigate = useNavigate();
 
@@ -12,25 +13,22 @@ export const SchollMenu = () => {
     navigate("/");
     window.location.reload();
   };
+
   return (
     <MenuSchool>
       <img src="" alt="Foto do usuário" />
       <h2>nome do usuário</h2>
       <ul>
         <nav>
-          <button id="menuList" onClick={() => navigate()}>
-            Perfil
-          </button>
+
+          <button id="menuList" onClick={() => navigate("/SchoolProfile")}>Perfil</button>
         </nav>
         <nav>
-          <button id="menuList" onClick={() => navigate()}>
-            Cursos
-          </button>
+          <button id="menuList" onClick={() => navigate("/DashboardSchoolCourses")}>Cursos</button>
         </nav>
         <nav>
-          <button id="menuList" onClick={() => navigate()}>
-            Alunos
-          </button>
+          <button id="menuList" onClick={() => navigate("/dashboardStudentsRegistered")}>Alunos</button>
+
         </nav>
       </ul>
       <button id="exit" onClick={handleExit}>

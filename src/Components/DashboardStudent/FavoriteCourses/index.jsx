@@ -1,13 +1,15 @@
 import React from "react";
 import { BackGroundDashboard } from "../../Background";
 
-import { CardFavoriteCourse } from "../../CardFavoriteCourse";
-import { MenuGodson } from "../../MenuGodson/index";
-import { Container, H2, ContentText, Content, Ul } from "./styled";
+import {CardFavoriteCourse} from "../../CardFavoriteCourse"
+
+import { MenuGodson } from '../../MenuGodson';
+
+import {Container, H2, ContentText, Content, Ul} from "./styled"
+
 
 export const FavoriteCourses = () => {
   
-
   return (
     <Container>
       <MenuGodson />
@@ -32,3 +34,4 @@ export const FavoriteCourses = () => {
     </Container>
   );
 };
+
