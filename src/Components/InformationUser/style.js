@@ -1,6 +1,7 @@
 import styled from "styled-components";
 
 export const InformationUserStyle = styled.div`
+margin-top: 10px;
     p{
     
        
