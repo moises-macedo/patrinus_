@@ -6,12 +6,14 @@ import { ModalContext } from "../../Provider/ModalStates"
 import { apiPatrinus } from "../../Services/api";
 import { Input } from "../Input";
 import { FiXCircle } from "react-icons/fi";
+import { toast } from "react-toastify";
+import { UsersContext } from "../../Provider/User";
 import { ModalContainer, Content, ButtonExitEditSchool,ButtonsStyle } from "./style";
 
 
 export const ModalEditSchoolProfile = () =>{
         const {modalEditSchool, setModalEditSchool} = useContext(ModalContext);
-        
+        const { user} = useContext(UsersContext);
         const handleCloseModalEditSchoolProfile = (e) => {
             if (e.target.id === "closeModalEditProfileSchool") {
                 setModalEditSchool(false);

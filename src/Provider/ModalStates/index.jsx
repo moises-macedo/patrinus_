@@ -8,6 +8,7 @@ export const ModalProvider = ({ children }) => {
   const [modalSignUp, setModalSignUp] = useState(false);
   const [modalRegisterUser, setModalRegisterUser] = useState(false);
   const [modalEditProfile, setModalEditProfile] = useState(true);
+  const [modalEditSchool, setModalEditSchool] = useState(false);
   const [modalPartnerSchools, setModalPartnerSchools] = useState(false);
   const [modalAddCourse, setModalAddCourse] = useState(false);
 
