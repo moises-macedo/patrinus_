@@ -2,7 +2,7 @@ import { useContext } from "react";
 import { Route, Routes as RoutePages } from "react-router-dom";
 import { DashboardStudentsCourses } from "../Components/DashboardStudentsCourses";
 import { ScreenTest } from "../Components/ScreenTest";
-import { Dashboard } from "../Pages/Dashboard";
+import { DashboardPartnerSchools } from "../Pages/DashboardPartnerSchools";
 import { DashboardProfileGodfather } from "../Pages/DashboardProfileGodfather";
 import { DashboardProfileGodson } from "../Pages/DashboardProfileGodson";
 import { DashboardStudentGodparents } from "../Components/DashboardStudentGodparents";
@@ -16,19 +16,24 @@ import { DashboardSchoolCourses } from "../Pages/DashboardSchoolCourses";
 import {SchoolProfile} from "../Components/DashboardSchoolProfile"
 
 export const Routes = () => {
-  const { authenticated } = useContext(UsersContext);
+  const { authenticated, user } = useContext(UsersContext);
+
   return (
     <RoutePages>
       <Route exact path="/" element={<Home authenticated={authenticated} />} />
+
       <Route path="/test" element={<ScreenTest />} />
-      <Route
+
+      {/* <Route
         path="/dashboard"
         element={<Dashboard authenticated={authenticated} />}
-      />
+      /> */}
+
       <Route
         path="/dashboardgodsonprofile"
         element={<DashboardProfileGodson />}
       />
+
       <Route path="/profileGodfather" element={<DashboardProfileGodfather />} />
       <Route path="/DashboardStudentsCourses" element={<DashboardStudentsCourses />} />
       <Route path="/DashboardStudentGodparents" element={<DashboardStudentGodparents />} />
@@ -39,6 +44,7 @@ export const Routes = () => {
       <Route path="/dashboardStudentsRegistered" element={<DashboardStudentsRegistered />} />
       <Route path="/SchoolProfile" element={<SchoolProfile />} />
       <Route path="/DashboardSchoolCourses" element={<DashboardSchoolCourses />} />
+
     </RoutePages>
   );
 };

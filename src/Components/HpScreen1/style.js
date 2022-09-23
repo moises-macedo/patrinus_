@@ -60,6 +60,7 @@ export const Content = styled.div`
   flex-direction: column;
   background-color: #83ad93;
 
+
   header {
     margin-top: 10px;
     width: 95%;

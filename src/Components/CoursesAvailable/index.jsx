@@ -1,4 +1,4 @@
-import { availableItems } from "./item";
+import { availableItems } from "../../Services/item";
 import { MdInfo } from "react-icons/md";
 import { useState } from "react";
 import {
@@ -11,6 +11,8 @@ import {
   Description,
 } from "./style";
 import { FiXCircle } from "react-icons/fi";
+import { useContext } from "react";
+import { CoursesContext } from "../../Provider/Courses";
 
 const CoursesDescription = ({ card, index, id = "modal" }) => {
   const [isClosed, setIsClosed] = useState(false);
@@ -18,9 +20,12 @@ const CoursesDescription = ({ card, index, id = "modal" }) => {
   const handleClick = (e) => {
     if (e.target.id === id) {
       setIsClosed(!isClosed);
-    }
-    console.log(e.target);
+    }    
   };
+
+  const {addCourses} = useContext(CoursesContext)
+
+
   return (
     <>
       <UlDescription key={index}>
@@ -71,7 +76,7 @@ const CoursesDescription = ({ card, index, id = "modal" }) => {
                   <p>{card.descricao}</p>
                 </li>
                 <li>
-                  <button>Inscrever-se</button>
+                  <button onClick={()=>addCourses(card)}>Inscrever-se</button>
                 </li>
               </ul>
             </Description>

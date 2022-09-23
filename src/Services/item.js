@@ -1,5 +1,5 @@
-import Estacio from "../../Assets/Img/estacio.jpg";
-import Kenzie from "../../Assets/Img/kenzie.jpg";
+import Estacio from "../Assets/Img/estacio.jpg";
+import Kenzie from "../Assets/Img/kenzie.jpg";
 
 export const availableItems = [
   {

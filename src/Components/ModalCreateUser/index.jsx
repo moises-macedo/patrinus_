@@ -38,6 +38,7 @@ export const ModalCreateUser = () => {
       .string()
       .oneOf([yup.ref("password")], "Senha diferentes"),
     type: yup.string(),
+    sex: yup.string().required("Selecione seu genêro"),
   });
   const {
     formState: { errors },
@@ -48,8 +49,8 @@ export const ModalCreateUser = () => {
     resolver: yupResolver(signUpSchema),
   });
 
-  const handleSignup = ({ name, email, password, type }) => {
-    const user = { name, email, password, type };
+  const handleSignup = ({ name, email, password, type, sex }) => {
+    const user = { name, email, password, type, sex };
     apiPatrinus
       .post("users/register", user)
       .then((_) => {
@@ -76,7 +77,13 @@ export const ModalCreateUser = () => {
   return (
     <>
       {modalRegisterUser ? (
-        <PageContainer id="OutsideModal" onClick={handleOutsideClick}>
+        <PageContainer
+          id="OutsideModal"
+          onClick={handleOutsideClick}
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          exit={{ opacity: 0, transition: { duration: 0.2 } }}
+        >
           <Container>
             <Content>
               <ButtonExit>
@@ -119,6 +126,13 @@ export const ModalCreateUser = () => {
                   <select {...register("type")}>
                     <option>aluno</option>
                     <option>padrinho</option>
+                  </select>
+                </InputBox>
+                <InputBox>
+                  <label>Genêro</label>
+                  <select {...register("sex")}>
+                    <option>masculino</option>
+                    <option>feminino</option>
                   </select>
                 </InputBox>
                 <button type="submit">Cadastre-se</button>

@@ -10,26 +10,19 @@ const UsersProvider = ({ children }) => {
   );
   const [user, setUser] = useState([]);
   const [authenticated, setAuthenticated] = useState(false);
-  console.log(user)
-  
-  const get_User = () => {  
-    
-    if(!!token){
-      const id = jwt_decode(token)
+
+  const get_User = () => {
+    if (!!token) {
+      const id = jwt_decode(token);
 
       apiPatrinus
-      .get(`/users/${id.sub}`)
-      .then((res) => {
-        setUser(res.data);
-        
-      })
-      .catch((err) => console.log(err));
+        .get(`/users/${id.sub}`)
+        .then((res) => {
+          setUser(res.data);
+        })
+        .catch((err) => console.log(err));
     }
-    
   };
- 
-  
-  
 
   useEffect(() => {
     if (token) {
@@ -37,15 +30,20 @@ const UsersProvider = ({ children }) => {
     }
   }, [authenticated]);
 
-
-
   useEffect(() => {
     get_User();
   }, [token]);
 
   return (
     <UsersContext.Provider
-      value={{ user, token, setToken, setUser, authenticated,setAuthenticated }}
+      value={{
+        user,
+        token,
+        setToken,
+        setUser,
+        authenticated,
+        setAuthenticated,
+      }}
     >
       {children}
     </UsersContext.Provider>
