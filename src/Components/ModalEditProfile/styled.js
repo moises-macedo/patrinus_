@@ -86,7 +86,7 @@ export const CheckboxContainer = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  font-size: 1.3em;
+  font-size: 2em;
 `;
 
 export const ButtonExit = styled.div`

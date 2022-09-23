@@ -31,6 +31,7 @@ export const ModalEditProfile = () => {
     address: yup.string(),
     age: yup.number(),
     cpf: yup.number(),
+    aboutme: yup.string(),
   });
 
   const { register, handleSubmit } = useForm({
@@ -72,6 +73,11 @@ export const ModalEditProfile = () => {
               <Input label="Endereço" register={register("address")} />
               <Input label="Idade" register={register("age")} type="number" />
               <Input label="CPF" register={register("cpf")} type="number" />
+              <Input
+                label="Sobre mim"
+                register={register("aboutme")}
+                type="text"
+              />
               <CheckboxContainer>
                 <label>Eu confirmo que as informações são verdadeiras</label>
                 <input
