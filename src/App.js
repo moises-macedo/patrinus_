@@ -5,8 +5,8 @@ function App() {
   return (
     <>
       <ToastContainer
-        position="top-right"
-        autoClose={4000}
+        position="top-center"
+        autoClose={1000}
         hideProgressBar={false}
         newestOnTop={false}
         closeOnClick
@@ -14,6 +14,7 @@ function App() {
         pauseOnFocusLoss
         draggable
         pauseOnHover
+        limit={1}
       />
       <Routes />
     </>

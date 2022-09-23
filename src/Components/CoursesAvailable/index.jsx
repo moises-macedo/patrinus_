@@ -13,6 +13,7 @@ import {
 import { FiXCircle } from "react-icons/fi";
 import { useContext } from "react";
 import { CoursesContext } from "../../Provider/Courses";
+import { toast } from "react-toastify";
 
 const CoursesDescription = ({ card, index, id = "modal" }) => {
   const [isClosed, setIsClosed] = useState(false);
@@ -20,12 +21,24 @@ const CoursesDescription = ({ card, index, id = "modal" }) => {
   const handleClick = (e) => {
     if (e.target.id === id) {
       setIsClosed(!isClosed);
-    }    
+    }
   };
+  const { addCourses, myCourses } = useContext(CoursesContext);
 
-  const {addCourses} = useContext(CoursesContext)
-
-
+  const handleAddCourses = (card) => {
+    addCourses(card);
+    setIsClosed(!isClosed);
+    toast.success("Inscrição realizada!", {
+      position: "top-center",
+      autoClose: 500,
+      hideProgressBar: true,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+    });
+  };
+  
   return (
     <>
       <UlDescription key={index}>
@@ -42,7 +55,13 @@ const CoursesDescription = ({ card, index, id = "modal" }) => {
       </UlDescription>
 
       {isClosed ? (
-        <Section id={id} onClick={handleClick}>
+        <Section
+          id={id}
+          onClick={handleClick}
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          exit={{ opacity: 0, transition: { duration: 0.2 } }}
+        >
           <Aside>
             <Title>
               <div>
@@ -76,7 +95,9 @@ const CoursesDescription = ({ card, index, id = "modal" }) => {
                   <p>{card.descricao}</p>
                 </li>
                 <li>
-                  <button onClick={()=>addCourses(card)}>Inscrever-se</button>
+                  <button onClick={() => handleAddCourses(card)}>
+                    Inscrever-se
+                  </button>
                 </li>
               </ul>
             </Description>

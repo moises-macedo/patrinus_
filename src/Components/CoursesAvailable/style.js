@@ -1,3 +1,4 @@
+import { motion } from "framer-motion";
 import styled from "styled-components";
 
 export const UlTitle = styled.ul`
@@ -90,7 +91,7 @@ export const UlDescription = styled.ul`
   }
 `;
 
-export const Section = styled.section`
+export const Section = styled(motion.section)`
   min-height: 100vh;
   width: 100%;
   background: rgba(0, 0, 0, 0.4);
