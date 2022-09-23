@@ -19,6 +19,7 @@ export const MenuGodSon = styled.div`
   h2 {
     color: var(--light-1);
     font-size: 25px;
+    text-transform: capitalize;
   }
 
   img {

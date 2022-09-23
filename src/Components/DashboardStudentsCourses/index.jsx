@@ -9,18 +9,16 @@ export const DashboardStudentsCourses = () => {
   return (
     <Container>
       <MenuGodson />
-      <div>
-        <BackGroundDashboard />
-        <Content>
-          <HeaderContent>
-            <h2>Cursos</h2>
-            <InputSearch />
-          </HeaderContent>
-          <ContentComponent>
-            <CoursesAvailable />
-          </ContentComponent>
-        </Content>
-      </div>
+      <BackGroundDashboard />
+      <Content>
+        <HeaderContent>
+          <h2>Cursos</h2>
+          <InputSearch />
+        </HeaderContent>
+        <ContentComponent>
+          <CoursesAvailable />
+        </ContentComponent>
+      </Content>
     </Container>
   );
 };

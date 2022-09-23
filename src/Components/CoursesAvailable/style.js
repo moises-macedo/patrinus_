@@ -1,14 +1,16 @@
 import styled from "styled-components";
 
 export const UlTitle = styled.ul`
-  position: fixed;
-  top: 14.9%;
-  width: 72%;
+  top: 0;
+  width: 100%;
   display: flex;
   align-items: center;
   justify-content: space-around;
   background: var(--primary-2);
   border: 1px solid var(--dark-2);
+  position: -webkit-sticky;
+  position: sticky;
+  z-index: 10;
 
   li {
     min-height: 50px;
@@ -16,7 +18,8 @@ export const UlTitle = styled.ul`
     display: flex;
     align-items: center;
     justify-content: center;
-    width:40%;
+    width: 40%;
+    font-weight: bold;
     p {
       color: var(--dark-2);
       font-size: 20px;
@@ -40,6 +43,7 @@ export const ContainerDescription = styled.div`
   align-items: center;
   justify-content: center;
   width: 100%;
+  /* position: relative; */
 `;
 
 export const UlDescription = styled.ul`
@@ -47,18 +51,19 @@ export const UlDescription = styled.ul`
   display: flex;
   align-items: center;
   justify-content: space-around;
-  background: rgba(0,0,0,0.1);
+  background: rgba(0, 0, 0, 0.1);
 
-box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-backdrop-filter: blur(5px);
--webkit-backdrop-filter: blur(5px);
-border: 1px solid rgba(255,255,255);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  border: 1px solid rgba(255, 255, 255);
   li {
     min-height: 50px;
     font-family: var(--font-barlow);
     display: flex;
     align-items: center;
     justify-content: center;
+    font-weight: bold;
     &:nth-child(1) {
       width: 43%;
     }
