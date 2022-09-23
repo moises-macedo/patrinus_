@@ -77,7 +77,13 @@ export const ModalCreateUser = () => {
   return (
     <>
       {modalRegisterUser ? (
-        <PageContainer id="OutsideModal" onClick={handleOutsideClick}>
+        <PageContainer
+          id="OutsideModal"
+          onClick={handleOutsideClick}
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          exit={{ opacity: 0, transition: { duration: 0.2 } }}
+        >
           <Container>
             <Content>
               <ButtonExit>

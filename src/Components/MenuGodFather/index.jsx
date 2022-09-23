@@ -2,11 +2,13 @@ import { useContext, useEffect, useState } from "react";
 import { UsersContext } from "../../Provider/User";
 import { MenuGodfather } from "./styled";
 import { useNavigate } from "react-router-dom";
-
-
+import Male from "../../Assets/Img/male.svg";
+import Female from "../../Assets/Img/female.svg";
 
 export const MenuGodFather = () => {
-  const { setAuthenticated, authenticated } = useContext(UsersContext);
+  const { setAuthenticated, authenticated,user } = useContext(UsersContext);
+
+  const [imageUser,setImageUser ] =useState()
   const navigate = useNavigate();
 
   const handleExit = () => {
@@ -15,7 +17,7 @@ export const MenuGodFather = () => {
     navigate("/");
     window.location.reload();
   };
-  const { user } = useContext(UsersContext);
+  
 
   useEffect(() => {
     if (user?.sex === "masculino") {
