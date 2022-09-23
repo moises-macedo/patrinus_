@@ -66,7 +66,7 @@ export const Login = ({ id = "loginModal" }) => {
           if (user.type === "aluno") {
             navigate("/dashboardgodsonprofile");
           } else if (user.type === "padrinho") {
-            navigate("/profilegodfather");
+            navigate("/profile-godfather");
           }
         })
         .catch((_) => {

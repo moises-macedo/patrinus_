@@ -1,7 +1,13 @@
+import { useContext } from "react";
 import { useState } from "react";
 import { createContext } from "react";
 
-export const CoursesContext = createContext([])
+export const CoursesContext = createContext({})
+
+export const useCourses = () =>{
+    const context = useContext(CoursesContext)
+    return context
+}
 
 export const CoursesProvider = ({children}) =>{
     const courses = JSON.parse(localStorage.getItem("@Patrinus: courses")) || []

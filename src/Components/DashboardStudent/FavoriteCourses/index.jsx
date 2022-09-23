@@ -7,9 +7,13 @@ import { MenuGodson } from '../../MenuGodson';
 
 import {Container, H2, ContentText, Content, Ul} from "./styled"
 
+import {useCourses} from "../../../Provider/Courses"
+
 
 export const FavoriteCourses = () => {
-  
+
+  const {myCourses} = useCourses()
+  console.log(myCourses)
   return (
     <Container>
       <MenuGodson />
@@ -19,12 +23,12 @@ export const FavoriteCourses = () => {
           <h3>Meus Cursos Favoritos</h3>
         </ContentText>
         <Ul>
-          {[1,2,3].map((item) => {
+          {myCourses.map((item, index) => {
             return (
               <CardFavoriteCourse
-                key={item.id}
-                img={item.img}
-                name={item.name}
+                key={index}
+                img={item.image}
+                name={item.curso}
               />
             );
           })}

@@ -1,9 +1,10 @@
 import styled from "styled-components";
 
 export const Container = styled.div`
+  z-index: 100;
 
 nav {
-  background-color: #1E1E23;
+  background-color: transparent;
   height: 65px;
   width: 100%;
 }
@@ -38,7 +39,7 @@ nav {
   height: 2px;
   margin-bottom: 5px;
   position: relative;
-  background: #ffffff;
+  background: #000;
   border-radius: 3px;
   z-index: 1;
   transform-origin: 5px 0px;

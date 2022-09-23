@@ -1,5 +1,21 @@
 import styled from "styled-components";
 
+export const Container = styled.div`
+  .mobile {
+    display: flex;
+    flex-direction: column;
+    @media (min-width: 720px) {
+      display: none;
+    }
+  }
+
+  .desktop {
+    @media (max-width: 720px) {
+      display: none;
+    }
+  }
+`;
+
 export const MenuGodSon = styled.div`
   display: flex;
   flex-direction: column;
@@ -28,7 +44,7 @@ export const MenuGodSon = styled.div`
     margin-top: 30px;
     background-color: beige;
     border-radius: 100%;
-    filter: drop-shadow(5px 5px 10px rgba(0,0,0,0.5));
+    filter: drop-shadow(5px 5px 10px rgba(0, 0, 0, 0.5));
   }
 
   ul {
@@ -67,7 +83,7 @@ export const MenuGodSon = styled.div`
   }
   #exit:hover {
     cursor: pointer;
-    filter: brightness(1);   
+    filter: brightness(1);
   }
 
   #menuList {
