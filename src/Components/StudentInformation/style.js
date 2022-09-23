@@ -13,14 +13,14 @@ export const StudentStyle = styled.div`
     font-size: 16.75px;
   }
 
-  @media (min-width: 600px) {
-    flex-wrap: wrap;
-    button {
-      width: 272px;
-      height: 65px;
-      font-family: var(--font-inter);
-      font-size: 18px;
-      margin-top: 28px;
+
+   @media(min-width: 600px){
+    button{
+        width: 272px;
+        height: 65px;
+        font-family: var(--font-inter);
+        font-size: 18px;
+        margin-top: 288px;
     }
   }
 `;
@@ -32,7 +32,13 @@ export const StudentStyleMain = styled.div`
 `;
 
 export const ProfileStyle = styled.div`
-  display: flex;
-  flex-direction: column;
-  justify-content: space-evenly;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+
+  
+
+    
+
 `;

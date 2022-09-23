@@ -8,17 +8,22 @@ import { TitlePage } from "../TitlePage";
 import { StudentStyle, StudentStyleMain, ProfileStyle } from "./style";
 import { useContext } from "react";
 import { ModalContext } from "../../Provider/ModalStates";
-export const StudentInformation = () => {
-  const { setModalEditProfile } = useContext(ModalContext);
-  return (
-    <>
-      <BackGroundDashboard theme="student" />
 
-      <StudentStyleMain>
-        <ProfileStyle>
-          <TitlePage>Perfil</TitlePage>
-          <Grades />
-        </ProfileStyle>
+import { InformationUser } from '../InformationUser'
+import { SponsoredBy } from '../SponsoredBy'
+import { TitlePage } from '../TitlePage'
+import {StudentStyle, StudentStyleMain, ProfileStyle} from './style'
+export const StudentInformation = () =>{
+     return (
+         <>
+         <BackGroundDashboard theme='student' />
+   
+       <StudentStyleMain>
+          <ProfileStyle>
+               <TitlePage>Perfil</TitlePage>
+               <Grades />
+          </ProfileStyle>
+
         <StudentStyle>
           <SponsoredBy />
           <InformationUser />
