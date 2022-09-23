@@ -1,12 +1,20 @@
 import { useContext, useEffect, useState } from "react";
 import { UsersContext } from "../../Provider/User";
 import { MenuGodfather } from "./styled";
-import Female  from "../../Assets/Img/female-godfather.svg";
-import Male from "../../Assets/Img/male-godfather.svg"
+import { useNavigate } from "react-router-dom";
+
+
 
 export const MenuGodFather = () => {
-  const [imageUser, setImageUser] = useState();
+  const { setAuthenticated, authenticated } = useContext(UsersContext);
+  const navigate = useNavigate();
 
+  const handleExit = () => {
+    localStorage.clear();
+    setAuthenticated(!authenticated);
+    navigate("/");
+    window.location.reload();
+  };
   const { user } = useContext(UsersContext);
 
   useEffect(() => {
@@ -18,22 +26,31 @@ export const MenuGodFather = () => {
     }
   }, [user]);
 
+
   return (
     <MenuGodfather>
       <img src={imageUser} alt="Foto do usuário" />
       <h2>{user.name}</h2>
       <ul>
         <nav>
-          <button id="menuList">Perfil</button>
+          <button id="menuList" onClick={() => navigate()}>
+            Perfil
+          </button>
         </nav>
         <nav>
-          <button id="menuList">Top Cursos</button>
+          <button id="menuList" onClick={() => navigate()}>
+            Top Cursos
+          </button>
         </nav>
         <nav>
-          <button id="menuList">Apadrinhados</button>
+          <button id="menuList" onClick={() => navigate()}>
+            Apadrinhados
+          </button>
         </nav>
       </ul>
-      <button id="exit">Sair</button>
+      <button id="exit" onClick={handleExit}>
+        Sair
+      </button>
     </MenuGodfather>
   );
 };

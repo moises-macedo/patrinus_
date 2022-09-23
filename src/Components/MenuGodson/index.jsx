@@ -1,4 +1,5 @@
 import { MenuGodSon } from "./styled";
+import { useNavigate } from "react-router-dom";
 import { FaUserAlt } from 'react-icons/fa';
 import { useContext, useEffect, useState } from "react";
 import { UsersContext } from "../../Provider/User";
@@ -6,9 +7,17 @@ import Female  from "../../Assets/Img/female.svg";
 import Male from "../../Assets/Img/male.svg"
 
 export const MenuGodson = () => {
+
   const [ imageUser, setImageUser] = useState()
 
-  const {user} = useContext(UsersContext)
+   const { user, setAuthenticated, authenticated } = useContext(UsersContext);
+  const navigate = useNavigate();
+  const handleExit = () => {
+    localStorage.clear();
+    setAuthenticated(!authenticated);
+    navigate("/");
+    window.location.reload();
+  };
   
 
   useEffect(()=>{
@@ -24,25 +33,49 @@ export const MenuGodson = () => {
     <MenuGodSon>
       <img src={imageUser} alt={user?.name} />
       <h2>{user.name}</h2>      
+
       <ul>
-        
         <nav>
-          <button id="menuList">Perfil</button>
+          <button
+            id="menuList"
+            onClick={() => navigate("/dashboardgodsonprofile")}
+          >
+            Perfil
+          </button>
         </nav>
         <nav>
-          <button id="menuList">Cursos</button>
+          <button
+            id="menuList"
+            onClick={() => navigate("/dashboardstudentscourses")}
+          >
+            Cursos
+          </button>
         </nav>
         <nav>
-          <button id="menuList">Padrinhos</button>
+          <button
+            id="menuList"
+            onClick={() => navigate("/dashboardstudentgodparents")}
+          >
+            Padrinhos
+          </button>
         </nav>
         <nav>
-          <button id="menuList">Escolas</button>
+          <button
+            id="menuList"
+            onClick={() => navigate("/componentpartnerschools")}
+          >
+            Escolas
+          </button>
         </nav>
         <nav>
-          <button id="menuList">Favoritos</button>
+          <button id="menuList" onClick={() => navigate("/favoritecourses")}>
+            Favoritos
+          </button>
         </nav>
       </ul>
-      <button id="exit">Sair</button>
+      <button id="exit" onClick={handleExit}>
+        Sair
+      </button>
     </MenuGodSon>
   );
 };
