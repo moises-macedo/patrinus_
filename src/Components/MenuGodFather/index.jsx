@@ -1,7 +1,9 @@
+import { useContext, useEffect, useState } from "react";
+import { UsersContext } from "../../Provider/User";
 import { MenuGodfather } from "./styled";
 import { useNavigate } from "react-router-dom";
-import { UsersContext } from "../../Provider/User";
-import { useContext } from "react";
+
+
 
 export const MenuGodFather = () => {
   const { setAuthenticated, authenticated } = useContext(UsersContext);
@@ -13,10 +15,22 @@ export const MenuGodFather = () => {
     navigate("/");
     window.location.reload();
   };
+  const { user } = useContext(UsersContext);
+
+  useEffect(() => {
+    if (user?.sex === "masculino") {
+      setImageUser(Male);
+    }
+    if (user?.sex === "feminino") {
+      setImageUser(Female);
+    }
+  }, [user]);
+
+
   return (
     <MenuGodfather>
-      <img src="" alt="Foto do usuário" />
-      <h2>nome do usuário</h2>
+      <img src={imageUser} alt="Foto do usuário" />
+      <h2>{user.name}</h2>
       <ul>
         <nav>
           <button id="menuList" onClick={() => navigate()}>
