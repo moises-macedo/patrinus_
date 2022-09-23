@@ -2,9 +2,7 @@ import React from 'react';
 import { BackGroundDashboard } from '../../Background';
 
 import {CardFavoriteCourse} from "../../CardFavoriteCourse"
-
-import { Menus } from '../../Menus';
-
+import { MenuGodSon } from '../../MenuGodson/styled';
 import {Container, H2, ContentText, Content, Ul} from "./styled"
 
 export const FavoriteCourses = () => {
@@ -53,7 +51,7 @@ export const FavoriteCourses = () => {
 
     return (
         <Container>
-            <Menus></Menus>
+            <MenuGodSon/>
             <Content>
             <ContentText>
             <H2>Seja Bem vindo Fulano</H2>

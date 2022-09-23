@@ -1,12 +1,14 @@
 import styled from "styled-components";
 
 export const UlTitle = styled.ul`
-  width: 100%;
+  position: fixed;
+  top: 14.9%;
+  width: 72%;
   display: flex;
   align-items: center;
   justify-content: space-around;
   background: var(--primary-2);
-  border: 1px solid #e1e1e1;
+  border: 1px solid var(--dark-2);
 
   li {
     min-height: 50px;
@@ -14,6 +16,7 @@ export const UlTitle = styled.ul`
     display: flex;
     align-items: center;
     justify-content: center;
+    width:40%;
     p {
       color: var(--dark-2);
       font-size: 20px;
@@ -44,7 +47,12 @@ export const UlDescription = styled.ul`
   display: flex;
   align-items: center;
   justify-content: space-around;
-  border: 1px solid #e1e1e1;
+  background: rgba(0,0,0,0.1);
+
+box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+backdrop-filter: blur(5px);
+-webkit-backdrop-filter: blur(5px);
+border: 1px solid rgba(255,255,255);
   li {
     min-height: 50px;
     font-family: var(--font-barlow);
@@ -171,7 +179,7 @@ export const Description = styled.div`
         justify-content: center;
         margin-bottom: 10px;
         button {
-            width: 100%;
+          width: 100%;
           font-size: 18px;
           letter-spacing: 2px;
           text-transform: uppercase;
@@ -217,9 +225,6 @@ export const Description = styled.div`
             transform: scale(0.9);
           }
         }
-
-
-
       }
     }
   }

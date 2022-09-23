@@ -60,56 +60,178 @@ export const Content = styled.div`
   flex-direction: column;
   background-color: #83ad93;
 
+
   header {
+    margin-top: 10px;
     width: 95%;
     display: flex;  
     align-items: center;
     justify-content: space-between ;
-    
 
-    .logo{
-      border-bottom: 2px solid;
-      font-family: var(--font-barlow);
-      margin-left: 5px;
-      font-size: 1.5em;
-      color: var(--light-2);
-      font-weight: 400;
-      animation: border 500ms infinite normal, typing 4s steps(50) 2s normal both;
-      white-space: nowrap; 
+    /* borda de teste*/
+
+    .container_logo {
+      width: 218px;
+      height: 66px;
+      border-radius: 20px;
       overflow: hidden;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: relative; 
+    }
+        .animated-border {
+          width: 304px;
+          height: 91px;
+          border-radius: 20px;
+          
+          position: absolute;
+          animation: backgroundAnimation 1s steps(50) 3s normal both, rotate 5s infinite ease-in-out;
+
+          @keyframes rotate {
+          100% {
+            transform: rotate(360deg);
+          }
+        }       
+
+          @keyframes backgroundAnimation {
+          from {
+            background: transparent;
+          }
+  
+          to {
+            background: #edebe8;
+          }
+        } 
+          
+        }
+        .corner {
+          width: 346px;
+          height: 62px; 
+          border-radius: 20px;         
+          background: #83ad93;
+          z-index: 1;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+        }
+        .content_logo {
+          width: 203px;
+          height: 52px;          
+          border-radius: 20px;
+          /* padding: 10px; */
+          background: #83ad93;
+          z-index: 2;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          border: none;
+          
+          .logo_tittle{      
+        font-family: var(--font-barlow);
+        background: linear-gradient(90deg,#212121,
+          #595959,          
+          #203239,
+         #edebe8        
+        );
+        background-clip: text;
+        -webkit-background-clip: text;
+        color: transparent;
+        text-align: center;
+        letter-spacing: 0.08em;
+        font-size: 2.7em;
+        /* color: var(--light-2); */
+        font-weight: 700;
+        animation: typing 2s steps(50) 1s normal both;
+        white-space: nowrap; 
+        overflow: hidden;
+          
+        @keyframes typing {
+          from {
+            width: 0;
+          }
+  
+          to {
+            width: 5em;
+          }
+        }    
+      }
+        }
         
-      @keyframes typing {
-        from {
-          width: 0;
-        }
 
-        to {
-          width: 5em;
-        }
-      }  
+    
+    
+    
+    
+    
+    
+    /* final de teste*/
 
-      @keyframes border {
-        from {
-          border-right-color: black;
-        }
+   
 
-        to {
-          border-right-color: red;
+    /* .logo{
+      border: 2px solid #fff;
+      border-radius: 20px;
+      padding: 5px;
+
+      background: #de0d9c;
+          position: absolute;
+          animation: rotate 3s infinite ease-in-out;
+
+
+
+      .logo_tittle{      
+        font-family: var(--font-barlow);
+        background: linear-gradient(90deg,#f0a500,
+        #e15fed,
+        #203239,
+        #eeedde,
+        #e0ddaa);
+        background-clip: text;
+        -webkit-background-clip: text;
+        color: transparent;
+        text-align: center;
+        font-size: 2em;
+        
+        font-weight: 700;
+        animation: border 500ms infinite normal, typing 4s steps(50) 2s normal both;
+        white-space: nowrap; 
+        overflow: hidden;
+          
+        @keyframes typing {
+          from {
+            width: 0;
+          }
+  
+          to {
+            width: 5em;
+          }
+        }  
+  
+        @keyframes border {
+          from {
+            border-right-color: black;
+          }
+  
+          to {
+            border-right-color: red;
+          }
         }
       }
-    }
 
-  
-    
+    } */
+
+
 
     div{
       display: flex;
-      flex-direction: column;
+      flex-direction: column;            
+     
       
 
       .button_register{
         width: 100%;
-        margin-top: 20px;
+        /* margin-top: 20px; */
         border-radius: 10px;
 
         background: transparent;
@@ -222,14 +344,18 @@ export const Content = styled.div`
       align-items: baseline;
 
       .logo{
-        font-size: 2em;
-        font-weight: 600;
+        .logo_tittle{
+          font-size: 2em;
+          font-weight: 600;
+        }
       }
+
 
       div{
         display: flex;
-        align-items: baseline;        
-        flex-direction: row-reverse;
+        align-items: center;        
+        flex-direction: row-reverse;       
+        justify-content: space-between ;
 
         .button_register{
         width: 100%;

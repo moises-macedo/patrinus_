@@ -1,7 +1,8 @@
-import { CoursesAvailable } from "../CoursesAvailable";
-import { DashboardStudentsCourses } from "../DashboardStudentsCourses";
-import { ModalEditSchoolProfile } from "../EditSchoolProfile";
+import { Home } from "../../Pages/Home";
+import { MenuMobile } from "../MenuMobile/Index";
 
 export const ScreenTest = () => {
-  return <ModalEditSchoolProfile />;
+  return <Home />;
+
+
 };
