@@ -1,4 +1,6 @@
 import styled, { keyframes } from "styled-components";
+import { motion } from "framer-motion";
+
 export const Colors = keyframes`
     0% {
         background-position: 0% 50%;
@@ -11,7 +13,7 @@ export const Colors = keyframes`
         background-position: 0% 50%;
       }`;
 
-export const PageContainer = styled.div`
+export const PageContainer = styled(motion.div)`
   height: 100vh;
   width: 100%;
   position: absolute;

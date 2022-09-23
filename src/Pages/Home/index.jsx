@@ -10,10 +10,14 @@ import { ModalContext } from "../../Provider/ModalStates";
 import { ModalCreateUser } from "../../Components/ModalCreateUser";
 import { Login } from "../../Components/Login";
 import { Navigate } from "react-router-dom";
+import { UsersContext } from "../../Provider/User";
 
 export const Home = ({ authenticated }) => {
+  const { user } = useContext(UsersContext);
   const { modalPartnerSchools, setModalPartnerSchools } =
     useContext(ModalContext);
+
+  // apagar
 
   const handleClick = () => {
     window.scrollTo({
@@ -23,9 +27,12 @@ export const Home = ({ authenticated }) => {
     setModalPartnerSchools(!modalPartnerSchools);
   };
 
-
-  if (authenticated ) {
-    return <Navigate to={"/dashboard"} />;
+  if (authenticated) {
+    if (user.type === "aluno") {
+      return <Navigate to={"/dashboardgodsonprofile"} />;
+    } else if (user.type === "padrinho") {
+      return <Navigate to={"/profilegodfather"} />;
+    }
   }
   return (
     <>

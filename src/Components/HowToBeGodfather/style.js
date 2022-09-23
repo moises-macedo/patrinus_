@@ -21,7 +21,7 @@ export const Container = styled.div`
     justify-content: center;
     background: var(--dark-2);
 
-    h2 {
+    h2{
       font-family: "Barlow";
 
       min-height: 50px;
@@ -52,39 +52,17 @@ export const Container = styled.div`
         50% {
           background-position: 100% 50%;
         }
-
-        100% {
-          background-position: 0% 50%;
-        }
       }
-    }
-  }
+      
 
-  @media (min-width: 769px) {
-    height: 100%;
-    width: 100%;
-
-    .tittleH2 {
-      background: var(--dark-2);
-      margin-bottom: 10px;
-
-      h2 {
-        background: none;
-        font-family: "Barlow";
+      @media (min-width: 769px){
         font-size: 3.12em;
         font-weight: 700;
         line-height: 60px;
         letter-spacing: 0em;
-        text-align: left;
-        color: red;
-        margin-top: 0.3em;
-        background-clip: none;
-        -webkit-background-clip: none;
-        -moz-background-clip: none;
-        -webkit-text-fill-color: var(--light-3);
-      }
-    }
-  }
+      } 
+    }   
+  }    
 `;
 
 export const Content = styled.div`
@@ -175,28 +153,38 @@ export const Content = styled.div`
           justify-content: center;
           img {
             width: 100%;
-            max-width: 250px;
-          }
-        }
 
-        .tittle {
-          font-size: 30px;
-          font-weight: 700;
-          line-height: 60px;
-          color: var(--secondary-1);
-        }
+            .box1, .box2, .box3{            
+                height: 30em;
+                width: 30em;
+                margin-top: 1.625em;
+                margin: 1.5em;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
 
-        .description {
-
-          font-size: 20px;
-          font-weight: 500;
-          text-align: center;
-          color: var(--light-1);
-          word-wrap: break-word;
+                .tittle{
+                    font-family: 'Barlow';
+                    font-size: 30px;
+                    font-weight: 700;
+                    line-height: 60px;
+                    letter-spacing: 0em;
+                    color: var(--secondary-1);
+                }
+                
+                .description{
+                    /* height: 6.75em;
+                    width: 436px; */
+                    font-family: 'Barlow';
+                    font-size: 20px;
+                    font-weight: 500;                
+                    letter-spacing: 0em;
+                    text-align: center;
+                    color: var(--light-1);
+                }
+            }
         }
-      }
     }
-  }
 `;
 
 export const ContainerText = styled.div`

@@ -37,11 +37,23 @@ export const Screen1 = () => {
       <Container>
         <Content>
           <header>
-            <button className="button_register" onClick={handleClickRegisterUser}>Cadastrar</button>
-            <button className="button_signIn" onClick={handleClickSignUp}>Entrar</button>
-            <div className="button__signIn-mobile" onClick={handleClickSignUp}>
-              <button>Entrar na plataforma</button>
+            <div class="container_logo">
+              <div class="animated-border"></div>
+              <div class="corner">
+                <div class="content_logo">
+                  <h1 className="logo_tittle">Patrinus</h1>
+                </div>
+              </div>
             </div>
+
+            <div>
+            <button className="button_register" onClick={handleClickRegisterUser}>Cadastrar</button>
+            
+            <div className="button__signIn-div" onClick={handleClickSignUp}>
+              <button>Entrar</button>
+            </div>
+            </div>
+            
           </header>
 
           <main>

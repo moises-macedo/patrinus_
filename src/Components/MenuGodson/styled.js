@@ -19,6 +19,7 @@ export const MenuGodSon = styled.div`
   h2 {
     color: var(--light-1);
     font-size: 25px;
+    text-transform: capitalize;
   }
 
   img {
@@ -27,6 +28,7 @@ export const MenuGodSon = styled.div`
     margin-top: 30px;
     background-color: beige;
     border-radius: 100%;
+    filter: drop-shadow(5px 5px 10px rgba(0,0,0,0.5));
   }
 
   ul {
@@ -61,9 +63,11 @@ export const MenuGodSon = styled.div`
     border: none;
     color: var(--light-1);
     box-shadow: 10px 10px 4px rgba(0, 0, 0, 0.25);
+    filter: brightness(0.9);
   }
   #exit:hover {
     cursor: pointer;
+    filter: brightness(1);   
   }
 
   #menuList {

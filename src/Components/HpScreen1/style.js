@@ -60,57 +60,228 @@ export const Content = styled.div`
   flex-direction: column;
   background-color: #83ad93;
 
+
   header {
+    margin-top: 10px;
     width: 95%;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    justify-content: flex-start;
+    display: flex;  
+    align-items: center;
+    justify-content: space-between ;
 
-    .button_register,
-    .button_signIn {
-      width: 100%;
-      margin-top: 20px;
-      border-radius: 30px;
-      background: linear-gradient(
-        180deg,
-        #ffffff 0%,
-        #ffffff 22.74%,
-        #ffeee6 100%
-      );
-      box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-      border: none;
-      font-family: Barlow;
-      font-size: 1.87em;
-      font-weight: 600;
-      letter-spacing: 0em;
-      padding: 4px;
-      cursor: pointer;
-    }
-    .button_register{
-      width: 100%;
-      max-width: 200px;
-    }
-    .button_signIn{
-      display: none;
-    }
-    .button__signIn-mobile{
-      width: 100%;
+    /* borda de teste*/
+
+    .container_logo {
+      width: 218px;
+      height: 66px;
+      border-radius: 20px;
+      overflow: hidden;
       display: flex;
+      justify-content: center;
       align-items: center;
-      justify-content: flex-end;
-      margin-top: 20px;
-      button{
-        background: none;
-        font-size: 18px;
-        text-decoration: underline;
-        cursor: pointer;
+      position: relative; 
+    }
+        .animated-border {
+          width: 304px;
+          height: 91px;
+          border-radius: 20px;
+          
+          position: absolute;
+          animation: backgroundAnimation 1s steps(50) 3s normal both, rotate 5s infinite ease-in-out;
 
-        &:hover{
-          color: var(--light-2);
+          @keyframes rotate {
+          100% {
+            transform: rotate(360deg);
+          }
+        }       
+
+          @keyframes backgroundAnimation {
+          from {
+            background: transparent;
+          }
+  
+          to {
+            background: #edebe8;
+          }
+        } 
+          
+        }
+        .corner {
+          width: 346px;
+          height: 62px; 
+          border-radius: 20px;         
+          background: #83ad93;
+          z-index: 1;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+        }
+        .content_logo {
+          width: 203px;
+          height: 52px;          
+          border-radius: 20px;
+          /* padding: 10px; */
+          background: #83ad93;
+          z-index: 2;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          border: none;
+          
+          .logo_tittle{      
+        font-family: var(--font-barlow);
+        background: linear-gradient(90deg,#212121,
+          #595959,          
+          #203239,
+         #edebe8        
+        );
+        background-clip: text;
+        -webkit-background-clip: text;
+        color: transparent;
+        text-align: center;
+        letter-spacing: 0.08em;
+        font-size: 2.7em;
+        /* color: var(--light-2); */
+        font-weight: 700;
+        animation: typing 2s steps(50) 1s normal both;
+        white-space: nowrap; 
+        overflow: hidden;
+          
+        @keyframes typing {
+          from {
+            width: 0;
+          }
+  
+          to {
+            width: 5em;
+          }
+        }    
+      }
+        }
+        
+
+    
+    
+    
+    
+    
+    
+    /* final de teste*/
+
+   
+
+    /* .logo{
+      border: 2px solid #fff;
+      border-radius: 20px;
+      padding: 5px;
+
+      background: #de0d9c;
+          position: absolute;
+          animation: rotate 3s infinite ease-in-out;
+
+
+
+      .logo_tittle{      
+        font-family: var(--font-barlow);
+        background: linear-gradient(90deg,#f0a500,
+        #e15fed,
+        #203239,
+        #eeedde,
+        #e0ddaa);
+        background-clip: text;
+        -webkit-background-clip: text;
+        color: transparent;
+        text-align: center;
+        font-size: 2em;
+        
+        font-weight: 700;
+        animation: border 500ms infinite normal, typing 4s steps(50) 2s normal both;
+        white-space: nowrap; 
+        overflow: hidden;
+          
+        @keyframes typing {
+          from {
+            width: 0;
+          }
+  
+          to {
+            width: 5em;
+          }
+        }  
+  
+        @keyframes border {
+          from {
+            border-right-color: black;
+          }
+  
+          to {
+            border-right-color: red;
+          }
         }
       }
+
+    } */
+
+
+
+    div{
+      display: flex;
+      flex-direction: column;            
+     
+      
+
+      .button_register{
+        width: 100%;
+        /* margin-top: 20px; */
+        border-radius: 10px;
+
+        background: transparent;
+        padding-right: 8px ;
+        padding-left: 8px ;
+        padding-top: 4px ;
+        padding-bottom: 4px ;
+        
+        border: 1px solid var(--dark-1);
+
+
+        box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);        
+        font-family: Barlow;
+        font-size: 16px;
+        font-weight: 600;
+        letter-spacing: 0em;        
+        cursor: pointer;
+      }
+      .button_register{
+        width: 100%;
+        height: 43px;
+        max-width: 200px;
+
+        &:hover{
+            color: var(--light-2);
+            border:1px solid var(--light-2);
+          }
+      }
+     
+      .button__signIn-div{
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        margin-top: 9px;
+        button{
+          background: none;
+          font-size: 18px;
+          text-decoration: underline;
+          cursor: pointer;
+
+          &:hover{
+            color: var(--light-2);
+          }
+        }
+      }
+
     }
+
+    
   }
 
   main {
@@ -170,28 +341,50 @@ export const Content = styled.div`
       display: flex;
       flex-direction: row;
       justify-content: space-between;
+      align-items: baseline;
 
-      .button_register {
+      .logo{
+        .logo_tittle{
+          font-size: 2em;
+          font-weight: 600;
+        }
+      }
+
+
+      div{
+        display: flex;
+        align-items: center;        
+        flex-direction: row-reverse;       
+        justify-content: space-between ;
+
+        .button_register{
         width: 100%;
-        max-width: 250px;
-        padding: 0.625em;
-        margin-left: 1em;
-        margin-top: 1.12em;
-        border-radius: 0px;    
+        max-width: 200px;
+        border-radius: 10px;
+
+        background: transparent;
+        padding-right: 8px ;
+        padding-left: 8px ;
+        padding-top: 4px ;
+        padding-bottom: 4px ;
+        
+        border: 1px solid var(--dark-1);
+
+
+        box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);        
+        font-family: Barlow;
+        font-size: 16px;
+        font-weight: 600;
+        letter-spacing: 0em;        
+        cursor: pointer;
+      }     
+        
+        .button__signIn-div{
+        margin-right: 15px;
+        }
 
       }
 
-      .button_signIn {
-        width: 100%;
-        max-width: 250px;
-        padding: 0.625em;
-        margin-right: 1em;
-        margin-top: 34px;
-        display: block;
-      }
-      .button__signIn-mobile{
-        display: none;
-      }
     }
 
     main {

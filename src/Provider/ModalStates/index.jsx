@@ -1,17 +1,39 @@
+import { useContext } from "react";
 import { createContext, useEffect, useState } from "react";
+import { UsersContext } from "../User";
 
 export const ModalContext = createContext();
 
 export const ModalProvider = ({ children }) => {
   const [modalSignUp, setModalSignUp] = useState(false);
   const [modalRegisterUser, setModalRegisterUser] = useState(false);
-  const [modalEditProfile, setModalEditProfile] = useState(false);
+  const [modalEditProfile, setModalEditProfile] = useState(true);
   const [modalPartnerSchools, setModalPartnerSchools] = useState(false);
+  const [modalAddCourse, setModalAddCourse] = useState(false);
 
-  if (!modalPartnerSchools || !modalRegisterUser || !modalSignUp) {
+  const { user} = useContext(UsersContext)
+
+  useEffect(()=>{
+    if(user?.age){
+      setModalEditProfile(false)
+    }
+
+  },[user])
+
+  if (
+    !modalPartnerSchools ||
+    !modalRegisterUser ||
+    !modalSignUp ||
+    !modalAddCourse
+  ) {
     document.querySelector("body").style.overflow = "auto";
   }
-  if (modalPartnerSchools || modalRegisterUser || modalSignUp) {
+  if (
+    modalPartnerSchools ||
+    modalRegisterUser ||
+    modalSignUp ||
+    modalAddCourse
+  ) {
     document.querySelector("body").style.overflow = "hidden";
   }
 
@@ -26,6 +48,8 @@ export const ModalProvider = ({ children }) => {
         setModalPartnerSchools,
         modalRegisterUser,
         setModalRegisterUser,
+        modalAddCourse,
+        setModalAddCourse,
       }}
     >
       {children}

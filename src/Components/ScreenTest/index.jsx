@@ -1,9 +1,8 @@
-import { CardDev } from "../CardDev";
-import { DashboardSponsored } from "../DashboardSponsored";
+import { Home } from "../../Pages/Home";
+import { MenuMobile } from "../MenuMobile/Index";
 
 export const ScreenTest = () => {
+  return <Home />;
 
-  return <DashboardSponsored/>;
 
 };
- 
