@@ -8,7 +8,7 @@ h3{
    
 }
 textarea{
-   
+    border-radius: 10px;
     background-color: var(--secondary-1);
     color: var(--dark-1);
    }

@@ -21,7 +21,7 @@ export const StudentStyle = styled.div`
         height: 65px;
         font-family: var(--font-inter);
         font-size: 18px;
-        margin-top: 28px;
+        margin-top: 288px;
     }
    }
 
@@ -37,4 +37,8 @@ export const ProfileStyle = styled.div`
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
+
+  
+
+    
 `;

@@ -13,10 +13,10 @@ export const StudentInformation = () =>{
          <BackGroundDashboard theme='student' />
    
        <StudentStyleMain>
-        <ProfileStyle>
-        <TitlePage>Perfil</TitlePage>
-        <Grades />
-        </ProfileStyle>
+          <ProfileStyle>
+               <TitlePage>Perfil</TitlePage>
+               <Grades />
+          </ProfileStyle>
         <StudentStyle>
          
         <SponsoredBy />
