@@ -1,9 +1,5 @@
-import { Home } from "../../Pages/Home";
-import { DashboardStudentsRegistered } from "../DashboardStudentsRegistered";
-import { MenuMobile } from "../MenuMobile/Index";
+import { DashboardSponsored } from "../DashboardSponsored";
 
 export const ScreenTest = () => {
-  return <DashboardStudentsRegistered />;
-
-
+  return <DashboardSponsored />;
 };

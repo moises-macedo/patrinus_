@@ -6,9 +6,9 @@ import Male from "../../Assets/Img/male.svg";
 import Female from "../../Assets/Img/female.svg";
 
 export const MenuGodFather = () => {
-  const { setAuthenticated, authenticated,user } = useContext(UsersContext);
+  const { setAuthenticated, authenticated, user } = useContext(UsersContext);
 
-  const [imageUser,setImageUser ] =useState()
+  const [imageUser, setImageUser] = useState();
   const navigate = useNavigate();
 
   const handleExit = () => {
@@ -17,7 +17,6 @@ export const MenuGodFather = () => {
     navigate("/");
     window.location.reload();
   };
-  
 
   useEffect(() => {
     if (user?.sex === "masculino") {
@@ -28,14 +27,13 @@ export const MenuGodFather = () => {
     }
   }, [user]);
 
-
   return (
     <MenuGodfather>
       <img src={imageUser} alt="Foto do usuário" />
       <h2>{user.name}</h2>
       <ul>
         <nav>
-          <button id="menuList" onClick={() => navigate()}>
+          <button id="menuList" onClick={() => navigate("/profilegodfather")}>
             Perfil
           </button>
         </nav>
@@ -45,7 +43,7 @@ export const MenuGodFather = () => {
           </button>
         </nav>
         <nav>
-          <button id="menuList" onClick={() => navigate()}>
+          <button id="menuList" onClick={() => navigate("/dashboardsponsored")}>
             Apadrinhados
           </button>
         </nav>

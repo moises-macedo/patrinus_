@@ -8,21 +8,19 @@ import { TitlePage } from "../TitlePage";
 import { StudentStyle, StudentStyleMain, ProfileStyle } from "./style";
 import { useContext } from "react";
 import { ModalContext } from "../../Provider/ModalStates";
+import { SponsoredBy } from "../SponsoredBy";
+import { TitlePage } from "../TitlePage";
+import { StudentStyle, StudentStyleMain, ProfileStyle } from "./style";
+export const StudentInformation = () => {
+  return (
+    <>
+      <BackGroundDashboard theme="student" />
 
-import { InformationUser } from '../InformationUser'
-import { SponsoredBy } from '../SponsoredBy'
-import { TitlePage } from '../TitlePage'
-import {StudentStyle, StudentStyleMain, ProfileStyle} from './style'
-export const StudentInformation = () =>{
-     return (
-         <>
-         <BackGroundDashboard theme='student' />
-   
-       <StudentStyleMain>
-          <ProfileStyle>
-               <TitlePage>Perfil</TitlePage>
-               <Grades />
-          </ProfileStyle>
+      <StudentStyleMain>
+        <ProfileStyle>
+          <TitlePage>Perfil</TitlePage>
+          <Grades />
+        </ProfileStyle>
 
         <StudentStyle>
           <SponsoredBy />
