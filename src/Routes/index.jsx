@@ -2,7 +2,6 @@ import { useContext } from "react";
 import { Route, Routes as RoutePages } from "react-router-dom";
 import { DashboardStudentsCourses } from "../Components/DashboardStudentsCourses";
 import { ScreenTest } from "../Components/ScreenTest";
-import { Dashboard } from "../Pages/Dashboard";
 import { DashboardPartnerSchools } from "../Pages/DashboardPartnerSchools";
 import { DashboardProfileGodfather } from "../Pages/DashboardProfileGodfather";
 import { DashboardProfileGodson } from "../Pages/DashboardProfileGodson";
@@ -14,7 +13,7 @@ import { DashboardSponsored } from "../Components/DashboardSponsored";
 import { ComponentPartnerSchools } from "../Components/ComponentPartnerSchools";
 
 export const Routes = () => {
-  const { authenticated,user } = useContext(UsersContext);
+  const { authenticated, user } = useContext(UsersContext);
 
   return (
     <RoutePages>
@@ -33,13 +32,21 @@ export const Routes = () => {
       />
       <Route path="/profilegodfather" element={<DashboardProfileGodfather />} />
 
-      <Route path="/dashboardstudentscourses" element={<DashboardStudentsCourses />} />
-      <Route path="/dashboardstudentgodparents" element={<DashboardStudentGodparents />} />
+      <Route
+        path="/dashboardstudentscourses"
+        element={<DashboardStudentsCourses />}
+      />
+      <Route
+        path="/dashboardstudentgodparents"
+        element={<DashboardStudentGodparents />}
+      />
       {/* <Route path="/dashboardstudentgodparents" element={<DashboardStudentGodparents />} /> */}
       <Route path="/favoritecourses" element={<FavoriteCourses />} />
       <Route path="/dashboardsponsored" element={<DashboardSponsored />} />
-      <Route path="/componentpartnerschools" element={<ComponentPartnerSchools />} />
-
+      <Route
+        path="/componentpartnerschools"
+        element={<ComponentPartnerSchools />}
+      />
     </RoutePages>
   );
 };

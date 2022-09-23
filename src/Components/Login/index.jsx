@@ -28,7 +28,8 @@ export const Login = ({ id = "loginModal" }) => {
   const [showPassword, setShowPassword] = useState(false);
   const [valid, setValid] = useState(false);
   const { modalSignUp, setModalSignUp } = useContext(ModalContext);
-  const { setToken, setUser, setAuthenticated } = useContext(UsersContext);
+  const { setToken, setUser, setAuthenticated, user } =
+    useContext(UsersContext);
 
   const formSchema = yup.object().shape({
     email: yup.string().required("Campo obrigatório!").email("Email inválido"),
@@ -62,7 +63,11 @@ export const Login = ({ id = "loginModal" }) => {
           setUser(response.data.user);
           setAuthenticated(true);
           reset();
-          navigate("/dashboard");
+          if (user.type === "aluno") {
+            navigate("/dashboardgodsonprofile");
+          } else if (user.type === "padrinho") {
+            navigate("/profilegodfather");
+          }
         })
         .catch((_) => {
           toast.error("Email ou Senha inválidos!!");
