@@ -17,8 +17,6 @@ export const Home = ({ authenticated }) => {
   const { modalPartnerSchools, setModalPartnerSchools } =
     useContext(ModalContext);
 
-  // apagar
-
   const handleClick = () => {
     window.scrollTo({
       top: 0,
@@ -42,7 +40,7 @@ export const Home = ({ authenticated }) => {
       <Container>
         <p>
           Seja uma <button onClick={handleClick}>#escola</button> parceira e
-          ajude melhorar a educação.
+          ajude melhorar a educação!
         </p>
       </Container>
       <CardDev />
